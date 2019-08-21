@@ -6,9 +6,9 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -138,14 +138,14 @@ public class EventDataLayout
 
     // ------------------------------------------------------------------------
     // Data keys
-    // - These define what data is available (see 'EventDataRow') and what columns are 
+    // - These define what data is available (see 'EventDataRow') and what columns are
     //   available for display in the report.
     // - Column names must contain only <alpha>/<numeric>/'_' characters
-    
+
     public static final String  DATA_INDEX                  = "index";
-    
+
     public static final String  DATA_MULTI_FIELDS           = "multiFields"; // "arg" must contain field list
-    
+
     public static final String  DATA_ATTACHMENT_URL         = "attachURL";
     public static final String  DATA_ATTACHMENT_PROP        = "attachProp";             // ev.getAttachData()
 
@@ -179,14 +179,14 @@ public class EventDataLayout
   //public static final String  DATA_STOP_DATETIME          = "stopDateTime";
   //public static final String  DATA_STOP_ELAPSED           = "stopElapsed";
 
-    public static final String  DATA_CELL_LATITUDE          = "cellLatitude";       
-    public static final String  DATA_CELL_LONGITUDE         = "cellLongitude";      
-    public static final String  DATA_CELL_GEOPOINT          = "cellGeoPoint";       
+    public static final String  DATA_CELL_LATITUDE          = "cellLatitude";
+    public static final String  DATA_CELL_LONGITUDE         = "cellLongitude";
+    public static final String  DATA_CELL_GEOPOINT          = "cellGeoPoint";
     public static final String  DATA_CELL_ACCURACY          = "cellAccuracy";
-    
-    public static final String  DATA_BEST_LATITUDE          = "bestLatitude";       
-    public static final String  DATA_BEST_LONGITUDE         = "bestLongitude";      
-    public static final String  DATA_BEST_GEOPOINT          = "bestGeoPoint";       
+
+    public static final String  DATA_BEST_LATITUDE          = "bestLatitude";
+    public static final String  DATA_BEST_LONGITUDE         = "bestLongitude";
+    public static final String  DATA_BEST_GEOPOINT          = "bestGeoPoint";
     public static final String  DATA_BEST_ACCURACY          = "bestAccuracy";
 
     public static final String  DATA_BATTERY                = "battery";
@@ -231,7 +231,7 @@ public class EventDataLayout
 
     public static final String  DATA_ENTITY_ID              = "entityId";
     public static final String  DATA_ENTITY_DESC            = "entityDesc";
-    
+
     public static final String  DATA_DRIVER_ID              = "driverId";
     public static final String  DATA_DRIVER_DESC            = "driverDesc";
     public static final String  DATA_DRIVER_STATUS          = "driverStatus";
@@ -258,7 +258,7 @@ public class EventDataLayout
     public static final String  DATA_ETA_LATITUDE           = "etaLatitude";            // ETA latitude
     public static final String  DATA_ETA_LONGITUDE          = "etaLongitude";           // ETA longitude
     public static final String  DATA_ETA_GEOPOINT           = "etaGeoPoint";            // ETA lat/lon
-    
+
     public static final String  DATA_STOP_UNIQUE_ID         = "stopUniqueID";           // STOP ID
     public static final String  DATA_STOP_STATUS            = "stopStatus";             // STOP Status
     public static final String  DATA_STOP_STATUS_DESC       = "stopStatusDesc";         // STOP Status Description
@@ -335,7 +335,7 @@ public class EventDataLayout
     public static final String  DATA_BRAKE_FORCE            = "brakeForce";
     public static final String  DATA_BRAKE_PRESSURE         = "brakePressure";          // kPa
     public static final String  DATA_BRAKE_POSITION         = "brakePos";               // %
-    public static final String  DATA_ACCELERATION           = "acceleration";           // 
+    public static final String  DATA_ACCELERATION           = "acceleration";           //
     public static final String  DATA_ACCEL_XYZ              = "accelXYZ";
     public static final String  DATA_ACCEL_MAGNITUDE        = "accelMagnitude";
     public static final String  DATA_PTO_ENGAGED            = "ptoEngaged";
@@ -475,7 +475,7 @@ public class EventDataLayout
         String fmt = EventDataLayout.getArgFormatString(arg, dftFmt);
         return StringTools.format(value, fmt);
     }
-    
+
     // ------------------------------------------------------------------------
 
     /* format temperatures */
@@ -645,22 +645,81 @@ public class EventDataLayout
             });
 
             // -- Attachment URL (pictures/images, etc)
+            // this.addColumnTemplate(new DataColumnTemplate(DATA_ATTACHMENT_URL) {
+            //     public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
+            //         RequestProperties reqState = rd.getRequestProperties();
+            //         String arg = rc.getArg();
+            //         EventData ed = (EventData)obj;
+            //         if (ed.hasAttachData()) {
+            //             PixelDimension dim = HTMLTools.getImageDimension(ed.getAttachData());
+            //             Print.logInfo("Image Dim: " + dim);
+            //             String extn   = HTMLTools.getExtensionFromMimeType(ed.getAttachType(), "txt");
+            //             String dftURI = "." + "/Attach"/*Constants.DEFAULT_ATTACH_URI*/ + "." + extn;
+            //             URIArg attURL = new URIArg(dftURI, true); // EncodeURL
+            //             attURL.addArg("d" , ed.getDeviceID());
+            //             attURL.addArg("ts", ed.getTimestamp());
+            //             attURL.addArg("sc", "0x" + StringTools.toHexString(ed.getStatusCode(),16));
+            //             int W = (dim != null)? dim.getWidth()  : 600;
+            //             int H = (dim != null)? dim.getHeight() : 400;
+            //             if ((W > 1024) || (H > 1024)) {
+            //                 if ((W > 1024) && (W > H)) {
+            //                     double scale = (double)H/(double)W;
+            //                     W = 1024;
+            //                     H = (int)Math.round((double)W * scale);
+            //                     if (H <= 0) { H = 1; }
+            //                 } else {
+            //                     double scale = (double)W/(double)H;
+            //                     H = 1024;
+            //                     W = (int)Math.round((double)H * scale);
+            //                     if (W <= 0) { W = 1; }
+            //                 }
+            //             }
+            //             String  encURL = WebPageAdaptor.EncodeURL(reqState,attURL);
+            //             String  target = null;
+            //             boolean button = false;
+            //             ColumnValue cv = new ColumnValue();
+            //             cv.setValue(" "+extn+" ");
+            //             cv.setLinkURL("javascript:openResizableWindow('"+encURL+"','Attachment',"+W+","+H+");",target,button);
+            //             return cv;
+            //         } else {
+            //             return "";
+            //         }
+            //     }
+            //     public String getTitle(ReportData rd, ReportColumn rc) {
+            //         I18N i18n = rd.getPrivateLabel().getI18N(EventDataLayout.class);
+            //         return i18n.getString("EventDataLayout.attachment","Attachment");
+            //     }
+            // });
+            //
+            //
+
+            // -- Attachment URL (pictures/images, etc) -> AlarmImages.jpeg
             this.addColumnTemplate(new DataColumnTemplate(DATA_ATTACHMENT_URL) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
                     RequestProperties reqState = rd.getRequestProperties();
-                    String arg = rc.getArg();
-                    EventData ed = (EventData)obj;
-                    if (ed.hasAttachData()) {
+                    String    arg            = rc.getArg();
+                    EventData ed             = (EventData)obj;
+                    Device    d              = ed.getDevice();
+                    String DCS_DeviceCode = d.getDeviceCode().toLowerCase(); // return: coban
+                    if (ed.hasAttachData() ) {
                         PixelDimension dim = HTMLTools.getImageDimension(ed.getAttachData());
                         Print.logInfo("Image Dim: " + dim);
-                        String extn   = HTMLTools.getExtensionFromMimeType(ed.getAttachType(), "txt");
-                        String dftURI = "." + "/Attach"/*Constants.DEFAULT_ATTACH_URI*/ + "." + extn;
+                        String extn   = HTMLTools.getExtensionFromMimeType(ed.getAttachType(), "jpeg");
+                        String dftURI = "." + Constants.DEFAULT_ATTACH_URI + "." + extn;
                         URIArg attURL = new URIArg(dftURI, true); // EncodeURL
                         attURL.addArg("d" , ed.getDeviceID());
                         attURL.addArg("ts", ed.getTimestamp());
                         attURL.addArg("sc", "0x" + StringTools.toHexString(ed.getStatusCode(),16));
-                        int W = (dim != null)? dim.getWidth()  : 600;
-                        int H = (dim != null)? dim.getHeight() : 400;
+                        long epoch_ = ed.getTimestamp();
+                        Account acct_ = ed.getAccount();
+                        //TimeZone tz_ = ed.getTimeZone();
+                        BasicPrivateLabel bpl_ = Account.getPrivateLabel(acct_);
+                        //String filename = ed.getTimestampString(epoch_, acct_, tz_, bpl_);
+						String filename = ed.getTimestampString(epoch_, acct_, bpl_);
+                        filename = filename.substring(0,19).replace(' ','_').replace('/','-');
+                        attURL.addArg("fn", ed.getDeviceID() + "_" + filename);
+                        int W = (dim != null)? dim.getWidth()  : 340; // Default: 600
+                        int H = (dim != null)? dim.getHeight() : 260; // Default: 400
                         if ((W > 1024) || (H > 1024)) {
                             if ((W > 1024) && (W > H)) {
                                 double scale = (double)H/(double)W;
@@ -674,22 +733,22 @@ public class EventDataLayout
                                 if (W <= 0) { W = 1; }
                             }
                         }
-                        String  encURL = WebPageAdaptor.EncodeURL(reqState,attURL);
-                        String  target = null;
-                        boolean button = false;
+                        String encURL = WebPageAdaptor.EncodeURL(reqState,attURL);
                         ColumnValue cv = new ColumnValue();
                         cv.setValue(" "+extn+" ");
-                        cv.setLinkURL("javascript:openResizableWindow('"+encURL+"','Attachment',"+W+","+H+");",target,button);
+                        cv.setLinkURL("javascript:openResizableWindow('"+encURL+"','',"+W+","+H+");",null/*target*/);
                         return cv;
                     } else {
                         return "";
                     }
                 }
+
                 public String getTitle(ReportData rd, ReportColumn rc) {
                     I18N i18n = rd.getPrivateLabel().getI18N(EventDataLayout.class);
-                    return i18n.getString("EventDataLayout.attachment","Attachment");
+                    return i18n.getString("EventDataLayout.attachment","Photo Camera");
                 }
             });
+
 
             // -- Attachment properties
             this.addColumnTemplate(new DataColumnTemplate(DATA_ATTACHMENT_PROP) {
@@ -736,28 +795,28 @@ public class EventDataLayout
                                     double val = rtp.getDouble(var,0.0); // parse as Double
                                     return EventDataLayout.formatDouble(val, dec, "0");
                                 }
-                            } else 
+                            } else
                             if (fmt.startsWith("K")) {
                                 // -- Kilometers
                                 String dec = fmt.substring(1);
                                 double km  = rtp.getDouble(var,0.0); // parse as Double
                                 // -- valid km (unlikely, but allow negative)
                                 return EventDataLayout.formatKM(km, dec, rd);
-                            } else 
+                            } else
                             if (fmt.startsWith("S")) {
                                 // -- SpeedKPH
                                 String dec = fmt.substring(1);
                                 double kph = rtp.getDouble(var,0.0); // parse as Double
                                 // -- valid km/h (unlikely, but allow negative)
                                 return EventDataLayout.formatSpeed(kph, dec, rd);
-                            } else 
+                            } else
                             if (fmt.startsWith("E")) {
                                 // -- Economy
                                 String dec = fmt.substring(1);
                                 double kpl = rtp.getDouble(var,0.0); // parse as Double
                                 // -- valid economy (unlikely, but allow negative)
                                 return EventDataLayout.formatEconomy(kpl, dec, rd);
-                            } else 
+                            } else
                             if (fmt.startsWith("T")) {
                                 // -- Temperature
                                 String dec = fmt.substring(1);
@@ -770,21 +829,21 @@ public class EventDataLayout
                                     // -- invalid temperature
                                     return rc.getBlankFiller();
                                 }
-                            } else 
+                            } else
                             if (fmt.startsWith("V")) {
                                 // -- Volume
                                 String dec = fmt.substring(1);
                                 double L   = rtp.getDouble(var,0.0); // parse as Double
                                 // -- valid volume (unlikely, but allow negative)
                                 return EventDataLayout.formatVolume(L, dec, rd);
-                            } else 
+                            } else
                             if (fmt.startsWith("P")) {
                                 // -- Pressure
                                 String dec = fmt.substring(1);
                                 double kPa = rtp.getDouble(var,0.0); // parse as Double
                                 // -- valid pressure (can be negative)
                                 return EventDataLayout.formatPressure(kPa, dec, rd);
-                            } else 
+                            } else
                             if (fmt.startsWith("L")) {
                                 // -- GeoPoint (lat/lon)
                                 String   dec = fmt.substring(1);
@@ -796,7 +855,7 @@ public class EventDataLayout
                                     // -- invalid GeoPoint
                                     return rc.getBlankFiller();
                                 }
-                            } else 
+                            } else
                             if (fmt.startsWith("A")) {
                                 // -- Altitude (meters)
                                 String dec = fmt.substring(1);
@@ -810,7 +869,7 @@ public class EventDataLayout
                                 String dec = fmt.substring(1);
                                 int ef = EventDataLayout.getElapsedFormat(dec, StringTools.ELAPSED_FORMAT_HHMMSS);
                                 String valS = rtp.getString(var,"");
-                                long sec = (valS.indexOf(".") < 0)? 
+                                long sec = (valS.indexOf(".") < 0)?
                                     StringTools.parseLong(valS,0L) :              // assume seconds
                                     Math.round(StringTools.parseDouble(valS,0.0) * 3600.0); // assume hours
                                 return new ColumnValue(EventDataLayout.formatElapsedTime(sec,ef)).setSortKey(sec);
@@ -880,7 +939,7 @@ public class EventDataLayout
                 }
             });
 
-            // -- Device IMEI 
+            // -- Device IMEI
             this.addColumnTemplate(new DataColumnTemplate(DATA_DEVICE_IMEI) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
                     String arg = rc.getArg();
@@ -901,7 +960,7 @@ public class EventDataLayout
                 }
             });
 
-            // -- Device UniqueID 
+            // -- Device UniqueID
             this.addColumnTemplate(new DataColumnTemplate(DATA_DEVICE_UNIQUE_ID) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
                     String arg = rc.getArg();
@@ -1353,7 +1412,7 @@ public class EventDataLayout
                     } else
                     if (arg.equalsIgnoreCase("frac") || arg.equalsIgnoreCase("fraction")) {
                         ts = ts % 1000L; // milliseconds only
-                    } else 
+                    } else
                     if (arg.equalsIgnoreCase("sec")  || arg.equalsIgnoreCase("seconds")) {
                         ts = ts / 1000L; // seconds only
                     }
@@ -1371,16 +1430,16 @@ public class EventDataLayout
                     String   arg = StringTools.trim(rc.getArg()).toLowerCase();
                     EventData ed = (EventData)obj;
                     int       sc = ed.getStatusCode();
-                    if (StringTools.isBlank(arg)   || 
+                    if (StringTools.isBlank(arg)   ||
                         (arg.indexOf("color") >= 0)  ) { // color, decColor, decimalColor
-                        String scCode = arg.startsWith("dec")? 
+                        String scCode = arg.startsWith("dec")?
                             String.valueOf(sc) : // decColor, decimalColor
                             ("0x" + StringTools.toHexString((long)sc,16)); // color, hexColor
                         StatusCodeProvider scp = ed.getStatusCodeProvider(rd.getPrivateLabel());
                         if (scp == null) {
                             return scCode;
                         } else
-                        if (StringTools.isBlank(scp.getForegroundColor()) && 
+                        if (StringTools.isBlank(scp.getForegroundColor()) &&
                             StringTools.isBlank(scp.getBackgroundColor())   ) {
                             return scCode;
                         } else {
@@ -1416,7 +1475,7 @@ public class EventDataLayout
                             String scDesc = scp.getDescription(rd.getLocale());
                             String scFG   = scp.getForegroundColor();
                             String scBG   = scp.getBackgroundColor();
-                            if (StringTools.isBlank(scFG) && 
+                            if (StringTools.isBlank(scFG) &&
                                 StringTools.isBlank(scBG)   ) {
                                 return scDesc;
                             } else {
@@ -1427,7 +1486,7 @@ public class EventDataLayout
                                 return cv;
                             }
                         }
-                    } else { 
+                    } else {
                         // arg.equalsIgnoreCase("noColor")
                         String scDesc = ed.getStatusCodeDescription(rd.getPrivateLabel());
                         return scDesc;
@@ -1668,7 +1727,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.rfidTag","RFID/Bar\nCode");
                 }
             });
-            
+
             // -- Sample ID/Index
             this.addColumnTemplate(new DataColumnTemplate(DATA_SAMPLE_ID) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -1790,7 +1849,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.etaLat","ETA\nLat");
                 }
             });
-            
+
             // -- ETA Longitude
             this.addColumnTemplate(new DataColumnTemplate(DATA_ETA_LONGITUDE) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -1821,7 +1880,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.etaLon","ETA Lon");
                 }
             });
-            
+
             // -- ETA Latitude/Longitude
             this.addColumnTemplate(new DataColumnTemplate(DATA_ETA_GEOPOINT) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -2008,7 +2067,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.lat","Lat");
                 }
             });
-            
+
             // -- Longitude
             this.addColumnTemplate(new DataColumnTemplate(DATA_LONGITUDE) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -2483,7 +2542,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.cellLat","Cell\nLat");
                 }
             });
-            
+
             // -- Cell Longitude
             this.addColumnTemplate(new DataColumnTemplate(DATA_CELL_LONGITUDE) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -2609,7 +2668,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.bestLat","Lat");
                 }
             });
-            
+
             // -- Best Longitude
             this.addColumnTemplate(new DataColumnTemplate(DATA_BEST_LONGITUDE) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -2709,7 +2768,7 @@ public class EventDataLayout
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
                     String arg = StringTools.trim(rc.getArg()).toLowerCase();
                     EventData ed = (EventData)obj;
-                    long input = ed.getInputMask();  // bit mask 
+                    long input = ed.getInputMask();  // bit mask
                     if (arg.startsWith("hex")) {
                         int blen = StringTools.parseInt(arg.substring("hex".length()),16);
                         return "0x" + StringTools.toHexString(input,blen);
@@ -2815,7 +2874,7 @@ public class EventDataLayout
                     I18N i18n    = rd.getPrivateLabel().getI18N(EventDataLayout.class);
                     int  argBit  = StringTools.parseInt(rc.getArg(),0);
                     long argMask = (argBit >= 0)? (1L << argBit) : 0L;
-                    return i18n.getString("EventDataLayout.seatbeltBitValue","Seatbelt\n{0}", 
+                    return i18n.getString("EventDataLayout.seatbeltBitValue","Seatbelt\n{0}",
                         EventData.GetSeatbeltMaskDescription(argMask,rd.getLocale()));
                 }
             });
@@ -2852,7 +2911,7 @@ public class EventDataLayout
                     I18N i18n    = rd.getPrivateLabel().getI18N(EventDataLayout.class);
                     int  argBit  = StringTools.parseInt(rc.getArg(),0);
                     long argMask = (argBit >= 0)? (1L << argBit) : 0L;
-                    return i18n.getString("EventDataLayout.doorStateBitValue","Door\n{0}", 
+                    return i18n.getString("EventDataLayout.doorStateBitValue","Door\n{0}",
                         EventData.GetDoorMaskDescription(argMask,rd.getLocale()));
                 }
             });
@@ -2889,7 +2948,7 @@ public class EventDataLayout
                     I18N i18n    = rd.getPrivateLabel().getI18N(EventDataLayout.class);
                     int  argBit  = StringTools.parseInt(rc.getArg(),0);
                     long argMask = (argBit >= 0)? (1L << argBit) : 0L;
-                    return i18n.getString("EventDataLayout.lightsStateBitValue","Lights\n{0}", 
+                    return i18n.getString("EventDataLayout.lightsStateBitValue","Lights\n{0}",
                         EventData.GetDoorMaskDescription(argMask,rd.getLocale()));
                 }
             });
@@ -2970,7 +3029,7 @@ public class EventDataLayout
                     }
                 }
             });
-            
+
             // -- City
             this.addColumnTemplate(new DataColumnTemplate(DATA_CITY) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -2983,7 +3042,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.city","City");
                 }
             });
-            
+
             // -- State/Province
             this.addColumnTemplate(new DataColumnTemplate(DATA_STATE) {
                 public Object getColumnValue(int rowNdx, ReportData rd, ReportColumn rc, Object obj) {
@@ -3022,7 +3081,7 @@ public class EventDataLayout
                     return i18n.getString("EventDataLayout.subdivision","Subdivision");
                 }
             });
-            
+
             // -- Atmosphere
             this.addColumnTemplate(new DataColumnTemplate(DATA_BAROMETER) {
                 // -- Barometric pressure
@@ -3615,7 +3674,7 @@ public class EventDataLayout
                         double liters = capacity * percent; // liters
                         double vol = Account.getVolumeUnits(rd.getAccount()).convertFromLiters(liters);
                         return EventDataLayout.formatDouble(vol, arg, "0.0");
-                    } 
+                    }
                 }
                 public String getTitle(ReportData rd, ReportColumn rc) {
                     I18N i18n = rd.getPrivateLabel().getI18N(EventDataLayout.class);
@@ -3641,7 +3700,7 @@ public class EventDataLayout
                         double vol = Account.getVolumeUnits(rd.getAccount()).convertFromLiters(liters);
                         //return StringTools.format(vol, "#0.0");
                         return EventDataLayout.formatDouble(vol, arg, "0.0");
-                    } 
+                    }
                 }
                 public String getTitle(ReportData rd, ReportColumn rc) {
                     I18N i18n = rd.getPrivateLabel().getI18N(EventDataLayout.class);
@@ -4101,7 +4160,7 @@ public class EventDataLayout
                                 return sb.toString();
                             }
                         }
-                    } 
+                    }
                     return rc.getBlankFiller();
                 }
                 public String getTitle(ReportData rd, ReportColumn rc) {
@@ -4194,7 +4253,7 @@ public class EventDataLayout
                                 return sb.toString();
                             }
                         }
-                    } 
+                    }
                     return rc.getBlankFiller();
                 }
                 public String getTitle(ReportData rd, ReportColumn rc) {
@@ -4231,7 +4290,7 @@ public class EventDataLayout
                     EventData ed = (EventData)obj;
                     String faultStr = ed.getFaultCode(); // RTProperties String
                     if (StringTools.isBlank(faultStr)) {
-                        long fault = ed.getOBDFault(); // 
+                        long fault = ed.getOBDFault(); //
                         if (fault == 0L) {
                             return rc.getBlankFiller();
                         } else {
@@ -4255,7 +4314,7 @@ public class EventDataLayout
                     if (fault == 0L) {
                         // -- not defined
                         return rc.getBlankFiller();
-                    } else 
+                    } else
                     if (DTOBDFault.IsJ1708(fault)) {
                         // -- J1708/J1587
                         if (DTOBDFault.HasDescriptionProvider(fault)) {
@@ -4271,7 +4330,7 @@ public class EventDataLayout
                                 j1587URL.addArg("fmi" , DTOBDFault.DecodeFMI(fault));
                                 cv.setLinkURL("javascript:openResizableWindow('"+j1587URL+"','J1587Desc',320,100);",target,button);
                                 return cv;
-                            } else 
+                            } else
                             if (arg.equalsIgnoreCase("desc")) {
                                 String desc = DTOBDFault.GetFaultDescription(fault, locale);
                                 return desc;
@@ -4281,7 +4340,7 @@ public class EventDataLayout
                         } else {
                             return DTOBDFault.GetFaultString(fault);
                         }
-                    } else 
+                    } else
                     if (DTOBDFault.IsOBDII(fault)) {
                         // -- OBDII DTC
                         if (DTOBDFault.HasDescriptionProvider(fault)) {
@@ -4409,7 +4468,7 @@ public class EventDataLayout
                     EventData ed = (EventData)obj;
                     double C = ed.getOilTemp(); // degrees 'C'
                     if (EventData.isValidTemperature(C)) {
-                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null); 
+                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null);
                         return new ColumnValue(tempS).setSortKey((long)(C * 100.0));
                     } else {
                         return rc.getBlankFiller();
@@ -4447,7 +4506,7 @@ public class EventDataLayout
                         // -- not specified
                         return rc.getBlankFiller();
                     } else
-                    if (arg.equalsIgnoreCase("%")      || 
+                    if (arg.equalsIgnoreCase("%")      ||
                         arg.equalsIgnoreCase("pct")    ||
                         arg.equalsIgnoreCase("percent")  ) {
                         // -- Explicit Percent
@@ -4564,7 +4623,7 @@ public class EventDataLayout
                     EventData ed = (EventData)obj;
                     double C = ed.getTransOilTemp(); // degrees 'C'
                     if (EventData.isValidTemperature(C)) {
-                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null); 
+                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null);
                         return new ColumnValue(tempS).setSortKey((long)(C * 100.0));
                     } else {
                         return rc.getBlankFiller();
@@ -4581,7 +4640,7 @@ public class EventDataLayout
                     EventData ed = (EventData)obj;
                     double C = ed.getOilCoolerInTemp(); // degrees 'C'
                     if (EventData.isValidTemperature(C)) {
-                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null); 
+                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null);
                         return new ColumnValue(tempS).setSortKey((long)(C * 100.0));
                     } else {
                         return rc.getBlankFiller();
@@ -4598,7 +4657,7 @@ public class EventDataLayout
                     EventData ed = (EventData)obj;
                     double C = ed.getOilCoolerOutTemp(); // degrees 'C'
                     if (EventData.isValidTemperature(C)) {
-                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null); 
+                        String tempS = EventDataLayout.formatTemperature(C, arg, rd, null);
                         return new ColumnValue(tempS).setSortKey((long)(C * 100.0));
                     } else {
                         return rc.getBlankFiller();

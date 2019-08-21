@@ -6,9 +6,9 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -160,7 +160,7 @@
 //     -Added check for "<Account>.getSmsEnabled()" before sending SMS messages.
 //  2013/03/01  Martin D. Flynn
 //     -Added check for past event timestamps (see "pastEventDateAction")
-//     -Ignore Geozone check ("checkGeozoneTransitions") for events that are older than 
+//     -Ignore Geozone check ("checkGeozoneTransitions") for events that are older than
 //      the last received event.
 //     -Set event "inputMask" to last device input state, if unset by DCS.
 //  2013/04/08  Martin D. Flynn
@@ -287,8 +287,8 @@ public class Device // Asset
     /* deferred rule check */
     private static volatile int DEFERRED_RULE_CHECK = -1; // false
     // -- intended to be used for deferred rule checking (a snapshot of the Device record
-    // -  is saved and passed to the rule trigger handling).  
-    // -- (ENRE "<EventFunctionMap>.getPreviousGeoPoint" may still need some additional  
+    // -  is saved and passed to the rule trigger handling).
+    // -- (ENRE "<EventFunctionMap>.getPreviousGeoPoint" may still need some additional
     // -  implementation before this can be considered complete).
 
     /**
@@ -337,11 +337,11 @@ public class Device // Asset
         if (defer == 1) {
             // -- always true
             return true;
-        } else 
+        } else
         if (defer == 2) {
             // -- TODO: check Account: "this.getAccount()"
             return true;
-        } else 
+        } else
         if (defer == 3) {
             // -- TODO: check Device: "this"
             return true;
@@ -356,7 +356,7 @@ public class Device // Asset
     private static EventDataInsertionListener _EventDataInsertionListener = null;
 
     /**
-    *** Sets the EventDataInsertionListener 
+    *** Sets the EventDataInsertionListener
     **/
     @SuppressWarnings("unchecked")
     public static void initEventDataInsertionListener()
@@ -382,14 +382,14 @@ public class Device // Asset
     }
 
     /**
-    *** Sets the EventDataInsertionListener 
+    *** Sets the EventDataInsertionListener
     **/
     public static void setEventDataInsertionListener(EventDataInsertionListener edil)
     {
         Device._EventDataInsertionListener = edil;
     }
 
-    /** 
+    /**
     *** Returns true if an EventDataInsertionListener has been defined
     *** @return True if an EventDataInsertionListener has been defined
     **/
@@ -399,7 +399,7 @@ public class Device // Asset
     }
 
     /**
-    *** Gets the EventDataInsertionListener 
+    *** Gets the EventDataInsertionListener
     **/
     public static EventDataInsertionListener getEventDataInsertionListener()
     {
@@ -446,8 +446,8 @@ public class Device // Asset
     private static ThreadPool  ThreadPool_DeviceEventUpdate         = new ThreadPool(
         "DeviceEventUpdate",
         PROP_ThreadPool_DeviceEventUpdate_, // property allowing default override
-        ThreadPool_DeviceEventUpdate_Size, 
-        ThreadPool_DeviceEventUpdate_IdleSec, 
+        ThreadPool_DeviceEventUpdate_Size,
+        ThreadPool_DeviceEventUpdate_IdleSec,
         ThreadPool_DeviceEventUpdate_QueSize);
 
     // ------------------------------------------------------------------------
@@ -566,15 +566,15 @@ public class Device // Asset
 
     /**
     *** Returns the defined EquipmentStatus for the specified device.
-    *** @param d  The device from which the EquipmentStatus will be obtained.  
+    *** @param d  The device from which the EquipmentStatus will be obtained.
     ***           If null, the default EquipmentStatus will be returned.
     *** @return The EquipmentStatus
     **/
     /*
     public static EquipmentStatus getEquipmentStatus(Device d)
     {
-        return (d != null)? 
-            EnumTools.getValueOf(EquipmentStatus.class,d.getEquipmentStatus()) : 
+        return (d != null)?
+            EnumTools.getValueOf(EquipmentStatus.class,d.getEquipmentStatus()) :
             EnumTools.getDefault(EquipmentStatus.class);
     }
     */
@@ -653,14 +653,14 @@ public class Device // Asset
 
     /**
     *** Returns the defined ReminderType for the specified device.
-    *** @param d  The device from which the ReminderType will be obtained.  
+    *** @param d  The device from which the ReminderType will be obtained.
     ***           If null, the default ReminderType will be returned.
     *** @return The ReminderType [0=periodic, 1=single]
     **/
     public static ReminderType getReminderType(Device d)
     {
-        return (d != null)? 
-            EnumTools.getValueOf(ReminderType.class,d.getReminderType()) : 
+        return (d != null)?
+            EnumTools.getValueOf(ReminderType.class,d.getReminderType()) :
             EnumTools.getDefault(ReminderType.class);
     }
 
@@ -679,7 +679,7 @@ public class Device // Asset
         public int     getIntValue() { return nn; }
         public boolean isTank()      { return (nn >= 0)? true : false; }
     }
-    
+
     /**
     *** Tank names
     **/
@@ -847,7 +847,7 @@ public class Device // Asset
 
     // TODO: this should be device dependent
     public  static final double MAX_DEVICE_ODOM_KM          = 1000000.0 * GeoPoint.KILOMETERS_PER_MILE; // 1609344
-    
+
     /**
     *** Get configured maximum allowed odometer value
     *** @return Maximum configured allowed odometer value
@@ -863,7 +863,7 @@ public class Device // Asset
 
     // TODO: this should be device dependent
     private static final double MAX_DEVICE_RUNTIME_HOURS    = DateTime.DaySeconds(365*30)/3600.0;
-    
+
     /**
     *** Get configured maximum allowed engine-hours value
     *** @return Maximum configured allowed engine-hours value
@@ -875,7 +875,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
     // check notify rule selector
-    
+
     /* check device rule selector */
     private static final boolean CHECK_NOTIFY_SELECTOR      = true;
 
@@ -995,7 +995,7 @@ public class Device // Asset
         if (!Device.cellTower_initDefault) {
             Device.cellTower_initDefault = true;
             if (Device.cellTower_GetLocation == null) {
-                Device.cellTower_GetLocation = null; // CellTower.GetDefaultCellTowerLocationInterface(); 
+                Device.cellTower_GetLocation = null; // CellTower.GetDefaultCellTowerLocationInterface();
                 // may still be null
             }
         }
@@ -1072,7 +1072,7 @@ public class Device // Asset
     }
 
     // ------------------------------------------------------------------------
-    // (Device) Session statistics 
+    // (Device) Session statistics
 
     private static SessionStatsFactory statsFactory = null;
 
@@ -1132,7 +1132,7 @@ public class Device // Asset
         }
     }
 
-    /** 
+    /**
     *** Returns true if an EntityManager has been defined
     *** @return True if an EntityManager has been defined
     **/
@@ -1676,7 +1676,7 @@ public class Device // Asset
         new DBField(FLD_vehicleModel         , String.class        , DBField.TYPE_STRING(40)  , I18N.getString(Device.class,"Device.fld.vehicleModel"         , "Vehicle Model"               ), "edit=2"),
         new DBField(FLD_vehicleColor         , String.class        , DBField.TYPE_COLOR()     , I18N.getString(Device.class,"Device.fld.vehicleColor"         , "Vehicle Color"               ), "edit=2"),
         new DBField(FLD_vehicleYear          , Integer.TYPE        , DBField.TYPE_UINT16      , I18N.getString(Device.class,"Device.fld.vehicleYear"          , "Vehicle Year"                ), "edit=2"),
-        new DBField(FLD_vehicleID            , String.class        , DBField.TYPE_STRING(24)  , I18N.getString(Device.class,"Device.fld.vehicleID"            , "VIN"                         ), "edit=2"),
+        new DBField(FLD_vehicleID            , String.class        , DBField.TYPE_STRING(50)  , I18N.getString(Device.class,"Device.fld.vehicleID"            , "VIN"                         ), "edit=2"),
         new DBField(FLD_licensePlate         , String.class        , DBField.TYPE_STRING(24)  , I18N.getString(Device.class,"Device.fld.licensePlate"         , "License Plate"               ), "edit=2"),
         new DBField(FLD_licenseExpire        , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.licenseExpire"        , "License Expiration Day"      ), "edit=2 format=date"),
         new DBField(FLD_insuranceExpire      , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.insuranceExpire"      , "Insurance Expiration Day"    ), "edit=2 format=date"),
@@ -1917,12 +1917,12 @@ public class Device // Asset
     public static final DBField GeoCorridorFieldInfo[]   = {
         new DBField(FLD_activeCorridor       , String.class        , DBField.TYPE_CORR_ID()   , "Active GeoCorridor"          , ""),
     };
-    
+
     // -- Maintenance odometer fields
     // -  startupInit.Device.MaintOdometerFieldInfo=true
   //public static final String FLD_maintDescriptionKM0   = "maintDescriptionKM0";   // odometer maint #0 description
     public static final String FLD_maintIntervalKM0      = "maintIntervalKM0";      // odometer maint #0 interval distance to next
-    public static final String FLD_maintOdometerKM0      = "maintOdometerKM0";      // odometer maint #0 last Odometer 
+    public static final String FLD_maintOdometerKM0      = "maintOdometerKM0";      // odometer maint #0 last Odometer
   //public static final String FLD_maintDescriptionKM1   = "maintDescriptionKM1";   // odometer maint #1 description
     public static final String FLD_maintIntervalKM1      = "maintIntervalKM1";      // odometer maint #1 interval distance to next
     public static final String FLD_maintOdometerKM1      = "maintOdometerKM1";      // odometer maint #1 last Odometer
@@ -1932,7 +1932,7 @@ public class Device // Asset
     public static final String FLD_maintNotes            = "maintNotes";
     public static final String FLD_reminderType          = "reminderType";
     public static final String FLD_reminderMessage       = "reminderMessage";
-    public static final String FLD_reminderInterval      = "reminderInterval";      // String: 
+    public static final String FLD_reminderInterval      = "reminderInterval";      // String:
     public static final String FLD_reminderTime          = "reminderTime";          // timestamp
     public static final String FLD_lastServiceTime       = "lastServiceTime";       // timestamp (last reminder time)
     public static final String FLD_nextServiceTime       = "nextServiceTime";       // timestamp
@@ -1980,7 +1980,7 @@ public class Device // Asset
 
     // -- ELog/HOS fields
     // -  startupInit.Device.ELogHOSInfo=true
-    public static final String FLD_eLogEnabled           = "eLogEnabled";           // ELog/HOS enabled 
+    public static final String FLD_eLogEnabled           = "eLogEnabled";           // ELog/HOS enabled
     public static final String FLD_lastELogState         = "lastELogState";         // last ELog/HOS state (timestamp, driving)
     public static final DBField ELogHOSInfo[]            = {
         new DBField(FLD_eLogEnabled          , Boolean.TYPE        , DBField.TYPE_BOOLEAN     , I18N.getString(Device.class,"Device.fld.eLogEnabled"          , "ELog/HOS Enabled"            ), "edit=2"),
@@ -2033,11 +2033,11 @@ public class Device // Asset
     public static final String FLD_startJourneyTimestamp = "startJourneyTimestamp";
     public static final DBField PlatinumInfo[] = {
         new DBField(FLD_maxSpeed		     , Double.TYPE         , DBField.TYPE_DOUBLE      , I18N.getString(Device.class,"Device.fld.maxSpeed"    		  , "Max Speed"         		  ), "format=#0.0"),
-        new DBField(FLD_lastTimePause        , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.lastTimePause"        , "Last Time Pause"             ), ""), 
+        new DBField(FLD_lastTimePause        , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.lastTimePause"        , "Last Time Pause"             ), ""),
         new DBField(FLD_totalJourney  		 , Integer.TYPE        , DBField.TYPE_UINT16      , I18N.getString(Device.class,"Device.fld.totalJourney"  		  , "Total Journey"  			  ), "edit=2"),
-        new DBField(FLD_startDayTimestamp    , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.startDayTimestamp"    , "Start Day Timestamp"         ), ""), 
-      //new DBField(FLD_endDayTimestamp		 , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.endDayTimestamp"      , "End Day Timestamp"           ), ""), 
-        new DBField(FLD_startJourneyTimestamp, Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.startJourneyTimestamp", "Start Journey Timestamp"     ), ""), 
+        new DBField(FLD_startDayTimestamp    , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.startDayTimestamp"    , "Start Day Timestamp"         ), ""),
+      //new DBField(FLD_endDayTimestamp		 , Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.endDayTimestamp"      , "End Day Timestamp"           ), ""),
+        new DBField(FLD_startJourneyTimestamp, Long.TYPE           , DBField.TYPE_UINT32      , I18N.getString(Device.class,"Device.fld.startJourneyTimestamp", "Start Journey Timestamp"     ), ""),
     };
 
     /**
@@ -2310,7 +2310,7 @@ public class Device // Asset
         if (v <= 0) {
             // -- invalid year
             year = 0;
-        } else 
+        } else
         if ((v >= 1800) && (v <= 2999)) {
             // -- assume exactly specified
             year = v;
@@ -2403,7 +2403,7 @@ public class Device // Asset
             return this.getVehicleID(); // never null
         }
     }
-    
+
     /**
     *** Returns true if the VIN has changed
     **/
@@ -2844,9 +2844,9 @@ public class Device // Asset
         if ((Device.FuelProfileColumnLength > 0)           &&
             (v.length() >= Device.FuelProfileColumnLength)  ) {
             // // -1 so we are not so close to the edge of the cliff
-            // int newLen = Device.FuelProfileColumnLength - 1; 
+            // int newLen = Device.FuelProfileColumnLength - 1;
             // v = v.substring(0, newLen).trim();
-            // // Note: MySQL will refuse to insert the entire record if the data 
+            // // Note: MySQL will refuse to insert the entire record if the data
             // // length is greater than the table column length.
             Print.logWarn("'fuelTankProfile' value is too large (ignored): " + v);
             return;
@@ -2878,9 +2878,9 @@ public class Device // Asset
         if ((Device.FuelProfileColumnLength > 0)           &&
             (v.length() >= Device.FuelProfileColumnLength)  ) {
             // // -1 so we are not so close to the edge of the cliff
-            // int newLen = Device.FuelProfileColumnLength - 1; 
+            // int newLen = Device.FuelProfileColumnLength - 1;
             // v = v.substring(0, newLen).trim();
-            // // Note: MySQL will refuse to insert the entire record if the data 
+            // // Note: MySQL will refuse to insert the entire record if the data
             // // length is greater than the table column length.
             Print.logWarn("'fuelTankProfile2' value is too large (ignored): " + v);
             return;
@@ -2892,7 +2892,7 @@ public class Device // Asset
 
     /**
     *** Gets the Fuel tank profile for the specified index
-    *** @param tank  The fuel-tank index 
+    *** @param tank  The fuel-tank index
     *** @return The Fuel tank profile
     **/
     public String getFuelTankProfile(Device.FuelTankIndex tank)
@@ -2928,7 +2928,7 @@ public class Device // Asset
     }
 
     /**
-    *** Gets the FuelLevelProfile instance for the specified index.  
+    *** Gets the FuelLevelProfile instance for the specified index.
     *** Returns "dft" if no FuelLevelProfile defined.
     **/
     public FuelLevelProfile getFuelLevelProfile(Device.FuelTankIndex tank, FuelLevelProfile dft)
@@ -2938,8 +2938,8 @@ public class Device // Asset
     }
 
     /**
-    *** Gets the FuelLevelProfile instance for the specified index.  
-    *** Returns "LINEAR" if no FuelLevelProfile defined. 
+    *** Gets the FuelLevelProfile instance for the specified index.
+    *** Returns "LINEAR" if no FuelLevelProfile defined.
     *** (does not return null)
     **/
     public FuelLevelProfile getFuelLevelProfile(Device.FuelTankIndex tank)
@@ -3005,9 +3005,9 @@ public class Device // Asset
         if ((Device.FuelPropertiesColumnLength > 0)          &&
             (v.length() >= Device.FuelPropertiesColumnLength)  ) {
             // // -1 so we are not so close to the edge of the cliff
-            // int newLen = Device.FuelProfileColumnLength - 1; 
+            // int newLen = Device.FuelProfileColumnLength - 1;
             // v = v.substring(0, newLen).trim();
-            // // Note: MySQL will refuse to insert the entire record if the data 
+            // // Note: MySQL will refuse to insert the entire record if the data
             // // length is greater than the table column length.
             Print.logWarn("'fuelProperties' value is too large (ignored): " + v);
             return;
@@ -3062,7 +3062,7 @@ public class Device // Asset
     }
 
     /**
-    *** Return true if event indicates that device is speeding 
+    *** Return true if event indicates that device is speeding
     *** used by (Rule function "$Speeding")
     **/
     public static boolean IsSpeeding(EventData ed, double dftLimitKPH, double dftOffsetKPH, boolean checkGeozones)
@@ -3120,7 +3120,7 @@ public class Device // Asset
         // -- 4: zone-speed
         if (checkGeozones) {
             Geozone GZ = Geozone.getGeozone(
-                ed.getAccountID(), null/*ZoneID*/, 
+                ed.getAccountID(), null/*ZoneID*/,
                 ed.getGeoPoint() , null/*purpose*/, false/*RGOnly*/);
             if ((GZ != null) && GZ.isDeviceInGroup(ed.getDeviceID())) {
                 double limKPH = GZ.getSpeedLimitKPH();
@@ -3368,7 +3368,7 @@ public class Device // Asset
 
         /* will device expire? */
         long expireTime = this.getExpirationTime();
-        if ((expireTime > 0L) && 
+        if ((expireTime > 0L) &&
             ((withinSec < 0L) || (expireTime < (DateTime.getCurrentTimeSec() + withinSec)))) {
             return true;
         }
@@ -3422,7 +3422,7 @@ public class Device // Asset
     {
         this.setOptionalFieldValue(FLD_linkURL, StringTools.trim(v));
     }
- 
+
     // ------------------------------------------------------------------------
 
     /**
@@ -3596,13 +3596,13 @@ public class Device // Asset
         this.setLastNotifyRule(ruleID);                         // FLD_lastNotifyRule
         if (update) {
             this.update(
-                Device.FLD_lastNotifyTime, 
+                Device.FLD_lastNotifyTime,
                 Device.FLD_lastNotifyCode,
                 Device.FLD_lastNotifyRule
                 );
         } else {
             this.addOtherChangedFieldNames(
-                Device.FLD_lastNotifyTime, 
+                Device.FLD_lastNotifyTime,
                 Device.FLD_lastNotifyCode,
                 Device.FLD_lastNotifyRule
                 );
@@ -3628,13 +3628,13 @@ public class Device // Asset
         this.setLastNotifyRule(ruleID);                         // FLD_lastNotifyRule
         if (update) {
             this.update(
-                Device.FLD_lastNotifyTime, 
+                Device.FLD_lastNotifyTime,
                 Device.FLD_lastNotifyCode,
                 Device.FLD_lastNotifyRule
                 );
         } else {
             this.addOtherChangedFieldNames(
-                Device.FLD_lastNotifyTime, 
+                Device.FLD_lastNotifyTime,
                 Device.FLD_lastNotifyCode,
                 Device.FLD_lastNotifyRule
                 );
@@ -3705,9 +3705,9 @@ public class Device // Asset
         if ((Device.NotifyEmailColumnLength > 0)           &&
             (ne.length() >= Device.NotifyEmailColumnLength)  ) {
             // -1 so we are not so close to the edge of the cliff
-            int newLen = Device.getMaximumNotifyEmailLength(); 
+            int newLen = Device.getMaximumNotifyEmailLength();
             ne = ne.substring(0, newLen).trim();
-            // Note: MySQL will refuse to insert the entire record if the data 
+            // Note: MySQL will refuse to insert the entire record if the data
             // length is greater than the table column length.
         }
         this.setOptionalFieldValue(FLD_notifyEmail, ne);
@@ -3813,7 +3813,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** Gets the Rule Selector to be evaluated by the installed RuleFactory.<br>
     *** This rule-selector is currently only used by default with the "RuleFactoryLite" module.
     *** @return The rule-selector to evaluate
@@ -3825,7 +3825,7 @@ public class Device // Asset
         return StringTools.trim(v);
     }
 
-    /** 
+    /**
     *** Sets the Rule Selector to be evaluated by the installed RuleFactory.<br>
     *** This rule-selector is currently only used by default with the "RuleFactoryLite" module.
     *** @param v The rule-selector to evaluate
@@ -3837,7 +3837,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** Gets the Notify Actions to be executed if the Notify Rule-Selector is triggered.<br>
     *** This notify action is currently only used by default with the "RuleFactoryLite" module.
     *** @return The notify action mask
@@ -3848,7 +3848,7 @@ public class Device // Asset
         return (v != null)? RuleFactoryAdapter.ValidateActionMask(v.intValue()) : RuleFactory.ACTION_DEFAULT;
     }
 
-    /** 
+    /**
     *** Sets the Notify Actions to be executed if the Notify Rule-Selector is triggered.<br>
     *** This notify action is currently only used by default with the "RuleFactoryLite" module.
     *** @param v The notify action mask
@@ -3860,7 +3860,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** Gets the Notify Description for the rule-selector specified.<br>
     *** This notify description is currently only used by default with the "RuleFactoryLite" module.
     *** @return The notify description
@@ -3871,7 +3871,7 @@ public class Device // Asset
         return StringTools.trim(v);
     }
 
-    /** 
+    /**
     *** Sets the Notify Description for the rule-selector specified.<br>
     *** This notify description is currently only used by default with the "RuleFactoryLite" module.
     *** @param v The notify description
@@ -3883,7 +3883,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** Gets the Email Subject for the triggered notification email .<br>
     *** This email subject is currently only used by default with the "RuleFactoryLite" module.
     *** @return The notify email subject
@@ -3894,7 +3894,7 @@ public class Device // Asset
         return (v != null)? v : "";
     }
 
-    /** 
+    /**
     *** Sets the Email Subject for the triggered notification email .<br>
     *** This email subject is currently only used by default with the "RuleFactoryLite" module.
     *** @param v The notify email subject
@@ -3906,7 +3906,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** Gets the Email Body/Text for the triggered notification email .<br>
     *** This email body/text is currently only used by default with the "RuleFactoryLite" module.
     *** @return The notify email body
@@ -3917,7 +3917,7 @@ public class Device // Asset
         return (v != null)? v : "";
     }
 
-    /** 
+    /**
     *** Sets the Email Body/Text for the triggered notification email .<br>
     *** This email body/text is currently only used by default with the "RuleFactoryLite" module.
     *** @param v The notify email body
@@ -3930,7 +3930,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** (OBSOLETE) Gets the configuration state indicating whether the email wrapper from the "private.xml"
     *** file should be used.<br>
     *** The method is obsolete and should not be used.
@@ -3946,7 +3946,7 @@ public class Device // Asset
         }
     }
 
-    /** 
+    /**
     *** (OBSOLETE) Sets the configuration state indicating whether the email wrapper from the "private.xml"
     *** file should be used.<br>
     *** The method is obsolete and should not be used.
@@ -3959,7 +3959,7 @@ public class Device // Asset
 
     // ---
 
-    /** 
+    /**
     *** (OBSOLETE) Gets the notification priority.<br>
     *** The method is obsolete and should not be used.
     *** @return The notification priority
@@ -3970,7 +3970,7 @@ public class Device // Asset
         return (v != null)? v.intValue() : 0;
     }
 
-    /** 
+    /**
     *** (OBSOLETE) Sets the notification priority.<br>
     *** The method is obsolete and should not be used.
     *** @param v The notification priority
@@ -3991,7 +3991,7 @@ public class Device // Asset
         this.setParkedLocation(null, 0.0/*radius*/, 0.0/*speed*/, update);
     }
 
-    /** 
+    /**
     *** Sets the parked location state
     *** @param parkLoc   The GeoPoint of the location where the device should be "parked"
     *** @param parkRadM  The radius, in meters, of the parked location
@@ -4001,7 +4001,7 @@ public class Device // Asset
     public void setParkedLocation(GeoPoint parkLoc, double parkRadM, double parkSpeed, boolean update)
         throws DBException
     {
-        String adID = this.getAccountID() + "/" + this.getDeviceID(); 
+        String adID = this.getAccountID() + "/" + this.getDeviceID();
         if (!GeoPoint.isValid(parkLoc) || (parkRadM <= 0.0)) {
             Print.logInfo("["+adID+"] Clearing parked location");
             this.setParkedLatitude(0.0);                        // FLD_parkedLatitude
@@ -4032,7 +4032,7 @@ public class Device // Asset
         }
     }
 
-    /** 
+    /**
     *** Saves the set parked location back to the Device table
     *** @throws DBException
     ***/
@@ -4257,7 +4257,7 @@ public class Device // Asset
     {
         this.setOptionalFieldValue(FLD_proximityRadius, v);
     }
-    
+
     /**
     *** Gets the proximity bounding box.
     *** Returns null if a proximity bounding box is not applicable
@@ -4405,7 +4405,7 @@ public class Device // Asset
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
     // DataTransport specific data below
-    
+
     private static boolean CHECK_IMEI_FOR_MODEM_ID = false;
     private String modemID = "";
 
@@ -4467,10 +4467,10 @@ public class Device // Asset
         String uniq = StringTools.stripChars(StringTools.trim(v),' '); // remove all spaces
         this.setFieldValue(FLD_uniqueID, uniq);
     }
-    
+
     /**
     *** Validates a new UniqueID to make sure that it isn't already in use.
-    *** Will return true if the specified UniqueID is blank 
+    *** Will return true if the specified UniqueID is blank
     *** (blank is valid since it means that the UniqueID is to be cleared)
     **/
     public boolean validateUniqueID(String newUID)
@@ -4484,7 +4484,7 @@ public class Device // Asset
             // -- UniqueID already matches this Device
             return true;
         } else {
-            // -- check for existing Device record 
+            // -- check for existing Device record
             Device nd = Transport.loadDeviceByUniqueID(newUID);
             return (nd == null)? true : false;
         }
@@ -4645,7 +4645,7 @@ public class Device // Asset
     }
 
     // ------------------------------------------------------------------------
-    
+
     public static final String CmdState_command     = "command";
     public static final String CmdState_timestamp   = "timestamp";
     public static final String CmdState_state       = "state";
@@ -4965,8 +4965,8 @@ public class Device // Asset
             // DBSelect: SELECT * FROM Device WHERE (simPhoneNumber='12345')
             DBSelect<Device> dsel = new DBSelect<Device>(Device.getFactory());
             dsel.setSelectedFields(
-                Device.FLD_accountID, 
-                Device.FLD_deviceID, 
+                Device.FLD_accountID,
+                Device.FLD_deviceID,
                 Device.FLD_simPhoneNumber);
             DBWhere dwh = dsel.createDBWhere();
             dsel.setWhere(dwh.WHERE(
@@ -4974,7 +4974,7 @@ public class Device // Asset
                 ));
             // Note: The index on the column FLD_simPhoneNumber is not unique
             // (since null/empty values are allowed and needed)
-    
+
             /* get records */
             dbc  = DBConnection.getDBConnection_read();
             stmt = dbc.execute(dsel.toString());
@@ -5093,7 +5093,7 @@ public class Device // Asset
     }
 
     /**
-    *** Gets the data key (PIN) for this device 
+    *** Gets the data key (PIN) for this device
     *** @return The Data key (PIN) for this device
     **/
     public String getDataKey()
@@ -5117,7 +5117,7 @@ public class Device // Asset
     }
 
     /**
-    *** Gets the data key (PIN) for this device 
+    *** Gets the data key (PIN) for this device
     *** @param v The Data key (PIN) for this device
     **/
     public void setDataKey(String v)
@@ -5291,7 +5291,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Gets the last vehicle battery volts recieved [2.6.4-B35]
     *** @return The last battery volts recieved
     **/
@@ -5428,7 +5428,7 @@ public class Device // Asset
         this.setFieldValue(FLD_lastFuelTotal, ((v >= 0.0)? v : 0.0));
     }
 
-    /** 
+    /**
     *** Gets the fuel used within the specified time range
     **/
     public double getFuelUsedInRange(long startTime, long endTime)
@@ -5753,7 +5753,7 @@ public class Device // Asset
         }
 
         /* look for the last ignition state based on a status code */
-        // -- non-optimized 
+        // -- non-optimized
         try {
             EventData ev = this.getLastEvent(ignSC);
             if (ev == null) {
@@ -5848,7 +5848,7 @@ public class Device // Asset
         boolean checkSC = RTConfig.getBoolean(DBConfig.PROP_Device_checkLastEventIgnitionState,CHECK_LAST_EVENT_IGNITION);
         return this.getIgnitionStateAsOfEvent(ev, checkSC);
     }
-    
+
     /**
     *** Returns the ignition state as-of the specified Event<br>
     *** -1 = unknown<br>
@@ -5966,7 +5966,7 @@ public class Device // Asset
         boolean lastIgnState = this.getLastInputState(ignNdx);
         boolean evntIgnState = ev.getInputMaskBitState(ignNdx);
         if (lastIgnState == evntIgnState) {
-            // -- no change 
+            // -- no change
             return -1;
         } else
         if (evntIgnState) {
@@ -6276,7 +6276,7 @@ public class Device // Asset
     private GeoPoint savedLastValidGeoPoint = null;
 
     /**
-    *** Save last valid GeoPoint 
+    *** Save last valid GeoPoint
     **/
     public boolean saveOriginalLastValidGeoPoint()
     {
@@ -6294,7 +6294,7 @@ public class Device // Asset
     }
 
     /**
-    *** Clear original last valid GeoPoint 
+    *** Clear original last valid GeoPoint
     **/
     public void clearOriginalLastValidGeoPoint()
     {
@@ -6389,7 +6389,7 @@ public class Device // Asset
                     gp = lastEv.getGeoPoint();
                     this.setLastValidLocation(
                         lastEv.getTimestamp(),      // FLD_lastGPSTimestamp
-                        lastEv.getGpsAge(),         // 
+                        lastEv.getGpsAge(),         //
                         lastEv.getGeoPoint(),       // FLD_lastValidLatitude/FLD_lastValidLongitude
                         lastEv.getSpeedKPH(),       // FLD_lastValidSpeedKPH
                         lastEv.getHeading());       // FLD_lastValidHeading
@@ -6413,7 +6413,7 @@ public class Device // Asset
     *** @param heading    The direction of travel
     **/
     private void setLastValidLocation(
-        long timestamp, long gpsAge, GeoPoint gp, 
+        long timestamp, long gpsAge, GeoPoint gp,
         double speedKPH, double heading)
     {
         if ((gp != null) && gp.isValid()) {
@@ -6453,7 +6453,7 @@ public class Device // Asset
         return -1.0;
     }
 
-    /** 
+    /**
     *** Returns true if the last know location of this device is is within the specified
     *** number of meters to the specified GeoPoint.
     *** @param gp   The GeoPoint to test
@@ -6472,7 +6472,7 @@ public class Device // Asset
         return this.isNearLastValidLocation(gp, meters, -1L);
     }
 
-    /** 
+    /**
     *** Returns true if the last know location of this device is is within the specified
     *** number of meters to the specified GeoPoint.
     *** @param gp        The GeoPoint to test
@@ -6556,7 +6556,7 @@ public class Device // Asset
         public Device getDevice() throws DBException {
             if (this.device == null) {
                 this.device = Device.getDevice(this.getAccount(),this.getDeviceID());
-            } 
+            }
             return this.device;
         }
         public String getDeviceDescription() {
@@ -6633,7 +6633,7 @@ public class Device // Asset
             if (this.hasGeoPoint()) {
                 sb.append(" ");
                 sb.append("GeoPoint=").append(this.getGeoPoint().toString());
-            } 
+            }
             sb.append(" ");
             sb.append("Speed=").append(StringTools.format(this.getSpeedKPH(),"0"));
             sb.append("-").append(GeoPoint.GetHeadingString(this.getHeading(),null));
@@ -6666,8 +6666,8 @@ public class Device // Asset
         } else
         if (!GeoPoint.isValid(lastGP)) {
             return null;
-        } 
-        
+        }
+
         /* start/end time */
         long startTime = -1L;
         long endTime   = -1L;
@@ -6679,9 +6679,9 @@ public class Device // Asset
 
         /* nearby devices */
         return Device.GetNearbyDeviceMap(
-            account, targID, false/*inclThisDev?*/, 
+            account, targID, false/*inclThisDev?*/,
             startTime, endTime,
-            lastGP, radiusM, true/*activeOnly*/, userAuth, 
+            lastGP, radiusM, true/*activeOnly*/, userAuth,
             true/*sort*/);
 
     }
@@ -6701,9 +6701,9 @@ public class Device // Asset
     **/
     public static Map<String,NearbyDevice> GetNearbyDeviceMap(
         Account account,
-        String targetDevID, boolean inclTargetID, 
+        String targetDevID, boolean inclTargetID,
         long startTime, long endTime,
-        GeoPoint gp, double radiusM, 
+        GeoPoint gp, double radiusM,
         boolean activeOnly, User userAuth,
         boolean sortByDist)
         throws DBException
@@ -6731,15 +6731,15 @@ public class Device // Asset
         }
 
         /* create "WHERE" */
-        // SELECT * FROM Device WHERE 
-        //       (accountID = "account") 
-        //   AND (deviceID != "TARGET_ID") 
-        //   AND (isActive != 0) 
-        //   AND (lastValidLatitude  <= maxLat) 
-        //   AND (lastValidLatitude  >= minLat) 
-        //   AND (lastValidLongitude <= maxLon) 
-        //   AND (lastValidLongitude >= minLon) 
-        //   AND (lastGPSTimestamp >= startTime) 
+        // SELECT * FROM Device WHERE
+        //       (accountID = "account")
+        //   AND (deviceID != "TARGET_ID")
+        //   AND (isActive != 0)
+        //   AND (lastValidLatitude  <= maxLat)
+        //   AND (lastValidLatitude  >= minLat)
+        //   AND (lastValidLongitude <= maxLon)
+        //   AND (lastValidLongitude >= minLon)
+        //   AND (lastGPSTimestamp >= startTime)
         //   AND (lastGPSTimestamp <= endTime)
         DBWhere dwh = new DBWhere(Device.getFactory());
         // -- account
@@ -6884,7 +6884,7 @@ public class Device // Asset
         private long     lastTS     = 0L;   // Timestamp
         private double   distanceM  = 0.0;  // Distance to target
         public NearbySubscriber(
-            String acctID, String devID, 
+            String acctID, String devID,
             String subID, String subName, String avat, String phone,
             GeoPoint gp, double kph, double dir, long timestamp,
             double distM) {
@@ -6942,7 +6942,7 @@ public class Device // Asset
             if (GeoPoint.isValid(this.getLastGeoPoint())) {
                 sb.append(" ");
                 sb.append("GeoPoint=").append(this.getLastGeoPoint().toString());
-            } 
+            }
             sb.append(" ");
             sb.append("Speed=").append(StringTools.format(this.getLastSpeedKPH(),"0"));
             sb.append("-").append(GeoPoint.GetHeadingString(this.getLastHeading(),null));
@@ -6959,7 +6959,7 @@ public class Device // Asset
     *** @param activeOnly     True for active subscribers only
     **/
     public static Map<String,NearbySubscriber> GetNearbySubscriberMap(
-        GeoPoint gp, double radiusM, 
+        GeoPoint gp, double radiusM,
         boolean activeOnly)
         throws DBException
     {
@@ -6984,13 +6984,13 @@ public class Device // Asset
         }
 
         /* create "WHERE" */
-        // SELECT * FROM Device WHERE 
-        //       (subscriberID != "") 
-        //   AND (isActive != 0) 
-        //   AND (lastValidLatitude  <= maxLat) 
-        //   AND (lastValidLatitude  >= minLat) 
-        //   AND (lastValidLongitude <= maxLon) 
-        //   AND (lastValidLongitude >= minLon) 
+        // SELECT * FROM Device WHERE
+        //       (subscriberID != "")
+        //   AND (isActive != 0)
+        //   AND (lastValidLatitude  <= maxLat)
+        //   AND (lastValidLatitude  >= minLat)
+        //   AND (lastValidLongitude <= maxLon)
+        //   AND (lastValidLongitude >= minLon)
         DBWhere dwh = new DBWhere(Device.getFactory());
         // -- subscriberID not blank
         dwh.append(dwh.NE(Device.FLD_subscriberID,""));
@@ -7058,8 +7058,8 @@ public class Device // Asset
                 double lastKPH = rs.getDouble(Device.FLD_lastValidSpeedKPH);
                 double lastDir = rs.getDouble(Device.FLD_lastValidHeading);
                 long   lastTS  = rs.getLong(  Device.FLD_lastGPSTimestamp);
-                if (StringTools.isBlank(acctID) || 
-                    StringTools.isBlank(devID)  || 
+                if (StringTools.isBlank(acctID) ||
+                    StringTools.isBlank(devID)  ||
                     !GeoPoint.isValid(lastLat,lastLon)) {
                     // -- unlikely, skip deviceID
                 } else {
@@ -7090,7 +7090,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Returns the last valid street address, based on the last know location
     *** (not currently supported)
     *** @return The last valid street address
@@ -7213,11 +7213,11 @@ public class Device // Asset
         if (timestamp <= 0L) {
             // invalid timestamp
             return true;
-        } else 
+        } else
         if (timestamp < this.getLastGPSTimestamp()) {
             // prior to last valid GPS timestamp
             return true;
-        } else 
+        } else
         if (timestamp < this.getLastEventTimestamp()) {
             // prior to last event timestamp
             return true;
@@ -7370,7 +7370,7 @@ public class Device // Asset
         /* calculate new EPS */
         double newVal = 0.0;
         try {
-            double thisVal = 1.0; 
+            double thisVal = 1.0;
             double agedVal = epsLastEPS / 1000.0; // epsLastValue;
             if (deltaVal > 0.0) {
                 // -- count last 'deltaMS' intervals as '0' values
@@ -7432,7 +7432,7 @@ public class Device // Asset
     {
         this.setFieldValue(FLD_lastCellServingInfo, StringTools.trim(v));
     }
-    
+
     /**
     *** Sets the last received serving cell-tower information
     *** @param sct The last received serving cell-tower information
@@ -7502,7 +7502,7 @@ public class Device // Asset
     }
 
     /**
-    *** Checks the new event time and GeoPoint to calculate and returns a set of 
+    *** Checks the new event time and GeoPoint to calculate and returns a set of
     *** Geozone arrive/depart events, which should be inserted into the EventData table.
     *** If no Geozone transition occurred, then this method returns null.
     *** @param eventTime  The tie of the event
@@ -7692,7 +7692,7 @@ public class Device // Asset
                     }
                     continue;
                 }
-    
+
                 /* Geozone arrive only */
                 // -- simple arrive, was not in any Geozone before
                 if ((prevZone == null) && (thisZone != null)) {
@@ -7705,10 +7705,10 @@ public class Device // Asset
                     }
                     continue;
                 }
-    
+
                 /* Geozone depart, then Geozone arrive */
                 // -- transition from one Geozone straight into another
-                if ((prevZone != null) && (thisZone != null) && 
+                if ((prevZone != null) && (thisZone != null) &&
                     !prevZone.getGeozoneID().equals(thisZone.getGeozoneID())) {
                     String devID = null; // <-- We've already verified that this is applicable to "devID"
                     // -- depart?
@@ -7727,7 +7727,7 @@ public class Device // Asset
                     }
                     continue;
                 }
-    
+
             } // loop through categories
         }
 
@@ -7785,8 +7785,8 @@ public class Device // Asset
     }
 
     /**
-    *** Returns true if the Device record supports the last odometer fields 
-    *** @return True if the Device record supports the last odometer fields 
+    *** Returns true if the Device record supports the last odometer fields
+    *** @return True if the Device record supports the last odometer fields
     **/
     public static boolean supportsLastOdometer()
     {
@@ -7823,7 +7823,7 @@ public class Device // Asset
                             lastEv.getGeoPoint(),       // FLD_lastValidLatitude/FLD_lastValidLongitude
                             lastEv.getSpeedKPH(),       // FLD_lastValidSpeedKPH
                             lastEv.getHeading());       // FLD_lastValidHeading
-                        this.setLastGPSTimestamp();    
+                        this.setLastGPSTimestamp();
                     }
                     return odomKM;
                 } else {
@@ -7878,7 +7878,7 @@ public class Device // Asset
     /**
     *** Adjusts the specified odometer value to the maximum allow value
     *** @param odomKM     The odometer value to adjust
-    *** @param checkLast  True to return last-odometer if specified odometer is 
+    *** @param checkLast  True to return last-odometer if specified odometer is
     ***                   less than last-odometer.
     *** @return The adjusted odometer value
     **/
@@ -7911,15 +7911,15 @@ public class Device // Asset
     {
         if (this.isOldEventTimestamp(fixtime)) {
             // old event, only allow odometer values from the device itself
-            odomKM = estimate? 
+            odomKM = estimate?
                 0.0 : // we cannot accurately calculate an odometer value
                 this.adjustOdometerKM(odomKM);
             if (logInfo) { Print.logInfo("OdometerKM: " + odomKM + " (old event)"); }
         } else
         if ((odomKM <= 0.0) || estimate) {
             // current event and we need to calculate the odomenter
-            odomKM = (estimate && validGPS)? 
-                this.getNextOdometerKM(geoPoint) : 
+            odomKM = (estimate && validGPS)?
+                this.getNextOdometerKM(geoPoint) :
                 this.getLastOdometerKM();
             if (logInfo) { Print.logInfo("OdometerKM: " + odomKM + " (estimated)"); }
         } else {
@@ -8378,7 +8378,7 @@ public class Device // Asset
         if (lastStopTime <= 0L) {
             // -- assume moving: stop is uninitialized, assume we've never stopped
             return false;
-        } else 
+        } else
         if (lastStartTime > lastStopTime) {
             // -- is moving: start time is more recent that stop time
             return false;
@@ -8453,9 +8453,9 @@ public class Device // Asset
         if ((Device.LastFaultCodeColumnLength > 0)           &&
             (fc.length() >= Device.LastFaultCodeColumnLength)  ) {
             // -1 so we are not so close to the edge of the cliff
-            int newLen = Device.LastFaultCodeColumnLength - 1; 
+            int newLen = Device.LastFaultCodeColumnLength - 1;
             fc = fc.substring(0, newLen).trim();
-            // Note: MySQL will refuse to insert the entire record if the data 
+            // Note: MySQL will refuse to insert the entire record if the data
             // length is greater than the table column length.
         }
         this.setFieldValue(FLD_lastFaultCode, fc);
@@ -8469,7 +8469,7 @@ public class Device // Asset
     {
         String lastFCStr = this.getLastFaultCode();
         if (StringTools.isBlank(lastFCStr)) {
-            // this Device does not already have a fault code 
+            // this Device does not already have a fault code
             this.setLastFaultCode(v);
         } else {
             // append new fault codes to old
@@ -8571,7 +8571,7 @@ public class Device // Asset
     {
         return this.hasPendingPingCommand();
     }
-    
+
     /**
     *** Clears the device pending commands
     *** @param update  True to update the device record now
@@ -8599,7 +8599,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Gets the time of the last command sent to the device
     *** @return The time of the last command sent to the device
     **/
@@ -8609,7 +8609,7 @@ public class Device // Asset
         return (v != null)? v.longValue() : 0L;
     }
 
-    /** 
+    /**
     *** Sets the time of the last command sent to the device
     *** @param v The time of the last command sent to the device
     **/
@@ -8618,7 +8618,7 @@ public class Device // Asset
         this.setFieldValue(FLD_lastPingTime, v);
     }
 
-    /** 
+    /**
     *** Sets the time of the last command sent to the device
     *** @param v The time of the last command sent to the device
     **/
@@ -8632,7 +8632,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Gets the total number of commands sent to the device, since last reset
     *** @return The total number of commands sent to the device, since last reset
     **/
@@ -8642,7 +8642,7 @@ public class Device // Asset
         return (v != null)? v.intValue() : 0;
     }
 
-    /** 
+    /**
     *** Sets the total number of commands sent to the device, since last reset
     *** @param v The total number of commands sent to the device, since last reset
     **/
@@ -8652,7 +8652,7 @@ public class Device // Asset
         this.setFieldValue(FLD_totalPingCount, v);
     }
 
-    /** 
+    /**
     *** Sets the total number of commands sent to the device, since last reset
     *** @param v The total number of commands sent to the device, since last reset
     **/
@@ -8742,13 +8742,13 @@ public class Device // Asset
             this.transport._setMaxPingCount(v);
         }
     }
-    
+
     /**
-    *** Returns true if the maximum number of commands sent to the server has 
+    *** Returns true if the maximum number of commands sent to the server has
     *** been exceeded.
     *** @return True if the maximum number has been exceeded
     ***/
-    public boolean exceedsMaxPingCount() 
+    public boolean exceedsMaxPingCount()
     {
 
         /* check device */
@@ -8774,7 +8774,7 @@ public class Device // Asset
 
         /* not over limit */
         return false;
-        
+
     }
 
     // ------------------------------------------------------------------------
@@ -8953,7 +8953,7 @@ public class Device // Asset
         this.setFieldValue(FLD_lastAckCommand, StringTools.trim(v));
     }
 
-    /** 
+    /**
     *** Returns true if an ACK is expected from the device
     *** @return True if an ACK is expected from the device
     **/
@@ -8962,7 +8962,7 @@ public class Device // Asset
         return this.getExpectAck() && (this.getLastAckTime() <= 0L);
     }
 
-    /** 
+    /**
     *** Clears the expect ACK state for the specified command
     *** @param didAck True if the ACK was received
     *** @param update True to update the Device record
@@ -8994,8 +8994,8 @@ public class Device // Asset
         if (update) {
             try {
                 this.update(
-                    Device.FLD_expectAck, 
-                    Device.FLD_expectAckCode, 
+                    Device.FLD_expectAck,
+                    Device.FLD_expectAckCode,
                     Device.FLD_lastAckTime
                     );
                 return true;
@@ -9006,7 +9006,7 @@ public class Device // Asset
         } else {
             this.addOtherChangedFieldNames(
                 Device.FLD_expectAck,
-                Device.FLD_expectAckCode, 
+                Device.FLD_expectAckCode,
                 Device.FLD_lastAckTime
                 );
             return true;
@@ -9016,7 +9016,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Gets the last ACK response (if supported)
     *** @return The last ACK response
     **/
@@ -9026,7 +9026,7 @@ public class Device // Asset
         return StringTools.trim(v);
     }
 
-    /** 
+    /**
     *** Sets the last ACK response
     *** @param v The last ACK response
     **/
@@ -9037,7 +9037,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Gets the last ACK time (if supported)
     *** @return The last ACK time
     **/
@@ -9047,7 +9047,7 @@ public class Device // Asset
         return (v != null)? v.longValue() : 0L;
     }
 
-    /** 
+    /**
     *** Sets the last ACK time (if supported)
     *** @param v The last ACK time
     **/
@@ -9057,7 +9057,7 @@ public class Device // Asset
         this.addOtherChangedFieldNames(FLD_lastAckTime);
     }
 
-    /** 
+    /**
     *** Sets the last ACK time (if supported)
     *** @param v The last ACK time
     **/
@@ -9107,7 +9107,7 @@ public class Device // Asset
 
     /**
     *** Gets the DCS configuration String.
-    *** Usage defined by specific DCS. For example, the Xirgo DCS uses this to get 
+    *** Usage defined by specific DCS. For example, the Xirgo DCS uses this to get
     *** the default firmware version.
     *** @return The DCS configuration String
     **/
@@ -9467,7 +9467,7 @@ public class Device // Asset
     {
         return Device.getFactory().hasField(FLD_fixedLatitude);
     }
-    
+
     /**
     *** Gets the fixed latitude for this device
     *** @return The fixed latitude for this device
@@ -9706,7 +9706,7 @@ public class Device // Asset
     public static boolean supportsPeriodicMaintenance()
     {
         if (Device.getPeriodicMaintOdometerCount() <= 0) {
-            return false; 
+            return false;
         } else {
             return Device.getFactory().hasField(FLD_maintOdometerKM0);
         }
@@ -9757,7 +9757,7 @@ public class Device // Asset
     public int getMaintTriggeredKM()
     {
         if (!ListTools.isEmpty(RuleMaintTrigger)) {
-            return RuleMaintTrigger.get(0).intValue(); 
+            return RuleMaintTrigger.get(0).intValue();
         } else {
             return -1;
         }
@@ -10020,7 +10020,7 @@ public class Device // Asset
         }
     }
 
-    /** 
+    /**
     *** Resets the maintenance engine hours for the specified index
     *** @param ndx  The maintenance engine-hours index
     **/
@@ -10103,7 +10103,7 @@ public class Device // Asset
 
     // ---------------
 
-    /** 
+    /**
     *** Gets the maintenance engine-hours interval for index #0
     *** @return The maintenance engine-hours interval for index #0
     **/
@@ -10112,7 +10112,7 @@ public class Device // Asset
         return this.getOptionalFieldValue(FLD_maintIntervalHR0, 0.0);
     }
 
-    /** 
+    /**
     *** Sets the maintenance engine-hours interval for index #0
     *** @param v The maintenance engine-hours interval for index #0
     **/
@@ -10121,7 +10121,7 @@ public class Device // Asset
         this.setOptionalFieldValue(FLD_maintIntervalHR0, v);
     }
 
-    /** 
+    /**
     *** Gets the maintenance engine-hours elapsed for index #0
     *** @return The maintenance engine-hours elapsed for index #0
     **/
@@ -10130,7 +10130,7 @@ public class Device // Asset
         return this.getOptionalFieldValue(FLD_maintEngHoursHR0, 0.0);
     }
 
-    /** 
+    /**
     *** Sets the maintenance engine-hours elapsed for index #0
     *** @param v The maintenance engine-hours elapsed for index #0
     **/
@@ -10190,7 +10190,7 @@ public class Device // Asset
     //      Email subj/body   : ${reminderMessage}
     //    The above rule will check the "$REMINDER" every hour.  When "$REMINDER"
     //    returns 'true', the email subj/body message will be sent.  The "resetReminder"
-    //    predefined action will then reset the reminder for the next interval. 
+    //    predefined action will then reset the reminder for the next interval.
     //    (Note: without the "resetReminder" predefined-action, the reminder notification
     //    will continue to be sent every hour)
     // 6) Set "Reminder Interval" and "Reminder Message" values on the Device Admin
@@ -10309,7 +10309,7 @@ public class Device // Asset
         long   remTime   = this.getReminderTime();      // last reminder time
         String remIntStr = this.getReminderInterval();  // <#ElapsIntrv>,date:<ArgDate>,<MonthAbbr>,<DayAbbr>
         return Device._isReminderExpired(
-            remType, remTime, remIntStr, 
+            remType, remTime, remIntStr,
             tz, nowTime);
     }
 
@@ -10360,7 +10360,7 @@ public class Device // Asset
             String rem = remInt[i].toLowerCase();
 
             /* skip blank entries */
-            if (StringTools.isBlank(rem)) { 
+            if (StringTools.isBlank(rem)) {
                 // -- skip this entry
                 if (REMINDER_LOG) { Print.logInfo("Skipping blank Reminder Entry: " + i); }
                 continue;
@@ -10406,7 +10406,7 @@ public class Device // Asset
                     if (REMINDER_LOG) { Print.logWarn("Invalid Reminder Date: " + rem); }
                 }
                 continue;
-            } 
+            }
 
             /* day of week */
             // -- "mon", "tue" - day of week abbreviation
@@ -10520,7 +10520,7 @@ public class Device // Asset
             return 0L;
         } else {
             //TimeZone tmz = this.getTimeZone(null);
-            TimeZone tmz = Account.getTimeZone(this.getAccount(),DateTime.getGMTTimeZone()); 
+            TimeZone tmz = Account.getTimeZone(this.getAccount(),DateTime.getGMTTimeZone());
             return (new DateTime(ts,tmz)).getDayNumber();
         }
     }
@@ -10559,13 +10559,13 @@ public class Device // Asset
             return 0L;
         } else {
             //TimeZone tmz = this.getTimeZone(null);
-            TimeZone tmz = Account.getTimeZone(this.getAccount(),DateTime.getGMTTimeZone()); 
+            TimeZone tmz = Account.getTimeZone(this.getAccount(),DateTime.getGMTTimeZone());
             return (new DateTime(ts,tmz)).getDayNumber();
         }
     }
 
     // ------------------------------------------------------------------------
-    
+
     private User assignedUser = null;
 
     /**
@@ -10577,7 +10577,7 @@ public class Device // Asset
         return Device.getFactory().hasField(FLD_assignedUserID);
     }
 
-    /** 
+    /**
     *** Gets the assigned User-ID
     *** @return The assigned User-ID
     **/
@@ -10587,7 +10587,7 @@ public class Device // Asset
         return StringTools.trim(v);
     }
 
-    /** 
+    /**
     *** Sets the assigned User-ID
     *** @param v The assigned User-ID
     **/
@@ -10597,7 +10597,7 @@ public class Device // Asset
         this.assignedUser = null;
     }
 
-    /** 
+    /**
     *** Gets the assigned User
     *** @return The assigned User, or null if no assigned User
     **/
@@ -10619,7 +10619,7 @@ public class Device // Asset
     /**
     *** Gets the TimeZone for the assigned user-id.  If there is no assigned user-id,
     *** or the assigned user-id does not have a TimeZone preference, then it returns
-    *** the Account preferred timezone. 
+    *** the Account preferred timezone.
     *** Does not return null
     *** @return The assigned user timezone, or the Account timezone.
     **/
@@ -10656,7 +10656,7 @@ public class Device // Asset
     **/
     public String getThermalProfile()
     {
-        // temp0=130.0/130.0 temp1=130.0/130.0 temp2=130.0/130.0 temp3=130.0/130.0 temp4=130.0/130.0 temp5=130.0/130.0 temp6=130.0/130.0 temp7=130.0/130.0 
+        // temp0=130.0/130.0 temp1=130.0/130.0 temp2=130.0/130.0 temp3=130.0/130.0 temp4=130.0/130.0 temp5=130.0/130.0 temp6=130.0/130.0 temp7=130.0/130.0
         String v = (String)this.getOptionalFieldValue(FLD_thermalProfile);
         return StringTools.trim(v);
     }
@@ -10675,7 +10675,7 @@ public class Device // Asset
     /* default WorkHours/HoursOfOperation */
     public static WorkHours DefaultWorkHours = new WorkHours(RTConfig.getPropertyGetter(),RuleFactory.PROP_rule_workHours_);
     private WorkHours cacheWorkHours = null;
-    
+
     /**
     *** Returns true if HoursOfOperation/WorkHours is supported
     *** @return True if HoursOfOperation/WorkHours is supported
@@ -10696,7 +10696,7 @@ public class Device // Asset
 
     /**
     *** Gets the HoursOfOperation for this device (as a String)
-    *** @return The HoursOfOperation 
+    *** @return The HoursOfOperation
     **/
     public String getHoursOfOperation()
     {
@@ -10790,7 +10790,7 @@ public class Device // Asset
 
         /* forward to "isHoursOfOperation(DateTime...)" */
         return this.isHoursOfOperation(dt,tz);
-        
+
     }
 
     /**
@@ -11208,7 +11208,7 @@ public class Device // Asset
     /**
     *** Returns true if the specified location would represent a job depart
     *** @param gp  The GeoPoint to test
-    *** @return True if the specified location represents a job depart 
+    *** @return True if the specified location represents a job depart
     **/
     public boolean isImplicitJobDepart(GeoPoint gp)
     {
@@ -11461,7 +11461,7 @@ public class Device // Asset
     {
         this.setOptionalFieldValue(FLD_mapSharePasscode, StringTools.trim(v));
     }
-    
+
     /**
     *** Returns true if the specified passcode matches the defined map share passcode
     *** @return True if the specified passcode matches the defined map share passcode
@@ -11703,8 +11703,8 @@ public class Device // Asset
     {
         return super.getIsActive();
     }
-    
-    /** 
+
+    /**
     *** Gets the DCS ative state of this Device record
     **/
     public boolean isDCSActive()
@@ -11739,7 +11739,7 @@ public class Device // Asset
             this.setAllowNotify(true);
         }
         this.setNotifyAction(RuleFactory.ACTION_DEFAULT);
-        // BorderCrossing 
+        // BorderCrossing
         if (Device.supportsBorderCrossing()) {
             this.setBorderCrossing(Device.BorderCrossingState.ON);
         }
@@ -11758,7 +11758,7 @@ public class Device // Asset
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** DataTransport Interface: Gets the Associated AccountID
     *** @return The Associated AccountID
     **/
@@ -11767,7 +11767,7 @@ public class Device // Asset
         return this.getAccountID();
     }
 
-    /** 
+    /**
     *** DataTransport Interface: Gets the Associated DeviceID
     *** @return The Associated DeviceID
     **/
@@ -11795,7 +11795,7 @@ public class Device // Asset
     *** @param type       The command location type (ie. "map", "admin", ...)
     *** @return A map of the specified commands
     **/
-    public Map<String,String> getSupportedCommands(BasicPrivateLabel privLabel, User user, 
+    public Map<String,String> getSupportedCommands(BasicPrivateLabel privLabel, User user,
         String type)
     {
         DCServerConfig dcs = this.getDCServerConfig();
@@ -12014,7 +12014,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Insert event into EventData table
     *** @param evdb  The EventData record to insert
     *** @return True if no database error occurred, false otherwise.
@@ -12030,7 +12030,7 @@ public class Device // Asset
         }
     }
 
-    /** 
+    /**
     *** Insert event into EventData table
     *** @param evdb  The EventData record to insert
     *** @return True if EventData record was inserted
@@ -12103,7 +12103,7 @@ public class Device // Asset
     {
         // -- Notes:
         // -  1) This incoming EventData record is populated, but hasn't been saved
-        // -  2) This Device record at this point _must_ contain old/last field values 
+        // -  2) This Device record at this point _must_ contain old/last field values
         //       for proper rule triggers, etc.
         Account account = this.getAccount();
         String  acctID  = this.getAccountID();
@@ -12401,7 +12401,7 @@ public class Device // Asset
             if (evdb.isStartEvent(true)) {
                 // -- was "stopped", now "moving"
                 /*
-                if (!isOldEvent && AUTO_GENERATE_NON_MOVING_EVENT && 
+                if (!isOldEvent && AUTO_GENERATE_NON_MOVING_EVENT &&
                     ((eventTime - lastEventTime) < MAX_STOPPED_DELTA_SEC)) {
                     EventData newEv = this.getLastStopEvent();
                     if (newEv != null) {
@@ -12518,7 +12518,7 @@ public class Device // Asset
                 }
             } else {  // [2.5.8-B37]
                 // -- ignition state expressed by status code?
-                // -  TODO: should we look backward for an ignition statis code 
+                // -  TODO: should we look backward for an ignition statis code
                 // -  assume prior ignition state was off for now
                 Print.logInfo("Assuming prior Igniton state was off ...");
                 lastIgnOn = 0L; // clear "On" time
@@ -12644,7 +12644,7 @@ public class Device // Asset
         // -- new PTO state
         int newPtoState = -1; // unknown
         if (statusCode == StatusCodes.STATUS_PTO_ON) {
-            // -- PTO is on 
+            // -- PTO is on
             evdb.setPtoEngaged(true); // device may not provide a separate indicator
             newPtoState = 1;
         } else
@@ -12655,13 +12655,13 @@ public class Device // Asset
             }
             evdb.setPtoEngaged(false);
             newPtoState = 0;
-        } else 
+        } else
         if (evdb.getPtoEngaged()) {
             // -- event indicates PTO is ON
             newPtoState = 1;
         } else {
             // -- event indicates PTO is OFF (could be unknown?)
-            newPtoState = 0; 
+            newPtoState = 0;
         }
         // -- simulated PTO-hours based on PTO-on elapsed time (EXPERIMENTAL)
         if (Device.GetSimulatePtoHours(this)) {
@@ -12790,7 +12790,7 @@ public class Device // Asset
                         break;
                     }
                     // -- event already exists
-                    if ((gfmiEV.getStopID()     == evdb.getStopID()    ) || 
+                    if ((gfmiEV.getStopID()     == evdb.getStopID()    ) ||
                         (gfmiEV.getStopStatus() == evdb.getStopStatus())   ) {
                         // same event (this stop id/status apparently already exists)
                         if (sc != statusCode) {
@@ -12865,7 +12865,7 @@ public class Device // Asset
         // -- TODO: check "((extUpdate & EXT_UPDATE_ADDRESS) != 0)"
         if (!deferRuleCheck) { // this.getDeferRuleCheckToPostInsert()
             // -- not deferred: perform rule check now
-            if (this.checkEventRules(evdb)) { 
+            if (this.checkEventRules(evdb)) {
                 // -- Fields may have changed: (NOTE: not yet saved)
                 // -   FLD_lastNotifyTime
                 // -   FLD_lastNotifyCode
@@ -13008,10 +13008,10 @@ public class Device // Asset
                 this.setLastPtoOnTime(0L);               // FLD_lastPtoOnTime
                 this.setLastPtoOffTime(eventTime);       // FLD_lastPtoOffTime
             }
-        } 
+        }
 
         /* current ignition state change */
-        if (ignStateCh == 1) { 
+        if (ignStateCh == 1) {
             // -- current Ignition state changed from OFF to ON
             if (lastIgnOn > 0L) { // (lastIgnOn > lastIgnOff)
                 // -- last ignition ON was already set
@@ -13039,7 +13039,7 @@ public class Device // Asset
             }
             this.setLastIgnitionOffTime(0L);                    // FLD_lastIgnitionOffTime  [2.5.8-B37]
         } else
-        if (ignStateCh == 0) { 
+        if (ignStateCh == 0) {
             // -- current Ignition state changed from ON to OFF
             if (lastIgnOff > 0L) { // (lastIgnOff > lastIgnOn)
                 // -- last ignition OFF was already set
@@ -13261,9 +13261,9 @@ public class Device // Asset
     // ------------------------------------------------------------------------
 
     /**
-    *** Post command handling 
+    *** Post command handling
     *** (called by "DCServerConfig.Command.setDeviceCommandAttributes" after a successful command)
-    *** @param command  The executed DCServerConfig.Command 
+    *** @param command  The executed DCServerConfig.Command
     *** @param cmdStr   The command string sent to the device
     *** @param update   True to update the Device record now.
     *** @return True if there are changed fields.
@@ -13284,8 +13284,8 @@ public class Device // Asset
             Print.logWarn("Already expecting an ACK for: " + this.getLastAckCommand());
         } else {
             int ackCode = command.getExpectAckCode();
-            String cs = !StringTools.isBlank(cmdStr)? 
-                StringTools.trim(cmdStr) : 
+            String cs = !StringTools.isBlank(cmdStr)?
+                StringTools.trim(cmdStr) :
                 command.getCommandString(this,null);
             this.setExpectAck(true);
             this.setExpectAckCode(ackCode);
@@ -13293,10 +13293,10 @@ public class Device // Asset
             //this.setLastAckResponse(null);
             this.setLastAckTime(0L);
             this.addOtherChangedFieldNames(
-                FLD_expectAck, 
-                FLD_expectAckCode, 
-                FLD_lastAckCommand, 
-              //FLD_lastAckResponse, 
+                FLD_expectAck,
+                FLD_expectAckCode,
+                FLD_lastAckCommand,
+              //FLD_lastAckResponse,
                 FLD_lastAckTime);
         }
 
@@ -13304,7 +13304,7 @@ public class Device // Asset
         if (command.hasStateBitMask()) {
             long    bitMask = command.getStateBitMask();
             boolean bitVal  = command.getStateBitValue();
-            this._setCommandStateMask(bitMask, bitVal); 
+            this._setCommandStateMask(bitMask, bitVal);
             // FLD_commandStateMask
         }
 
@@ -13446,10 +13446,10 @@ public class Device // Asset
         Device.FLD_lastBatteryLevel,
         Device.FLD_lastBatteryVolts,
         Device.FLD_lastVBatteryVolts,
-        Device.FLD_lastFuelLevel,           
-        Device.FLD_lastFuelLevel2,           
+        Device.FLD_lastFuelLevel,
+        Device.FLD_lastFuelLevel2,
         Device.FLD_lastFuelTotal,
-        Device.FLD_lastOilLevel,           
+        Device.FLD_lastOilLevel,
         Device.FLD_lastValidLatitude,
         Device.FLD_lastValidLongitude,
         Device.FLD_lastValidSpeedKPH,
@@ -13481,8 +13481,8 @@ public class Device // Asset
       //Device.FLD_lastNotifyCode,          // optional field (should only be updated if changed)
       //Device.FLD_activeCorridor           // optional field (should only be updated if changed)
     };
-    
-    private static final Set<String> DefaultUpdatedFieldsSet = 
+
+    private static final Set<String> DefaultUpdatedFieldsSet =
         ListTools.toSet(DefaultUpdatedFieldsList);
 
     /**
@@ -13655,7 +13655,7 @@ public class Device // Asset
 
     /**
     *** Post EventData record insertion processing
-    *** This method is called when the device fields have been updated after having 
+    *** This method is called when the device fields have been updated after having
     *** received an event and the "lastXXXX" fields have been changed.
     **/
     private void _postDeviceEventUpdate()
@@ -13694,7 +13694,7 @@ public class Device // Asset
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Insert connection session statistics into the SessionStats table
     *** @param startTime  The time of the session stat
     *** @param ipAddr     The IP address
@@ -13885,13 +13885,13 @@ public class Device // Asset
             } else
             if (bpl == null) {
                 // -- unlikely
-                Print.logWarn("Unable to determine Account PrivateLabel for Geozone email: " + 
+                Print.logWarn("Unable to determine Account PrivateLabel for Geozone email: " +
                     this.getAccountID() + "/" + this.getDeviceID() +
                     " (zone: " + event.getGeozoneID() + ")");
             } else
             if (zone == null) {
                 // -- unlikely (DCS is supposed to populate a valid value)
-                Print.logWarn("Geozone status code, but Geozone not found: " + 
+                Print.logWarn("Geozone status code, but Geozone not found: " +
                     this.getAccountID() + "/" + this.getDeviceID() +
                     " (zone: " + event.getGeozoneID() + ")");
             } else
@@ -13902,7 +13902,7 @@ public class Device // Asset
                 /* time format */
                 String timeFmt  = bpl.getDateFormat() + " " + bpl.getTimeFormat();
                 //TimeZone tmz  = this.getTimeZone(null);
-                TimeZone tmz    = Account.getTimeZone(account,DateTime.getGMTTimeZone()); 
+                TimeZone tmz    = Account.getTimeZone(account,DateTime.getGMTTimeZone());
                 String timeStr  = new DateTime(event.getTimestamp()).format(timeFmt,tmz);
 
                 /* device/geozone description */
@@ -14066,7 +14066,7 @@ public class Device // Asset
 
     private Map<Integer,StatusCode> cacheStatusCodeMap = null;
 
-    /** 
+    /**
     *** Gets the StatusCode instance for the specified code
     *** @param code  The numeric status code value
     *** @return The StatusCode instance
@@ -14327,7 +14327,7 @@ public class Device // Asset
                 if ((lastTimestamp >= this.timeStart) && (currTimestamp <= this.timeEnd)) {
                     // -- deltatime contained by test-range
                     deltaStopSec = currTimestamp - lastTimestamp;
-                } else 
+                } else
                 if ((lastTimestamp <= this.timeEnd) && (currTimestamp > this.timeEnd)) {
                     // -- deltaStopSec spans end of test-range
                     deltaStopSec = this.timeEnd - lastTimestamp;
@@ -14353,13 +14353,13 @@ public class Device // Asset
 
     // --------------------------------
 
-    /** 
+    /**
     *** Gets the accumulated stopped seconds within the specified time range.
     *** Used for driver fatigue checking.
     *** @param stoppedSec  Array of StoppedSeconds (modified with total stopped seconds)
     *** @throws DBException
     **/
-    public void calculateStoppedSecondsInRange(final StoppedSeconds stoppedSec[], 
+    public void calculateStoppedSecondsInRange(final StoppedSeconds stoppedSec[],
         final boolean checkIgnition, final boolean checkSpeed)
         throws DBException
     {
@@ -14442,7 +14442,7 @@ public class Device // Asset
                         // -- checkSpeed and (speed > 0.0)
                         isMoving = true;
                     }
-                    // -- 
+                    // --
                     boolean deltaStoppedChanged = false;
                     if (!validGPS) {
                         // -- disregard events with invalid GPS
@@ -14470,7 +14470,7 @@ public class Device // Asset
                             // -    timeStart         - may over estimate the stopped-time (false negatives)
                             // -    ev.getTimestamp() - may under estimate the stopped-time (false positives)
                             lastStopTime.set(timeStart);         // [2.6.1-B51]
-                          //lastStopTime.set(ev.getTimestamp()); 
+                          //lastStopTime.set(ev.getTimestamp());
                             wasMoving.set(false);
                         }
                     } else
@@ -14540,9 +14540,9 @@ public class Device // Asset
 
     }
 
-    /** 
+    /**
     *** Returns true if all accumulated stopped seconds within the specified time range are greater-than
-    *** or equal-to the corresponding expected stop seconds.  
+    *** or equal-to the corresponding expected stop seconds.
     *** Used for driver fatigue checking.
     *** @param stoppedSec     Array of StoppedSeconds
     *** @param checkIgnition  True to check ignition for moving state
@@ -14550,7 +14550,7 @@ public class Device // Asset
     *** @return True if all accumulated stopped seconds are >= their corresponding expected stop secods.
     *** @throws DBException
     **/
-    public boolean isExpectedStoppedSeconds(StoppedSeconds stoppedSec[], 
+    public boolean isExpectedStoppedSeconds(StoppedSeconds stoppedSec[],
         boolean checkIgnition, boolean checkSpeed)
         throws DBException
     {
@@ -14558,10 +14558,10 @@ public class Device // Asset
         return (i < 0)? true : false;
     }
 
-    /** 
+    /**
     *** Returns the index of the failed accumulated stopped-seconds range, or -1 if all accumulated stopped
-    *** seconds within the specified time range are greater-than or equal-to the corresponding expected stop 
-    *** seconds.  
+    *** seconds within the specified time range are greater-than or equal-to the corresponding expected stop
+    *** seconds.
     *** Used for driver fatigue checking.
     *** @param stoppedSec     Array of StoppedSeconds
     *** @param checkIgnition  True to check ignition state for moving condition
@@ -14569,7 +14569,7 @@ public class Device // Asset
     *** @return The index of the failed accumulated stopped-seconds range, or -1 if all pass.
     *** @throws DBException
     **/
-    public int getFailedExpectedStoppedSecondsIndex(StoppedSeconds stoppedSec[], 
+    public int getFailedExpectedStoppedSecondsIndex(StoppedSeconds stoppedSec[],
         boolean checkIgnition, boolean checkSpeed)
         throws DBException
     {
@@ -14586,7 +14586,7 @@ public class Device // Asset
         return -1; // true
     }
 
-    /** 
+    /**
     *** Gets the accumulated stopped seconds within the specified time range.
     *** Used for driver fatigue checking.
     *** @param timeStart      The event start time
@@ -14597,7 +14597,7 @@ public class Device // Asset
     *** @return The elapsed number of seconds stopped
     *** @throws DBException
     **/
-    public long getStoppedSecondsInRange(long timeStart, long timeEnd, long minStopSec, 
+    public long getStoppedSecondsInRange(long timeStart, long timeEnd, long minStopSec,
         final boolean checkIgnition, final boolean checkSpeed)
         throws DBException
     {
@@ -14617,7 +14617,7 @@ public class Device // Asset
     ***         >0 if a DriverFatigue condition was triggered (return value indicates a 1-based
     ***         index of the condition that failed).
     **/
-    public int checkDriverFatigue(String name, long eventTime, 
+    public int checkDriverFatigue(String name, long eventTime,
         boolean checkIgnition, boolean checkSpeed)
     {
         Locale locale = Account.GetLocale(this.getAccount());
@@ -14751,8 +14751,8 @@ public class Device // Asset
         throws DBException
     {
         return this.getRangeEvents(
-            timeStart, timeEnd, 
-            null/*statusCodes*/, validGPS, 
+            timeStart, timeEnd,
+            null/*statusCodes*/, validGPS,
             limitType, limit);
     }
 
@@ -14768,8 +14768,8 @@ public class Device // Asset
         long timeStart = -1L;
         long timeEnd   = -1L;
         return this.getRangeEvents(
-            timeStart, timeEnd, 
-            null/*statusCodes*/, validGPS, 
+            timeStart, timeEnd,
+            null/*statusCodes*/, validGPS,
             EventData.LimitType.LAST, limit);
     }
 
@@ -14872,7 +14872,7 @@ public class Device // Asset
     {
         public void handleEventDataRecord(EventData ev);
     }
-    
+
     /**
     *** Reprocesses a range of EventData reocrds
     *** @param timeStart  The start time
@@ -14903,12 +14903,12 @@ public class Device // Asset
     /**
     *** Callback for VIN changed
     **/
-    protected void vinDidChange(String oldVIN, String newVIN) 
+    protected void vinDidChange(String oldVIN, String newVIN)
     {
         // -- TODO:
         // -  add VIN "change" implementation
     }
-    
+
     // --------------------------------
 
     /**
@@ -15042,7 +15042,7 @@ public class Device // Asset
 
     /**
     *** Delete events prior to the specified time.<br>
-    *** Note: Will return -1 if EventData table is InnoDB.  
+    *** Note: Will return -1 if EventData table is InnoDB.
     ***       Old events will still be deleted, however it will still go through the
     ***       motions of attempting to delete events, event if the range is empty.
     *** @param oldTimeSec  The timestamp before which events will be deleted
@@ -15096,7 +15096,7 @@ public class Device // Asset
     // ------------------------------------------------------------------------
 
     /**
-    *** This method is used to load a Device record based on the SIM phone number. 
+    *** This method is used to load a Device record based on the SIM phone number.
     *** Intended for use by an incoming SMS message handler.
     *** It is up to the caller to check whether this Device or Account are inactive.
     *** @param simPhone  The SIM phone number of the device
@@ -15245,7 +15245,7 @@ public class Device // Asset
     }
 
     // ------------------------------------------------------------------------
-    
+
     private static final boolean GetDevice_SkipExistsCheck = true;
 
     /**
@@ -15320,7 +15320,7 @@ public class Device // Asset
     *** This method should only be used when relatively sure that the specified deviceID exists.
     *** @param account     The Account
     *** @param devID       The Device ID
-    *** @param fieldNames  The specific field-names to load (null to load all).  
+    *** @param fieldNames  The specific field-names to load (null to load all).
     ***                    All non-specified fields will be undefined in this Device record.
     *** @return The Device record (does not return null)
     *** @throws DBException If any DB error occurs.
@@ -15417,7 +15417,7 @@ public class Device // Asset
 
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** Create/Save Device record
     *** @param account The Account
     *** @param devID   The Device ID
@@ -15553,7 +15553,7 @@ public class Device // Asset
     // This section supports a method for obtaining human readable information from
     // the Device record for reporting, or email purposes. (currently this is
     // used by the 'rules' engine when generating notification emails).
-    
+
     public  static final String KEY_ACCOUNT[]         = new String[] { "account"          , "accountDesc"     };  // "Smith Trucking"
     public  static final String KEY_ACCOUNT_ID[]      = new String[] { "accountID"                            };  // "smith"
     private static final String KEY_DEVICE[]          = EventData.KEY_DEVICE;
@@ -15564,9 +15564,9 @@ public class Device // Asset
     public  static final String KEY_LICENSE_PLATE[]   = new String[] { "licensePlate"                          };  // "ABC123"
     public  static final String KEY_EQUIP_STATUS[]    = new String[] { "equipmentStatus"    , "equipStatus"    };  // "active" [2.6.5-B14]
     private static final String KEY_EVENT_COUNT24[]   = EventData.KEY_EVENT_COUNT24;
-    private static final String KEY_LAST_EPS[]        = new String[] { "lastEventsPerSecond", "lastEPS" , "eventsPerSecond" }; 
-    private static final String KEY_LAST_EPH[]        = new String[] { "lastEventsPerHour"  , "lastEPH" , "eventsPerHour"   }; 
-    private static final String KEY_SIM_PHONE[]       = new String[] { "simPhoneNumber"     , "simPhone"   }; 
+    private static final String KEY_LAST_EPS[]        = new String[] { "lastEventsPerSecond", "lastEPS" , "eventsPerSecond" };
+    private static final String KEY_LAST_EPH[]        = new String[] { "lastEventsPerHour"  , "lastEPH" , "eventsPerHour"   };
+    private static final String KEY_SIM_PHONE[]       = new String[] { "simPhoneNumber"     , "simPhone"   };
 
     private static final String KEY_DRIVERID[]        = EventData.KEY_DRIVERID;
     private static final String KEY_DRIVER_DESC[]     = EventData.KEY_DRIVER_DESC;
@@ -15589,9 +15589,9 @@ public class Device // Asset
 
     private static final String KEY_CORRIDOR_ID[]     = new String[] { "activeCorridor"      , "corridorID"     };  // "freeway"
     private static final String KEY_CORRIDOR_DESC[]   = new String[] { "activeCorridorDesc"  , "corridorDesc"   };  // "freeway"
-    private static final String KEY_STOP_ELAPSED[]    = new String[] { "stopElapsed"         , "timeStopped"    }; 
-    private static final String KEY_SPEED_LIMIT[]     = new String[] { "devSpeedLimit"       , "speedLimit"     }; 
-    private static final String KEY_REMINDER[]        = new String[] { "reminderMessage"     , "reminder"       }; 
+    private static final String KEY_STOP_ELAPSED[]    = new String[] { "stopElapsed"         , "timeStopped"    };
+    private static final String KEY_SPEED_LIMIT[]     = new String[] { "devSpeedLimit"       , "speedLimit"     };
+    private static final String KEY_REMINDER[]        = new String[] { "reminderMessage"     , "reminder"       };
 
     private static final String KEY_LAST_IGN_HOURS[]  = new String[] { "lastIgnitionHours"                      };
     private static final String KEY_LAST_ENG_HOURS[]  = new String[] { "lastEngineHours"                        };
@@ -15602,18 +15602,18 @@ public class Device // Asset
     private static final String KEY_COMMAND_STATE[]   = new String[] { "commandState"                           };
     private static final String KEY_COMMAND_TIME[]    = new String[] { "commandDateTime"     , "commandTime", "pingDateTime"};
     private static final String KEY_ACK_DATETIME[]    = new String[] { "ackDateTime"                            };
-    
+
     private static final String KEY_MAINT_DESC[]      = new String[] { "maintDesc"                              };
     private static final String KEY_MAINT_ODOMETER[]  = new String[] { "maintOdometer"       , "maintOdom"      };
     private static final String KEY_MAINT_DIST_NEXT[] = new String[] { "maintDistToNext"     , "maintNextDelta" };
     private static final String KEY_MAINT_INTERVAL[]  = new String[] { "maintInterval"       , "maintInter"     };
     private static final String KEY_MAINT_NOTES[]     = new String[] { "maintNotes"                             };
 
-    private static final String KEY_DEVICE_PHONE[]    = new String[] { "fixedPhone"          , "devicePhone"    }; 
+    private static final String KEY_DEVICE_PHONE[]    = new String[] { "fixedPhone"          , "devicePhone"    };
 
     private static final String KEY_EVAL[]            = new String[] { "evaluate"            , "eval"           }; //
 
-    private static final String KEY_CUSTOM[]          = new String[] { "custom"                                 }; 
+    private static final String KEY_CUSTOM[]          = new String[] { "custom"                                 };
 
     /**
     *** Gets the field title for the specified key
@@ -15625,7 +15625,7 @@ public class Device // Asset
     public static String getKeyFieldTitle(String key, String arg, Locale locale)
     {
         return Device._getKeyFieldString(
-            true/*title*/, key, arg, 
+            true/*title*/, key, arg,
             locale, null/*BasicPrivateLabel*/, null/*Device*/);
     }
 
@@ -15640,7 +15640,7 @@ public class Device // Asset
     {
         Locale locale = (bpl != null)? bpl.getLocale() : null;
         return Device._getKeyFieldString(
-            false/*value*/, key, arg, 
+            false/*value*/, key, arg,
             locale, bpl, this);
     }
 
@@ -15655,7 +15655,7 @@ public class Device // Asset
     *** @return The title/value
     **/
     public static String _getKeyFieldString(
-        boolean getTitle, String key, String arg, 
+        boolean getTitle, String key, String arg,
         Locale locale, BasicPrivateLabel bpl, Device dev)
     {
         //Print.logInfo("Getting "+(getTitle?"title":"value")+" for key: " + key);
@@ -15734,7 +15734,7 @@ public class Device // Asset
                 if (StringTools.isBlank(url)) {
                     return "";
                 } else
-                if (StringTools.isBlank(arg)    || 
+                if (StringTools.isBlank(arg)    ||
                     arg.equalsIgnoreCase("a")   ||  // "anchor"
                     arg.equalsIgnoreCase("html")||
                     arg.equalsIgnoreCase("link")  ) {
@@ -15807,8 +15807,8 @@ public class Device // Asset
             } else {
                 String a[]       = StringTools.split(arg,',');
                 int sinceHH      = (a.length > 1)? StringTools.parseInt(a[0],24) : 24;
-                int statCodes[]  = ((a.length > 2) && !StringTools.isBlank(a[1]))? 
-                    new int[] { StringTools.parseInt(a[1],StatusCodes.STATUS_NONE) } : 
+                int statCodes[]  = ((a.length > 2) && !StringTools.isBlank(a[1]))?
+                    new int[] { StringTools.parseInt(a[1],StatusCodes.STATUS_NONE) } :
                     null;
                 long timeStart   = now - DateTime.HourSeconds((sinceHH > 0)? sinceHH : 24);
                 long timeEnd     = -1L;
@@ -15862,7 +15862,7 @@ public class Device // Asset
                 if (StringTools.isBlank(ph)) {
                     return "";
                 } else
-                if (StringTools.isBlank(arg)      || 
+                if (StringTools.isBlank(arg)      ||
                     arg.equalsIgnoreCase("plain")   ) {
                     return ph;
                 } else
@@ -15874,7 +15874,7 @@ public class Device // Asset
                     return ph;
                 }
             }
-        } 
+        }
 
         /* fuel (tank #1) */
         if (EventData._keyMatch(key,Device.KEY_FUEL_LEVEL)) {
@@ -16080,7 +16080,7 @@ public class Device // Asset
                 if (StringTools.isBlank(ph)) {
                     return "";
                 } else
-                if (StringTools.isBlank(arg)      || 
+                if (StringTools.isBlank(arg)      ||
                     arg.equalsIgnoreCase("plain")   ) {
                     return ph;
                 } else
@@ -16092,7 +16092,7 @@ public class Device // Asset
                     return ph;
                 }
             }
-        } 
+        }
 
         /* OBD fault values */
         if (EventData._keyMatch(key,Device.KEY_FAULT_CODES)) {
@@ -16277,7 +16277,7 @@ public class Device // Asset
             if (getTitle) {
                 return i18n.getString("Device.key.commandState", "Command State #{0}", String.valueOf(bitNdx));
             } else {
-                return dev.getCommandStateMaskBit(bitNdx)? 
+                return dev.getCommandStateMaskBit(bitNdx)?
                     AccountRecord.GetSimpleLocalString("true" ,locale) :
                     AccountRecord.GetSimpleLocalString("false",locale);
             }
@@ -16387,7 +16387,7 @@ public class Device // Asset
                 if (StringTools.isBlank(ph)) {
                     return "";
                 } else
-                if (StringTools.isBlank(arg)      || 
+                if (StringTools.isBlank(arg)      ||
                     arg.equalsIgnoreCase("plain")   ) {
                     return ph;
                 } else
@@ -16399,7 +16399,7 @@ public class Device // Asset
                     return ph;
                 }
             }
-        } 
+        }
 
         /* RuleFactory */
         if (EventData._keyMatch(key,Device.KEY_EVAL)) {
@@ -16522,7 +16522,7 @@ public class Device // Asset
     }
 
     /**
-    *** Comparator optimized for EventData device description 
+    *** Comparator optimized for EventData device description
     **/
     public static class DeviceDescriptionComparator
         implements Comparator<Device>
@@ -16538,7 +16538,7 @@ public class Device // Asset
             // assume we are comparing Device records
             if (dv1 == dv2) {
                 return 0; // exact same object (or both null)
-            } else 
+            } else
             if (dv1 == null) {
                 return this.ascending? -1 :  1; // null < non-null
             } else
@@ -16703,7 +16703,7 @@ public class Device // Asset
         int opts = 0;
 
         /* delete */
-        if (RTConfig.getBoolean(ARG_DELETE, false) && 
+        if (RTConfig.getBoolean(ARG_DELETE, false) &&
             !StringTools.isBlank(acctID) && !StringTools.isBlank(devID)) {
             opts++;
             if (!acctExists || !deviceExists) {
@@ -16779,8 +16779,8 @@ public class Device // Asset
                     java.util.List<Device> devList = new Vector<Device>();
                     devList.add(deviceRcd);
                     EventUtil evUtil = EventUtil.getInstance();
-                    evUtil.writeEvents((PrintWriter)null, 
-                        acct, devList, 
+                    evUtil.writeEvents((PrintWriter)null,
+                        acct, devList,
                         fmt, true/*allTags*/, null/*timezone*/,
                         privLabel);
                 } catch (IOException ioe) {
@@ -17039,7 +17039,7 @@ public class Device // Asset
             evRcd.setDevice(deviceRcd);
             evRcd.setGeoPoint(gp);
             evRcd.setAddress(null);
-            Print.logInfo("Created Event: " + _fmtDevID(acctID,devID) + " " + gp + 
+            Print.logInfo("Created Event: " + _fmtDevID(acctID,devID) + " " + gp +
                 " [" + StatusCodes.GetHex(code) + ":" + StatusCodes.GetDescription(code,null) + "]");
             // -- check rules
             if (!deviceRcd.checkEventRules(evRcd)) { // command-line
@@ -17121,7 +17121,7 @@ public class Device // Asset
         }
 
         /* count/delete old events */
-        if (RTConfig.hasProperty(ARG_CNT_OLD_EV) || 
+        if (RTConfig.hasProperty(ARG_CNT_OLD_EV) ||
             RTConfig.hasProperty(ARG_DEL_OLD_EV)   ) {
             opts++;
             // -- delete/count
@@ -17395,9 +17395,9 @@ public class Device // Asset
                     GeoPoint devGP = deviceRcd.getLastValidLocation();
                     Print.sysPrintln("Check Device location: " + devGP + " RadiusM=" + radM);
                     nbMap = Device.GetNearbyDeviceMap(
-                        acct, deviceRcd.getDeviceID(), false/*inclThisDev?*/, 
+                        acct, deviceRcd.getDeviceID(), false/*inclThisDev?*/,
                         -1L/*startTime*/, -1L/*endTime*/,
-                        devGP, radM, true/*active*/, null/*User*/, 
+                        devGP, radM, true/*active*/, null/*User*/,
                         true/*sort*/);
                 } else {
                     // -- no device specified, or a valid GeoPoint was specified
@@ -17440,7 +17440,7 @@ public class Device // Asset
                 Print.logError("Device does not define a DCS module: " + _fmtDevID(acctID,devID));
                 System.exit(97);
             }
-            // -- 
+            // --
             String cmdHost = dcs.getCommandDispatcherHost(device);
             int    cmdPort = dcs.getCommandDispatcherPort();
             if (StringTools.isBlank(cmdHost) || (cmdPort <= 0)) {
@@ -17494,11 +17494,11 @@ public class Device // Asset
             }
             // -- include mask
             int incMask = 0
-              //| DBFactory.INCL_TABLE 
-              //| DBFactory.INCL_BLANK 
-              | DBFactory.INCL_TYPE  
-              //| DBFactory.INCL_TITLE 
-              //| DBFactory.INCL_KEY   
+              //| DBFactory.INCL_TABLE
+              //| DBFactory.INCL_BLANK
+              | DBFactory.INCL_TYPE
+              //| DBFactory.INCL_TITLE
+              //| DBFactory.INCL_KEY
               ;
             // -- toJSON
             Device device = deviceRcd;

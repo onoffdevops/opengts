@@ -1,4 +1,4 @@
-<!-- 
+<!--
 ===============================================================================
 Copyright: Copyright 2007-2017 GeoTelematic Solutions, Inc.
 Project  : OpenGTS - Open GPS Tracking System
@@ -51,7 +51,7 @@ File     : build.xml
     <fileset dir="${lib.home}">
         <include name="**/*.jar"/>
     </fileset>
-    <fileset dir="${catalina.home}"> 
+    <fileset dir="${catalina.home}">
         <!-- Tomcat 5.5.XX -->
         <include name="common/lib/*.jar"/>
         <!-- Tomcat 6.0.XX -->
@@ -62,7 +62,7 @@ File     : build.xml
   <!-- tomcat classpath -->
   <path id="tomcat.classpath">
     <pathelement location="${build.home}"/>
-    <fileset dir="${catalina.home}"> 
+    <fileset dir="${catalina.home}">
         <!-- Tomcat 5.5.XX -->
         <include name="common/lib/*.jar"/>
         <!-- Tomcat 6.0.XX+ -->
@@ -77,7 +77,7 @@ File     : build.xml
   <!-- ======================================================================== -->
 
   <!-- Target: help -->
-  <target name="help" 
+  <target name="help"
     description="Clean/Build project">
     <echo message="clean    : Remove 'build' directory"/>
     <echo message="events   : Create 'Events' Servlet WAR file"/>
@@ -86,9 +86,9 @@ File     : build.xml
     <echo message="all      : all of the above"/>
     <echo message="help     : This help"/>
   </target>
-  
+
   <!-- Target: environment -->
-  <target name="environment" 
+  <target name="environment"
     description="Display Environment settings">
     <echo message="GTS_HOME      = ${Env.GTS_HOME}"/>
     <echo message="GTS_CONF      = ${Env.GTS_CONF}"/>
@@ -104,15 +104,15 @@ File     : build.xml
   <!-- ======================================================================== -->
 
   <!-- Target: all -->
-  <target name="all" 
-    depends="clean,custom,compile" 
+  <target name="all"
+    depends="clean,custom,compile"
     description="Clean/Build Server and all WAR files">
     <echo message="Build 'all' complete."/>
   </target>
 
   <!-- Target: clean (iff "src/" exists) -->
-  <target name="clean" 
-    if="exists.src" 
+  <target name="clean"
+    if="exists.src"
     description="Clean build">
     <delete dir="${build.home}"/>
     <delete file="${src.gts}/org/opengts/CompileTime.java"/>
@@ -120,32 +120,32 @@ File     : build.xml
   </target>
 
   <!-- Target: compile -->
-  <target name="compile" 
-    if="exists.src" 
-    depends="compile.base,compile.servers,compile.servlets" 
+  <target name="compile"
+    if="exists.src"
+    depends="compile.base,compile.servers,compile.servlets"
     description="Build Server and all WAR files">
     <echo message="Libraries compiled ..."/>
   </target>
 
   <!-- Target: compile.base -->
-  <target name="compile.base" 
-    depends="gtsutils,gtsdb,tomcat7.init,optjars,tools" 
+  <target name="compile.base"
+    depends="gtsutils,gtsdb,tomcat7.init,optjars,tools"
     description="Build Base Libraries">
     <echo message="Libraries compiled ..."/>
   </target>
 
   <!-- Target: compile.servers -->
   <!-- 2016/09/01: ",icare,sipgear,aspicore,gtsdmtp,taip" removed from "depends" attribute -->
-  <target name="compile.servers" 
-    depends="compile.base,astra,tk10x,lantrix,template" 
+  <target name="compile.servers"
+    depends="compile.base,astra,tk10x,lantrix,template,coban"
     description="Build Servers">
     <echo message="Servers compiled ..."/>
   </target>
 
   <!-- Target: compile.servlets -->
   <!-- 2016/09/01: ",gc101,mologogo,gpsmapper" removed from "depends" attribute -->
-  <target name="compile.servlets" 
-    depends="compile.base,track,events,gprmc" 
+  <target name="compile.servlets"
+    depends="compile.base,track,events,gprmc"
     description="Build Servlet/War files">
     <echo message="Servlet/War file compiled ..."/>
   </target>
@@ -153,7 +153,7 @@ File     : build.xml
   <!-- ======================================================================== -->
 
   <!-- Target: WriteListener.java unless="exists.tomcat8" -->
-  <target name="tomcat7.init" 
+  <target name="tomcat7.init"
     unless="exists.tomcat8"
     description="Create WriteListener.java">
     <echo message="Creating '${src.gts}/org/opengts/war/tools/WriteListener.java' ..."/>
@@ -166,12 +166,12 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: tomcat "${catalina.home}" -->
-  <target name="tomcat.env" 
+  <target name="tomcat.env"
     depends="tomcat.home"
     description="Check for Tomcat environment variables"/>
 
   <!-- Target: tomcat "${catalina.home}" -->
-  <target name="tomcat.home" 
+  <target name="tomcat.home"
     description="Check for CATALINA_HOME environment variable">
     <fail unless="Env.CATALINA_HOME">
         CATALINA_HOME environment variable has not been defined.
@@ -181,7 +181,7 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: tomcat.base "${catalina.base}" -->
-  <target name="tomcat.base" 
+  <target name="tomcat.base"
     description="Check for CATALINA_BASE environment variable">
     <fail unless="Env.CATALINA_BASE">
         CATALINA_BASE environment variable has not been defined.
@@ -191,9 +191,9 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: tomcat.shexe "${catalina.base}" -->
-  <target name="tomcat.shexe" 
+  <target name="tomcat.shexe"
     depends="tomcat.sh_exe"/>
-  <target name="tomcat.sh_exe" 
+  <target name="tomcat.sh_exe"
     description="Make Tomcat $CATALINA_HOME/bin/*.sh files executable">
     <fail unless="Env.CATALINA_HOME">
         CATALINA_HOME environment variable has not been defined.
@@ -236,7 +236,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: prepare (create build directories) -->
-  <target name="prepare" 
+  <target name="prepare"
     description="Prepare for compile">
     <mkdir dir="${build.home}"/>
     <mkdir dir="${build.lib}"/>
@@ -326,12 +326,12 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- ======================================================================== -->
-  
+
   <!-- Target: gtsdmtp -->
-  <target name="gtsdmtp.jar" 
+  <target name="gtsdmtp.jar"
     depends="gtsdmtp"/>
-  <target name="gtsdmtp" 
-    depends="prepare,gtsdb" 
+  <target name="gtsdmtp"
+    depends="prepare,gtsdb"
     description="Create 'gtsdmtp.jar'">
     <echo message="Creating 'gtsdmtp.jar' ..."/>
 
@@ -394,9 +394,9 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: gtsdb.jar -->
-  <target name="gtsdb.jar" 
+  <target name="gtsdb.jar"
     depends="gtsdb"/>
-  <target name="gtsdb" depends="prepare,gtsutils,CompileTime.java" 
+  <target name="gtsdb" depends="prepare,gtsutils,CompileTime.java"
     description="Create 'gtsdb.jar'">
 
     <!-- compile GTS db -->
@@ -516,16 +516,16 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: gtsutils.optional -->
-  <target name="gtsutils.optional" 
-    if="exists.exceltools" 
-    depends="gtsutils.exceltools,gtsutils.sigHandler" 
+  <target name="gtsutils.optional"
+    if="exists.exceltools"
+    depends="gtsutils.exceltools,gtsutils.sigHandler"
     description="Compile 'gtsutils.jar' optional components">
   </target>
 
   <!-- Target: gtsutils.exceltools -->
-  <target name="gtsutils.exceltools" 
-    if="exists.exceltools" 
-    depends="prepare" 
+  <target name="gtsutils.exceltools"
+    if="exists.exceltools"
+    depends="prepare"
     description="Compile 'gtsutils.jar' Excel Tools components">
     <echo message="Compiling gtsutils.jar Excel Tools source ... "/>
     <!-- compile "ExcelTools.java" -->
@@ -550,9 +550,9 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gtsutils.sigHandler -->
-  <target name="gtsutils.sigHandler" 
-    if="exists.sigHandler" 
-    depends="prepare" 
+  <target name="gtsutils.sigHandler"
+    if="exists.sigHandler"
+    depends="prepare"
     description="Compile 'gtsutils.jar' Signal Handler components">
     <echo message="Compiling gtsutils.jar Signal Handler source ... "/>
     <!-- compile "PosixSignalHandler.java" -->
@@ -579,12 +579,12 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: gtsutils.jar -->
-  <target name="gtsutils" 
+  <target name="gtsutils"
     depends="gtsutils.jar"/>
 
   <!-- Target: gtsutils.compile -->
-  <target name="gtsutils.compile" 
-    depends="prepare" 
+  <target name="gtsutils.compile"
+    depends="prepare"
     description="Compile 'gtsutils.jar' components">
     <echo message="Compiling gtsutils.jar source ... "/>
 
@@ -658,8 +658,8 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gtsutils.jar -->
-  <target name="gtsutils.jar" 
-    depends="prepare,gtsutils.compile,gtsutils.optional" 
+  <target name="gtsutils.jar"
+    depends="prepare,gtsutils.compile,gtsutils.optional"
     description="Create 'gtsutils.jar'">
     <echo message="Creating gtsutils.jar ... "/>
 
@@ -715,10 +715,10 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: wartools.jar -->
-  <target name="wartools.jar" 
+  <target name="wartools.jar"
     depends="wartools"/>
-  <target name="wartools" 
-    depends="tomcat.env,prepare,gtsdb" 
+  <target name="wartools"
+    depends="tomcat.env,prepare,gtsdb"
     description="Create 'wartools.jar'">
     <echo message="Creating 'wartools.jar' [Tomcat8 = ${exists.tomcat8}] ..."/>
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
@@ -772,14 +772,14 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: warmaps.jar -->
-  <target name="warmaps.jar" 
+  <target name="warmaps.jar"
     depends="warmaps"/>
-  <target name="warmaps" 
-    depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="warmaps"
+    depends="tomcat.env,prepare,gtsdb,wartools"
     description="Create 'warmaps.jar'">
     <echo message="Creating 'warmaps.jar' ..."/>
     <property name="compile.war.classpath" refid="compile.war.classpath"/>
-    
+
     <!-- compile maps -->
     <javac srcdir="${src.gts}"
         includeAntRuntime="false"
@@ -819,10 +819,10 @@ public class WriteListener { /* nothing */ }
   <property name="build.track" value="${build.home}/track"/>
 
   <!-- Target: track -->
-  <target name="track.all" 
-    depends="track"/> 
-  <target name="track" 
-    depends="track.compile,track.war" 
+  <target name="track.all"
+    depends="track"/>
+  <target name="track"
+    depends="track.compile,track.war"
     description="Compile/Create 'track.war'">
     <echo message="'track.war' created."/>
   </target>
@@ -924,8 +924,8 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: track.compile -->
-  <target name="track.compile" 
-    depends="tomcat.env,prepare,gtsdb,wartools,warmaps,track.prepare" 
+  <target name="track.compile"
+    depends="tomcat.env,prepare,gtsdb,wartools,warmaps,track.prepare"
     description="Compile 'track.war' source">
     <echo message="Compiling 'track.war' servlet ..."/>
     <delete file="${build.home}/track.war"/>
@@ -960,8 +960,8 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: track.war -->
-  <target name="track.war" 
-    depends="track.prepare" 
+  <target name="track.war"
+    depends="track.prepare"
     description="Create 'track.war' archive">
     <echo message="Creating 'track.war' archive ..."/>
     <delete file="${build.home}/track.war"/>
@@ -1004,12 +1004,12 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: track.deploy -->
-  <target name="track.deploy" 
-    depends="track.war" 
+  <target name="track.deploy"
+    depends="track.war"
     description="Deploy 'track.war' to Tomcat">
     <echo message="Deploying 'track.war' to ${catalina.base}/webapps/${track.deployWar}"/>
-    <copy 
-        file="${build.home}/track.war" 
+    <copy
+        file="${build.home}/track.war"
         tofile="${catalina.base}/webapps/${track.deployWar}"
         overwrite="true"
         failonerror="true"
@@ -1025,16 +1025,16 @@ public class WriteListener { /* nothing */ }
   <property name="build.service" value="${build.home}/service"/>
 
   <!-- Target: service -->
-  <target name="service.all" 
-    depends="service"/> 
-  <target name="service" 
-    depends="service.compile,service.war" 
+  <target name="service.all"
+    depends="service"/>
+  <target name="service"
+    depends="service.compile,service.war"
     description="Compile/Create 'service.war'">
     <echo message="'service.war' created."/>
   </target>
 
   <!-- Target: service.prepare -->
-  <target name="service.prepare" 
+  <target name="service.prepare"
     depends="tomcat.env"
     description="Copy runtime configuration for 'service.war'">
 
@@ -1109,8 +1109,8 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: service.compile -->
-  <target name="service.compile" 
-    depends="tomcat.env,prepare,gtsdb,wartools,service.prepare" 
+  <target name="service.compile"
+    depends="tomcat.env,prepare,gtsdb,wartools,service.prepare"
     description="Compile 'service.war' source">
     <echo message="Compiling 'service.war' servlet ..."/>
     <delete file="${build.home}/service.war"/>
@@ -1142,8 +1142,8 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: service.war -->
-  <target name="service.war" 
-    depends="service.prepare" 
+  <target name="service.war"
+    depends="service.prepare"
     description="Create 'service.war' archive">
     <echo message="Creating 'service.war' archive ..."/>
     <delete file="${build.home}/service.war"/>
@@ -1159,7 +1159,7 @@ public class WriteListener { /* nothing */ }
             <include name="gtsdb.jar"/>
             <include name="wartools.jar"/>
             <include name="ruledb.jar"/>
-            <include name="ruletrack.jar"/>   
+            <include name="ruletrack.jar"/>
             <include name="bcrossdb.jar"/>
             <include name="bcrosstrack.jar"/>
             <include name="warmaps.jar"/>
@@ -1179,15 +1179,15 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: service.deploy -->
-  <target name="service.deploy" 
-    depends="service.war" 
+  <target name="service.deploy"
+    depends="service.war"
     description="Deploy 'service.war' to Tomcat">
     <echo message="Deploying 'service.war' to ${catalina.base}/webapps/${service.deployWar}"/>
-    <copy 
-        file="${build.home}/service.war" 
+    <copy
+        file="${build.home}/service.war"
         tofile="${catalina.base}/webapps/${service.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${service.deployWar}"/>
@@ -1200,17 +1200,17 @@ public class WriteListener { /* nothing */ }
   <property name="build.events" value="${build.home}/events"/>
 
   <!-- Target: events -->
-  <target name="events.all" 
-    depends="events"/> 
-  <target name="events" 
-    depends="events.compile,events.war" 
+  <target name="events.all"
+    depends="events"/>
+  <target name="events"
+    depends="events.compile,events.war"
     description="Compile/Create 'events.war'">
     <echo message="'events.war' created."/>
   </target>
 
   <!-- Target: events.compile -->
-  <target name="events.compile" 
-    depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="events.compile"
+    depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'events.war' source">
 
     <echo message="Compiling 'events.war' servlet ..."/>
@@ -1280,10 +1280,10 @@ public class WriteListener { /* nothing */ }
     </copy>
 
   </target>
-  
+
   <!-- Target: events.war -->
-  <target name="events.war" 
-    depends="" 
+  <target name="events.war"
+    depends=""
     description="Create 'events.war' archive">
     <echo message="Creating 'events.war' file ..."/>
 
@@ -1313,15 +1313,15 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: events.deploy -->
-  <target name="events.deploy" 
-    depends="events.war" 
+  <target name="events.deploy"
+    depends="events.war"
     description="Deploy 'events.war' to Tomcat">
     <echo message="Deploying 'events.war' to ${catalina.base}/webapps/${events.deployWar}"/>
-    <copy 
-        file="${build.home}/events.war" 
+    <copy
+        file="${build.home}/events.war"
         tofile="${catalina.base}/webapps/${events.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${events.deployWar}"/>
@@ -1334,16 +1334,16 @@ public class WriteListener { /* nothing */ }
   <property name="build.mologogo" value="${build.home}/mologogo"/>
 
   <!-- Target: mologogo -->
-  <target name="mologogo.all" 
-    depends="mologogo"/> 
-  <target name="mologogo" 
-    depends="mologogo.compile,mologogo.war" 
+  <target name="mologogo.all"
+    depends="mologogo"/>
+  <target name="mologogo"
+    depends="mologogo.compile,mologogo.war"
     description="Compile/Create 'mologogo.war'">
     <echo message="'mologogo.war' created."/>
   </target>
 
   <!-- Target: mologogo.compile -->
-  <target name="mologogo.compile" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="mologogo.compile" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'mologogo.war' source">
     <echo message="Compiling 'mologogo.war' servlet ..."/>
     <delete file="${build.home}/mologogo.war"/>
@@ -1443,33 +1443,33 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: mologogo.deploy -->
-  <target name="mologogo.deploy" depends="mologogo.war" 
+  <target name="mologogo.deploy" depends="mologogo.war"
     description="Deploy 'mologogo.war' to Tomcat">
     <echo message="Deploying 'mologogo.war' to ${catalina.base}/webapps/${mologogo.deployWar}"/>
-    <copy 
-        file="${build.home}/mologogo.war" 
+    <copy
+        file="${build.home}/mologogo.war"
         tofile="${catalina.base}/webapps/${mologogo.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${mologogo.deployWar}"/>
   </target>
 
   <!-- ======================================================================== -->
-  
+
   <!-- CelltracGTS servlet build directory (MAY NOT BE SUPPORTED IN THIS RELEASE) -->
   <property name="build.ctracgts" value="${build.home}/ctracgts"/>
 
   <!-- Target: ctracgts -->
-  <target name="ctracgts.all" depends="ctracgts"/> 
-  <target name="ctracgts" depends="ctracgts.compile,ctracgts.war" 
+  <target name="ctracgts.all" depends="ctracgts"/>
+  <target name="ctracgts" depends="ctracgts.compile,ctracgts.war"
     description="Compile/Create 'ctracgts.war'">
     <echo message="'ctracgts.war' created."/>
   </target>
 
   <!-- Target: ctracgts.compile (MAY NOT BE SUPPORTED IN THIS RELEASE) -->
-  <target name="ctracgts.compile" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="ctracgts.compile" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'ctracgts.war' source">
     <echo message="Compiling 'ctracgts.war' servlet ..."/>
     <delete file="${build.home}/ctracgts.war"/>
@@ -1587,14 +1587,14 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: ctracgts.deploy (MAY NOT BE SUPPORTED IN THIS RELEASE) -->
-  <target name="ctracgts.deploy" depends="ctracgts.war" 
+  <target name="ctracgts.deploy" depends="ctracgts.war"
     description="Deploy 'ctracgts.war' to Tomcat">
     <echo message="Deploying 'ctracgts.war' to ${catalina.base}/webapps/${ctracgts.deployWar}"/>
-    <copy 
-        file="${build.home}/ctracgts.war" 
+    <copy
+        file="${build.home}/ctracgts.war"
         tofile="${catalina.base}/webapps/${ctracgts.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${ctracgts.deployWar}"/>
@@ -1606,14 +1606,14 @@ public class WriteListener { /* nothing */ }
   <property name="build.gprmc" value="${build.home}/gprmc"/>
 
   <!-- Target: gprmc -->
-  <target name="gprmc.all" depends="gprmc"/> 
-  <target name="gprmc" depends="gprmc.compile,gprmc.war" 
+  <target name="gprmc.all" depends="gprmc"/>
+  <target name="gprmc" depends="gprmc.compile,gprmc.war"
     description="Compile/Create 'gprmc.war'">
     <echo message="'gprmc.war' created."/>
   </target>
 
   <!-- Target: gprmc.compile -->
-  <target name="gprmc.compile" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="gprmc.compile" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'gprmc.war' source">
     <echo message="Compiling 'gprmc.war' servlet ..."/>
     <delete file="${build.home}/gprmc.war"/>
@@ -1713,14 +1713,14 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gprmc.deploy -->
-  <target name="gprmc.deploy" depends="gprmc.war" 
+  <target name="gprmc.deploy" depends="gprmc.war"
     description="Deploy 'gprmc.war' to Tomcat">
     <echo message="Deploying 'gprmc.war' to ${catalina.base}/webapps/${gprmc.deployWar}"/>
-    <copy 
-        file="${build.home}/gprmc.war" 
+    <copy
+        file="${build.home}/gprmc.war"
         tofile="${catalina.base}/webapps/${gprmc.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${gprmc.deployWar}"/>
@@ -1732,14 +1732,14 @@ public class WriteListener { /* nothing */ }
   <property name="build.gc101" value="${build.home}/gc101"/>
 
   <!-- Target: gc101 -->
-  <target name="gc101.all" depends="gc101"/> 
-  <target name="gc101" depends="gc101.compile,gc101.war" 
+  <target name="gc101.all" depends="gc101"/>
+  <target name="gc101" depends="gc101.compile,gc101.war"
     description="Compile/Create 'gc101.war'">
     <echo message="'gc101.war' created."/>
   </target>
 
   <!-- Target: gc101.compile -->
-  <target name="gc101.compile" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="gc101.compile" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'gc101.war' source">
     <echo message="Compiling 'gc101.war' servlet ..."/>
     <delete file="${build.home}/gc101.war"/>
@@ -1809,7 +1809,7 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gc101.war -->
-  <target name="gc101.war" depends="" 
+  <target name="gc101.war" depends=""
     description="Create 'gc101.war' archive">
     <echo message="Creating 'gc101.war' archive ..."/>
     <delete file="${build.home}/gc101.war"/>
@@ -1839,33 +1839,33 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gc101.deploy -->
-  <target name="gc101.deploy" depends="gc101.war" 
+  <target name="gc101.deploy" depends="gc101.war"
     description="Deploy 'gc101.war' to Tomcat">
     <echo message="Deploying 'gc101.war' to ${catalina.base}/webapps/${gc101.deployWar}"/>
-    <copy 
-        file="${build.home}/gc101.war" 
+    <copy
+        file="${build.home}/gc101.war"
         tofile="${catalina.base}/webapps/${gc101.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${gc101.deployWar}"/>
   </target>
 
   <!-- ======================================================================== -->
-  
+
   <!-- GPSMapper servlet build directory -->
   <property name="build.gpsmapper" value="${build.home}/gpsmapper"/>
 
   <!-- Target: gpsmapper -->
-  <target name="gpsmapper.all" depends="gpsmapper"/> 
-  <target name="gpsmapper" depends="gpsmapper.compile,gpsmapper.war" 
+  <target name="gpsmapper.all" depends="gpsmapper"/>
+  <target name="gpsmapper" depends="gpsmapper.compile,gpsmapper.war"
     description="Compile/Create 'gpsmapper.war'">
     <echo message="'gpsmapper.war' created."/>
   </target>
 
   <!-- Target: gpsmapper.compile -->
-  <target name="gpsmapper.compile" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="gpsmapper.compile" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'gpsmapper.war' source">
     <echo message="Compiling 'gpsmapper.war' servlet ..."/>
     <delete file="${build.home}/gpsmapper.war"/>
@@ -1963,14 +1963,14 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: gpsmapper.deploy -->
-  <target name="gpsmapper.deploy" depends="gpsmapper.war" 
+  <target name="gpsmapper.deploy" depends="gpsmapper.war"
     description="Deploy 'gpsmapper.war' to Tomcat">
     <echo message="Deploying 'gpsmapper.war' to ${catalina.base}/webapps/${gpsmapper.deployWar}"/>
-    <copy 
-        file="${build.home}/gpsmapper.war" 
+    <copy
+        file="${build.home}/gpsmapper.war"
         tofile="${catalina.base}/webapps/${gpsmapper.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${gpsmapper.deployWar}"/>
@@ -1980,7 +1980,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: Device Parser Module example template -->
-  <target name="template" depends="prepare,gtsdb" 
+  <target name="template" depends="prepare,gtsdb"
     description="Create 'Device Communication Server' template ...">
     <echo message="template ..."/>
 
@@ -2018,7 +2018,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: [OLD] Device Parser Module example template -->
-  <target name="template_old" depends="prepare,gtsdb" 
+  <target name="template_old" depends="prepare,gtsdb"
     description="Create [OLD] 'Device Communication Server' template_old ...">
     <echo message="template_old ..."/>
 
@@ -2054,7 +2054,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: Device Parser Module I-CARE G3300 -->
-  <target name="icare" depends="prepare,gtsdb" 
+  <target name="icare" depends="prepare,gtsdb"
     description="Create 'Device Communication Server' I-CARE G3300 ...">
     <echo message="I-Care G3300 server 'icare.jar' ..."/>
 
@@ -2092,7 +2092,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: Device Parser Module Aspicore -->
-  <target name="aspicore" depends="prepare,gtsdb" 
+  <target name="aspicore" depends="prepare,gtsdb"
     description="Create 'Device Communication Server' Aspicore ...">
     <echo message="Aspicore 'aspicore.jar' ..."/>
 
@@ -2130,7 +2130,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: Device Parser Module TK102/TK103 -->
-  <target name="tk10x" depends="prepare,gtsdb" 
+  <target name="tk10x" depends="prepare,gtsdb"
     description="Create TK102/TK103 DCS ...">
     <echo message="TK102/TK103 'tk10x.jar' ..."/>
 
@@ -2164,11 +2164,51 @@ public class WriteListener { /* nothing */ }
 
   </target>
 
+
+
+  <!-- ======================================================================== -->
+  <!-- ======================================================================== -->
+
+  <!-- Target: Device Parser Module TK102/TK103 -->
+  <target name="coban" depends="prepare,gtsdb"
+    description="Create TK102/TK103 DCS ...">
+    <echo message="TK102/TK103 'coban.jar' ..."/>
+
+    <!-- compile -->
+    <javac srcdir="${src.gts}"
+        includeAntRuntime="false"
+        source="${compiler.source}"
+        target="${compiler.target}"
+        destdir="${build.home}"
+        debug="${compile.debug}"
+        nowarn="${compile.nowarn}"
+        deprecation="${compile.deprecation}"
+        optimize="${compile.optimize}">
+        <compilerarg compiler="${compiler.compiler}" value="${compile.Xlint}"/>
+        <classpath refid="compile.classpath"/>
+        <include name="org/opengts/servers/*.java"/>
+        <include name="org/opengts/servers/coban/**/*.java"/>
+    </javac>
+
+    <!-- create jar -->
+    <jar jarfile="${build.lib}/coban.jar">
+        <manifest>
+            <attribute name="Class-Path" value="${Server_Jar_Classpath}"/>
+            <attribute name="Main-Class" value="org.opengts.servers.coban.Main"/>
+        </manifest>
+        <fileset dir="${build.home}">
+            <include name="org/opengts/servers/*.class"/>
+            <include name="org/opengts/servers/coban/**/*.class"/>
+        </fileset>
+    </jar>
+
+  </target>
+
   <!-- ======================================================================== -->
   <!-- ======================================================================== -->
 
   <!-- Target: Device Parser Module SipGear -->
-  <target name="sipgear" depends="prepare,gtsdb" 
+  <target name="sipgear" depends="prepare,gtsdb"
     description="Create 'Device Communication Server' SipGear ...">
     <echo message="SipGear 'sipgear.jar' ..."/>
 
@@ -2206,7 +2246,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: Trimble ASCII Interface Protocol -->
-  <target name="taip" depends="prepare,gtsdb" 
+  <target name="taip" depends="prepare,gtsdb"
     description="Create 'Device Communication Server' TAIP ...">
     <echo message="TAIP server 'taip.jar' ..."/>
 
@@ -2237,14 +2277,14 @@ public class WriteListener { /* nothing */ }
             <include name="org/opengts/servers/taip/**/*.class"/>
         </fileset>
     </jar>
-    
+
   </target>
 
   <!-- ======================================================================== -->
   <!-- ======================================================================== -->
 
   <!-- Target: Lantrix T1800/T2000 Protocol -->
-  <target name="lantrix" depends="prepare,gtsdb" 
+  <target name="lantrix" depends="prepare,gtsdb"
     description="Create Lantrix T1800/T2000 DCS ...">
     <echo message="Lantrix T1800/T2000 DCS 'lantrix.jar' ..."/>
 
@@ -2275,14 +2315,14 @@ public class WriteListener { /* nothing */ }
             <include name="org/opengts/servers/lantrix/**/*.class"/>
         </fileset>
     </jar>
-    
+
   </target>
 
   <!-- ======================================================================== -->
   <!-- ======================================================================== -->
 
   <!-- Target: Astra Telematics Protocols -->
-  <target name="astra" depends="prepare,gtsdb" 
+  <target name="astra" depends="prepare,gtsdb"
     description="Create Astra Telematics DCS ...">
     <echo message="Astra Telematics DCS 'astra.jar' ..."/>
 
@@ -2313,7 +2353,7 @@ public class WriteListener { /* nothing */ }
             <include name="org/opengts/servers/astra/**/*.class"/>
         </fileset>
     </jar>
-    
+
   </target>
 
   <!-- ======================================================================== -->
@@ -2323,14 +2363,14 @@ public class WriteListener { /* nothing */ }
   <property name="build.ctrac" value="${build.home}/ctrac"/>
 
   <!-- Target: ctrac -->
-  <target name="ctrac.all" depends="ctrac"/> 
-  <target name="ctrac" depends="ctrac.exists,ctrac.prep,ctrac.war" 
+  <target name="ctrac.all" depends="ctrac"/>
+  <target name="ctrac" depends="ctrac.exists,ctrac.prep,ctrac.war"
     description="Compile/Create 'ctrac.war'">
     <echo message="'ctrac.war' created."/>
   </target>
 
   <!-- Target: ctrac.download" -->
-  <target name="ctrac.download" 
+  <target name="ctrac.download"
     description="Download/Install 'ctrac.jar'">
 
     <!-- download "lib/gtsopt/ctrac.jar" (source currently not available) -->
@@ -2371,7 +2411,7 @@ public class WriteListener { /* nothing */ }
      The following command will automatically dowload and install "ctrac.jar":
        ant ctrac.download
     ====
-     Note: Source code is currently not available for "ctrac.jar", however we 
+     Note: Source code is currently not available for "ctrac.jar", however we
        may have a version of CelltracGTS/Server with source code available in
        a future release.
      For more information, please visit the following link:
@@ -2383,7 +2423,7 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: ctrac.prep -->
-  <target name="ctrac.prep" depends="tomcat.env,prepare,gtsdb,wartools" 
+  <target name="ctrac.prep" depends="tomcat.env,prepare,gtsdb,wartools"
     description="Compile 'ctrac.war' source">
 
     <echo message="Compiling 'ctrac.war' servlet ..."/>
@@ -2468,10 +2508,10 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: ctrac.war -->
-  <target name="ctrac.war" depends="" 
+  <target name="ctrac.war" depends=""
     description="Create 'ctrac.war' archive">
     <echo message="Creating 'ctrac.war' file ..."/>
-    
+
     <!-- "build/lib/ctrac.jar" exists? -->
     <available file="${build.lib}/ctrac.jar" type="file" property="exists.build.ctrac"/>
     <fail unless="exists.build.ctrac">
@@ -2506,14 +2546,14 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: ctrac.deploy -->
-  <target name="ctrac.deploy" depends="ctrac.war" 
+  <target name="ctrac.deploy" depends="ctrac.war"
     description="Deploy 'ctrac.war' to Tomcat">
     <echo message="Deploying 'ctrac.war' to ${catalina.base}/webapps/${ctrac.deployWar}"/>
-    <copy 
-        file="${build.home}/ctrac.war" 
+    <copy
+        file="${build.home}/ctrac.war"
         tofile="${catalina.base}/webapps/${ctrac.deployWar}"
-        overwrite="true" 
-        failonerror="true" 
+        overwrite="true"
+        failonerror="true"
         verbose="true"
         />
     <echo message="Deployed ${catalina.base}/webapps/${ctrac.deployWar}"/>
@@ -2523,8 +2563,8 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: miscellaneous tools -->
-  <target name="tools" 
-    depends="prepare,gtsdb,tomcat.env" 
+  <target name="tools"
+    depends="prepare,gtsdb,tomcat.env"
     description="Create Miscellaneous tools ...">
     <echo message="Tools ..."/>
 
@@ -2569,7 +2609,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: systemProps -->
-  <target name="systemProps" depends="prepare" 
+  <target name="systemProps" depends="prepare"
     description="Print System Properties">
     <echo message="Print System Properties ... "/>
 
@@ -2588,7 +2628,7 @@ public class WriteListener { /* nothing */ }
         <classpath refid="compile.classpath"/>
         <include name="org/opengts/tools/PrintProperties.java"/>
     </javac>
-    
+
     <java classname="org.opengts.tools.PrintProperties" fork="false">
         <classpath refid="compile.classpath"/>
     </java>
@@ -2602,13 +2642,13 @@ public class WriteListener { /* nothing */ }
   <target name="javadocs"
     description="Create Javadocs ...">
     <echo message="Create Javadocs ..."/>
-  
+
     <!-- clean old javadocs -->
     <delete dir="${basedir}/javadocs"/>
     <mkdir dir="${basedir}/javadocs"/>
 
     <!-- create javadocs -->
-    <javadoc 
+    <javadoc
         destdir="${basedir}/javadocs/"
         classpathref="compile.war.classpath"
         maxmemory="1024m">
@@ -2652,7 +2692,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: locale -->
-  <target name="locale" 
+  <target name="locale"
     description="Copy LocalStrings files to ${build.locale} ...">
 
     <delete dir="${build.locale}"/>
@@ -2686,12 +2726,12 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: locale.old -->
-  <target name="locale.old" 
+  <target name="locale.old"
     description="Copy Old LocalStrings files to ${build.locale}.old ...">
-    
+
     <delete dir="${build.locale}.old"/>
     <mkdir dir="${build.locale}.old"/>
-    
+
     <copy todir="${build.locale}.old" verbose="false">
         <fileset dir="${src.gts}">
            <include name="**/LocalStrings_*.properties.old"/>
@@ -2701,12 +2741,12 @@ public class WriteListener { /* nothing */ }
   </target>
 
   <!-- Target: locale -->
-  <target name="locale_XX" 
+  <target name="locale_XX"
     description="Copy LocalStrings files to ${build.locale}_${build.locale_XX} ...">
-    
+
     <delete dir="${build.locale}_${build.locale_XX}"/>
     <mkdir dir="${build.locale}_${build.locale_XX}/src"/>
-    
+
     <copy todir="${build.locale}_${build.locale_XX}/src" verbose="false">
         <fileset dir="${src.gts}">
            <include name="**/LocalStrings_${build.locale_XX}.properties"/>
@@ -2722,7 +2762,7 @@ public class WriteListener { /* nothing */ }
   <!-- ======================================================================== -->
 
   <!-- Target: epoch -->
-  <target name="epoch"  depends="gtsutils" 
+  <target name="epoch"  depends="gtsutils"
     description="Display Epoch time ...">
     <java classname="org.opengts.util.DateTime">
         <arg value="-now_sec"/>

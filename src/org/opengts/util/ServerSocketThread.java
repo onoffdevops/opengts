@@ -6,9 +6,9 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@
 //  2007/05/01  David Cowan
 //     -Added support for gracefully shutting down the server
 //  2007/07/13  Martin D. Flynn
-//     -End Of Stream errors on UDP connections simply returns the bytes we're 
+//     -End Of Stream errors on UDP connections simply returns the bytes we're
 //      just read (previously it threw an exception, and ignored the received data).
 //  2008/07/08  Martin D. Flynn
 //     -Removed (commented) default socket timeout.
@@ -117,7 +117,7 @@ public class ServerSocketThread
     //   -Djavax.net.ssl.keyStore=<mySrvKeystore>
     //   -Djavax.net.ssl.keyStorePassword=<123456>
     // For debug, also add:
-    //   -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol 
+    //   -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol
     //   -Djavax.net.debug=ssl
     // ------------------------------------------------------------------------
 
@@ -192,7 +192,7 @@ public class ServerSocketThread
     }
 
     /**
-    *** Gets the local bind address for all created ServerSocket's, or null if no specific 
+    *** Gets the local bind address for all created ServerSocket's, or null if no specific
     *** bind address has been set
     *** @return The local bind address
     **/
@@ -224,7 +224,7 @@ public class ServerSocketThread
         }
         return ialist.toArray(new InetAddress[ialist.size()]);
     }
-    
+
     /**
     *** Returns true if the specified InetAddress is a local bound interface (including loopback)
     *** @return True if the specified InetAddress is a local bound interface
@@ -267,7 +267,7 @@ public class ServerSocketThread
         }
         return dgSock;
     }
-    
+
     /**
     *** Creates a DatagramSocket bound to the default local interface
     *** @return The created DatagramSocket
@@ -383,7 +383,7 @@ public class ServerSocketThread
                 } catch (OutOfMemoryError oome) {
                     // -- "java.lang.OutOfMemoryError: unable to create new native thread"
                     Print.logError("Shutdown failed (unable to create new thread), trying in-line ...");
-                    // -- try shutdown in-line 
+                    // -- try shutdown in-line
                     // -  Note: "SSTList" is locked, so care must be taken to prevent a deadlock
                     boolean ok = sst.shutdown(timeoutMS);
                     //Print.logDebug(ndxVal + ") SST shutdown: " + ok); // static
@@ -431,12 +431,12 @@ public class ServerSocketThread
 
     private int                                  listenPort               = 0;
     private int                                  clientPort               = -1;  // use for UDP response connections only
-    
+
     private InetAddress                          bindAddress              = null;
 
     private DatagramSocket                       datagramSocket           = null; // UDP
     private ServerSocket                         serverSocket             = null; // TCP
-    
+
     private java.util.List<ServerSessionThread>  clientThreadPool         = null;
     private int                                  maxClientPoolSize        = 0;
     private java.util.List<ClientPacketHandler>  activeSessionList        = null;
@@ -450,7 +450,7 @@ public class ServerSocketThread
     private long                                 sessionTimeoutMS         = -1L;
     private long                                 idleTimeoutMS            = -1L;
     private long                                 packetTimeoutMS          = -1L;
-    
+
     private int                                  lingerTimeoutSec         = 4;    // SO_LINGER timeout is in *Seconds*
 
     private int                                  maxReadLength            = -1;   // safety net only
@@ -500,7 +500,7 @@ public class ServerSocketThread
     /**
     *** UDP Constructor
     **/
-    public ServerSocketThread(DatagramSocket ds) 
+    public ServerSocketThread(DatagramSocket ds)
     {
         this();
         // --
@@ -533,7 +533,7 @@ public class ServerSocketThread
     *** TCP Constructor
     *** @param ss  The ServerSocket containing the 'listen' port information
     **/
-    public ServerSocketThread(ServerSocket ss) 
+    public ServerSocketThread(ServerSocket ss)
     {
         this();
         // --
@@ -547,7 +547,7 @@ public class ServerSocketThread
     *** @param port  The port on which to listen for incoming connections
     **/
     public ServerSocketThread(InetAddress bindAddr, int port)
-        throws IOException 
+        throws IOException
     {
         this();
         // --
@@ -561,7 +561,7 @@ public class ServerSocketThread
     *** @param port  The port on which to listen for incoming connections
     **/
     public ServerSocketThread(int port)
-        throws IOException 
+        throws IOException
     {
         this((InetAddress)null, port);
     }
@@ -572,7 +572,7 @@ public class ServerSocketThread
     *** @param useSSL  True to enable an SSL
     **/
     public ServerSocketThread(InetAddress bindAddr, int port, boolean useSSL)
-        throws IOException 
+        throws IOException
     {
         this();
         // --
@@ -589,7 +589,7 @@ public class ServerSocketThread
     *** @param useSSL  True to enable an SSL
     **/
     public ServerSocketThread(int port, boolean useSSL)
-        throws IOException 
+        throws IOException
     {
         this((InetAddress)null, port, useSSL);
     }
@@ -617,7 +617,7 @@ public class ServerSocketThread
         }
     }
 
-    /** 
+    /**
     *** Starts this thread handler
     *** @param name the name to assign to this thread
     **/
@@ -642,7 +642,7 @@ public class ServerSocketThread
     }
 
     /**
-    *** Gets the logging enabled flag.  
+    *** Gets the logging enabled flag.
     *** @return True if enabled, false otherwise
     **/
     public boolean getLoggingEnabled()
@@ -675,7 +675,7 @@ public class ServerSocketThread
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the bound UDP DatagramSocket for this server handler.  Will 
+    *** Gets the bound UDP DatagramSocket for this server handler.  Will
     *** return null if this server handler does not handle UDP connections.
     *** @return The DatagramSocket handle
     **/
@@ -685,7 +685,7 @@ public class ServerSocketThread
     }
 
     /**
-    *** Gets the bound TCP ServerSocket for this server handler.  Will 
+    *** Gets the bound TCP ServerSocket for this server handler.  Will
     *** return null if this server handler does not handle TCP connections.
     *** @return The DatagramSocket handle
     **/
@@ -702,7 +702,7 @@ public class ServerSocketThread
     {
         return this.listenPort;
     }
-    
+
     /**
     *** Gets the local bind address
     **/
@@ -728,7 +728,7 @@ public class ServerSocketThread
     {
         return this.inputStreamHandler;
     }
-    
+
     /**
     *** Returns true if an InputStream handler has been assigned
     **/
@@ -765,7 +765,7 @@ public class ServerSocketThread
         if (currThread instanceof ServerSessionThread) {
             currSST = (ServerSessionThread)currThread;
         } else {
-            // -- Note: If we are running within a "testSession" the current thread  
+            // -- Note: If we are running within a "testSession" the current thread
             // -  will not be s ServerSessionThread, and this may fail.
         }
 
@@ -822,7 +822,7 @@ public class ServerSocketThread
     *** Run a test session from the specified input stream
     *** @param dataInput  The test input stream
     **/
-    public void testSession(InputStream dataInput, boolean isDuplex) 
+    public void testSession(InputStream dataInput, boolean isDuplex)
     {
 
         /* nothing to test? */
@@ -842,7 +842,7 @@ public class ServerSocketThread
     /**
     *** Listens for incoming connections and dispatches them to a handler thread
     **/
-    public void run() 
+    public void run()
     {
         while (true) {
             ClientSocket clientSocket = null;
@@ -870,8 +870,8 @@ public class ServerSocketThread
                             SocketAddress localSock  = this.datagramSocket.getLocalSocketAddress(); // fixed value
                             InetAddress   remoteAddr = dp.getAddress();
                             SocketAddress remoteSock = dp.getSocketAddress();
-                            Print.logInfo("Datagram: local="+localAddr+"["+localSock+"], remote="+remoteAddr+"["+remoteSock+"]"); 
-                            //Print.logInfo("Datagram: inetAddress="+this.datagramSocket.getInetAddress() + ", remoteSocket="+this.datagramSocket.getRemoteSocketAddress()); 
+                            Print.logInfo("Datagram: local="+localAddr+"["+localSock+"], remote="+remoteAddr+"["+remoteSock+"]");
+                            //Print.logInfo("Datagram: inetAddress="+this.datagramSocket.getInetAddress() + ", remoteSocket="+this.datagramSocket.getRemoteSocketAddress());
                         } catch (Throwable th) { // IllegalArgumentException
                             // -- ignore
                         }
@@ -990,9 +990,9 @@ public class ServerSocketThread
     } // run()
 
     /**
-    *** Shuts down the server 
+    *** Shuts down the server
     **/
-    public boolean shutdown(long tmoMS) 
+    public boolean shutdown(long tmoMS)
     {
         final long timeoutMS = (tmoMS >= 1000L)? tmoMS : 1000L;
     	try {
@@ -1148,7 +1148,7 @@ public class ServerSocketThread
             this.controlChannelHeader = null;
         }
     }
-    
+
     /**
     *** Returns true if this instance has a defined control channel
     **/
@@ -1171,7 +1171,7 @@ public class ServerSocketThread
     {
         this.clientPacketHandler = cph;
     }
-    
+
     /**
     *** Sets the client packet handler class [CHECK]
     *** @param cphc The client packet handler class
@@ -1253,7 +1253,7 @@ public class ServerSocketThread
     {
         this.idleTimeoutMS = timeoutMS;
     }
-    
+
     /**
     *** Gets the idle timeout in milliseconds
     *** @return The idle timeout in milliseconds
@@ -1270,11 +1270,11 @@ public class ServerSocketThread
     **/
     public void setPacketTimeout(long timeoutMS)
     {
-        // once a byte is finally read, the timeout for waiting until the 
+        // once a byte is finally read, the timeout for waiting until the
         // entire packet is finished
         this.packetTimeoutMS = timeoutMS;
     }
-    
+
     /**
     *** Gets the packet timeout in milliseconds
     *** @return The packet timeout in milliseconds
@@ -1368,12 +1368,12 @@ public class ServerSocketThread
             return this.maxReadLength;
         } else
         if (this.isTextPackets()) {
-            return 2048; // default for text packets
+            return 4096; // default for text packets
         } else {
-            return 1024; // default for binary packets
+            return 4096; // default for binary packets
         }
     }
-    
+
     // ------------------------------------------------------------------------
 
     /**
@@ -1466,7 +1466,7 @@ public class ServerSocketThread
     {
         this.includePacketLineTerm = rtnTerm;
     }
-   
+
     /**
     *** Returns True if the line terminator character should be included in the returned packet
     *** @return True if the line terminator character should be included in the returned packet
@@ -1506,7 +1506,7 @@ public class ServerSocketThread
     {
         return !ListTools.isEmpty(this.packetTermPattern)? this.packetTermPattern : null;
     }
-    
+
     // ------------------------------------------------------------------------
 
     /**
@@ -1555,7 +1555,7 @@ public class ServerSocketThread
         }
         return false;
     }
-    
+
     // ------------------------------------------------------------------------
 
     /**
@@ -1575,7 +1575,7 @@ public class ServerSocketThread
     {
         return this.ignoreChar;
     }
-    
+
     /**
     *** Returns true if <code>ch</code> is a character to ignore
     *** @return True if <code>ch</code> is a character to ignore
@@ -1591,9 +1591,9 @@ public class ServerSocketThread
         }
         return false;
     }
-   
+
     // ------------------------------------------------------------------------
-    
+
     /**
     *** If a default automatically generated prompt should be used [CHECK](all prompt related below)
     *** @param auto Ture if default automatic prompt should be used
@@ -1607,7 +1607,7 @@ public class ServerSocketThread
             this.autoPrompt = false;
         }
     }
-    
+
     /**
     *** Sets the prompt for TCP connections
     *** @param prompt The prompt
@@ -1742,7 +1742,7 @@ public class ServerSocketThread
                         sb.append((rtnOK > 0)?" (success)":" (failed)");
                         Print.logInfo(sb.toString());
                     }
-                    // count 
+                    // count
                     sidCount++;
                     // debug test terminate session
                     /* * /
@@ -1765,7 +1765,7 @@ public class ServerSocketThread
             }
         }
         if (LogEnable && (sidCount <= 0)) {
-            Print.logWarn("TCP SessionID not found: " + sessionID); 
+            Print.logWarn("TCP SessionID not found: " + sessionID);
         }
         return (rtnOK > 0)? true : false;
 
@@ -1773,7 +1773,7 @@ public class ServerSocketThread
 
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
-    
+
     public static final String SI_SessionID             = "SessionID";
     public static final String SI_SessionThreadName     = "SessionThreadName";
     public static final String SI_SessionProtocol       = "SessionProtocol";
@@ -1785,7 +1785,7 @@ public class ServerSocketThread
     public static final String SI_SessionError          = "SessionError";
 
     /**
-    *** Writes the SessionInfo information for the specified ClientPacketHandler 
+    *** Writes the SessionInfo information for the specified ClientPacketHandler
     *** to the specified StringBuffer.
     *** @param cph    The ClientPacketHandler from which the SessionInfo is obtained
     *** @param nowMS  The current timestamp in milliseconds
@@ -1954,7 +1954,7 @@ public class ServerSocketThread
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
 
-    /** 
+    /**
     *** ClientSocket
     **/
     private class ClientSocket
@@ -2049,7 +2049,7 @@ public class ServerSocketThread
             // -- return client remote address
             if (this.isTCP()) {
                 return this.tcpClient.getInetAddress();
-            } else 
+            } else
             if (this.isUDP()) {
                 try {
                     SocketAddress sa = this.udpClient.getSocketAddress();
@@ -2077,10 +2077,10 @@ public class ServerSocketThread
             // -- get client remote port
             if (this.isTCP()) {
                 return this.tcpClient.getPort();
-            } else 
+            } else
             if (this.isUDP()) {
                 return this.udpClient.getPort();
-            } else 
+            } else
             if (this.isInputStream()) {
                 return -1;
             } else {
@@ -2098,7 +2098,7 @@ public class ServerSocketThread
             /*
             if (this.isTCP()) {
                 return this.tcpClient.getLocalPort();
-            } else 
+            } else
             if (this.isUDP()) {
                 // This does not return the proper port
                 SocketAddress sa = this.udpClient.getSocketAddress();
@@ -2130,8 +2130,8 @@ public class ServerSocketThread
                 }
             } else
             if (this.isUDP()) {
-                // -- Java Bug: Java does not provide a way to get the specific 
-                // -  local address the remote client connected.  
+                // -- Java Bug: Java does not provide a way to get the specific
+                // -  local address the remote client connected.
                 // -  Only an issue when the UDP DatagramSocket is bound to "ANY".
                 // -  (See IP_PKTINFO above for additional info)
                 /*
@@ -2182,11 +2182,11 @@ public class ServerSocketThread
                     this.inpStream = this.tcpClient.getInputStream();
                 }
                 return this.inpStream;
-            } else 
+            } else
             if (this.isUDP()) {
                 if (this.inpStream == null) {
                     this.inpStream = new ByteArrayInputStream(this.udpClient.getData(), 0, this.udpClient.getLength());
-                } 
+                }
                 return this.inpStream;
             } else
             if (this.isInputStream()) {
@@ -2337,7 +2337,7 @@ public class ServerSocketThread
             this.isOpen = false;
         }
     }
-              
+
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
 
@@ -2380,7 +2380,7 @@ public class ServerSocketThread
         public long                 getWriteByteCount();    // how many bytes we've written so far
 
     }
-    
+
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
 
@@ -2399,21 +2399,21 @@ public class ServerSocketThread
 
         private Object              runLock              = new Object();
         private Object              tcpWriteLock         = new Object(); // TCP write: synchronous/asynchronous
-        
+
         private boolean             hasStarted           = false;
 
         private ClientSocket        client               = null;
-        
+
         private long                sessionStartTimeMS   = 0L;  // milliseconds
         private long                sessionReceiveTimeMS = 0L;  // milliseconds
 
         private Object              sessionObject        = null;
-        
+
         private ServerSessionThread inputStreamSST       = null;
 
         private long                readByteCount        = 0L;
         private long                writeByteCount       = 0L;
-        
+
         private boolean             shutdown             = false;
 
         //public ServerSessionThread(Socket client) {
@@ -2423,7 +2423,7 @@ public class ServerSocketThread
         //}
 
         /**
-        *** Empty Constructor 
+        *** Empty Constructor
         **/
         public ServerSessionThread() {
             this((ClientSocket)null, false);
@@ -2435,7 +2435,7 @@ public class ServerSocketThread
         *** @param startThread True to start this thread
         **/
         public ServerSessionThread(ClientSocket clientSock, boolean startThread) {
-            super("ClientSession" + "_" + 
+            super("ClientSession" + "_" +
                 (startThread?
                     StringTools.format(ServerSessionThread_counter++,"000").trim() :
                     "XXX")); // this.getName()
@@ -2505,7 +2505,7 @@ public class ServerSocketThread
         }
 
         /**
-        *** Gets the Parent SessionInfo instance, or this SessionInfo, if this 
+        *** Gets the Parent SessionInfo instance, or this SessionInfo, if this
         *** ServerSessionThread does not have a parent.
         *** (does not return null)
         **/
@@ -2535,7 +2535,7 @@ public class ServerSocketThread
             boolean rtn = false;
             synchronized (this.runLock) {
                 if (!this.hasStarted) {
-                    // -- thread has not yet been started 
+                    // -- thread has not yet been started
                     // -  (typically used for InputStream handling)
                     if (this.client != null) {
                         // -- should not occur
@@ -2579,21 +2579,21 @@ public class ServerSocketThread
 
         // --------------------------------------------------------------------
 
-        /** 
+        /**
         *** Returns true if the current session transport is TCP
         **/
         public boolean isTCP() {
             return (this.client != null)? this.client.isTCP() : false;
         }
 
-        /** 
+        /**
         *** Returns true if the current session transport is UDP
         **/
         public boolean isUDP() {
             return (this.client != null)? this.client.isUDP() : false;
         }
 
-        /** 
+        /**
         *** Returns true if the current session transport is a generic InputStream
         **/
         public boolean isInputStream() {
@@ -2719,8 +2719,8 @@ public class ServerSocketThread
                         // -- skip
                     } else
                     if (this.client.isTCP()) {
-                        if (!isControl && LogEnable) { 
-                            Print.logInfo("("+this._getName()+") UDP] Ignoring TCP write: 0x%s", StringTools.toHexString(data)); 
+                        if (!isControl && LogEnable) {
+                            Print.logInfo("("+this._getName()+") UDP] Ignoring TCP write: 0x%s", StringTools.toHexString(data));
                         }
                     } else
                     if (this.client.isUDP()) {
@@ -2734,8 +2734,8 @@ public class ServerSocketThread
                         }
                     } else
                     if (this.client.isInputStream()) {
-                        if (!isControl && LogEnable) { 
-                            Print.logInfo("("+this._getName()+") UDP] Ignoring InputStream write: 0x%s", StringTools.toHexString(data)); 
+                        if (!isControl && LogEnable) {
+                            Print.logInfo("("+this._getName()+") UDP] Ignoring InputStream write: 0x%s", StringTools.toHexString(data));
                         }
                     } else {
                         // ?
@@ -2758,8 +2758,8 @@ public class ServerSocketThread
                     // The above "interrupt()" does not necessarily interrupt pending
                     // reads, so the following is a bit of a hack. Closing the client
                     // socket will force the TCP session to close.
-                    try { 
-                        this.client.close(); 
+                    try {
+                        this.client.close();
                     } catch (IOException ioe) {
                         // ignore
                     }
@@ -2774,8 +2774,8 @@ public class ServerSocketThread
             IOException rethrowIOE = null;
             synchronized (this.runLock) {
                 if (this.client != null) {
-                    try { 
-                        this.client.close(); 
+                    try {
+                        this.client.close();
                     } catch (IOException ioe) {
                         /* unable to close? */
                         rethrowIOE = ioe;
@@ -2792,7 +2792,7 @@ public class ServerSocketThread
         // --------------------------------------------------------------------
 
         /**
-        *** Signal thread to shut down 
+        *** Signal thread to shut down
         **/
         public void signalShutdown() {
             synchronized (this.runLock) {
@@ -2845,7 +2845,7 @@ public class ServerSocketThread
 
                 // End client session
                 // ------------------------------------------------------------
-    
+
                 /* clear for next requestor */
                 synchronized (this.runLock) {
                     this.client = null;
@@ -2999,9 +2999,9 @@ public class ServerSocketThread
                                         // -- TCP: Send response over socket connection
                                         if (!isControl && LogEnable) {
                                             if (!StringTools.isPrintableASCII(response)) {
-                                            Print.logInfo("("+this._getName()+") TCP Resp Hex: 0x%s", StringTools.toHexString(response)); 
+                                            Print.logInfo("("+this._getName()+") TCP Resp Hex: 0x%s", StringTools.toHexString(response));
                                             }
-                                            Print.logInfo("("+this._getName()+") TCP Resp Asc: %s"  , StringTools.toStringValue(response,'.')); 
+                                            Print.logInfo("("+this._getName()+") TCP Resp Asc: %s"  , StringTools.toStringValue(response,'.'));
                                         }
                                         this._tcpWrite(output, response);   // TCP write: synchronous
                                     } else
@@ -3012,7 +3012,7 @@ public class ServerSocketThread
                                             InetAddress clientBindAddr = clientSock.getLocalInetAddress(); // null, due to Java bug
                                             this._sendUDPResponse(isControl, clientBindAddr, inetAddr, rp, response); // possible IOException
                                         } catch (IOException ioeUDP) {
-                                            Print.logException("Sending UDP response ["+inetAddr+":"+rp+"]", ioeUDP); 
+                                            Print.logException("Sending UDP response ["+inetAddr+":"+rp+"]", ioeUDP);
                                             // -- exception ignored for now
                                         }
                                     } else
@@ -3113,19 +3113,19 @@ public class ServerSocketThread
             }
 
             /* display end-of-session logging */
-            if (!isControl && LogEnable) { 
+            if (!isControl && LogEnable) {
                 String sessType = clientSock.getSessionType();
                 long   deltaMS  = DateTime.getCurrentTimeMillis() - this.sessionStartTimeMS;
                 if ((clientHandler != null) && clientHandler.getTerminateSession()) {
-                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (terminated) ..."); 
+                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (terminated) ...");
                 } else
                 if (termError != null) {
-                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (error/warning) ..."); 
-                } else 
+                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (error/warning) ...");
+                } else
                 if (this._isShutdown()) {
-                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (shutdown) ..."); 
+                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (shutdown) ...");
                 } else {
-                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (normal) ..."); 
+                    Print.logInfo("("+this._getName()+") End of " + sessType + " session [" + deltaMS + " ms] (normal) ...");
                 }
             }
 
@@ -3138,8 +3138,8 @@ public class ServerSocketThread
                         if ((finalPacket != null) && (finalPacket.length > 0)) {
                             if (clientSock.isTCP()) {
                                 // -- TCP: Send response over socket connection
-                                if (!isControl && LogEnable) { 
-                                    Print.logInfo("("+this._getName()+") TCP] Final Packet: 0x"+StringTools.toHexString(finalPacket)); 
+                                if (!isControl && LogEnable) {
+                                    Print.logInfo("("+this._getName()+") TCP] Final Packet: 0x"+StringTools.toHexString(finalPacket));
                                 }
                                 this._tcpWrite(output, finalPacket);   // TCP write: synchronous
                             } else
@@ -3149,11 +3149,11 @@ public class ServerSocketThread
                                 InetAddress clientBindAddr = clientSock.getLocalInetAddress(); // null, due to Java bug
                                 int rp = this._getRemotePort(clientSock,clientHandler.getResponsePort());
                                 this._sendUDPResponse(isControl, clientBindAddr, inetAddr, rp, finalPacket);
-                            } else 
+                            } else
                             if (clientSock.isInputStream()) {
                                 if (LogEnable) { Print.logInfo("("+this._getName()+") Ignoring InputStream finalPacket: 0x" + StringTools.toHexString(finalPacket)); }
                             } else {
-                                // 
+                                //
                             }
                         }
                     } catch (Throwable t) {
@@ -3215,19 +3215,19 @@ public class ServerSocketThread
             }
 
             /* close socket */
-            try { 
-                clientSock.close(); 
+            try {
+                clientSock.close();
             } catch (IOException ioe) {
                 /* unable to close? */
             }
-                
+
         }
 
         // --------------------------------------------------------------------
 
         private int _getRemotePort(ClientSocket clientSock) {
             int rPort = ServerSocketThread.this.getRemotePort(); // likely always '0'
-            if ((rPort <= 0) && (clientSock != null)) { 
+            if ((rPort <= 0) && (clientSock != null)) {
                 rPort = clientSock.getPort(); // preferred port#
             }
             return rPort;
@@ -3351,7 +3351,7 @@ public class ServerSocketThread
                 this._tcpWrite(clientSock.getOutputStream(), resp);
             } else
             if (clientSock.isUDP()) {
-                // UDP: Send response via datagram 
+                // UDP: Send response via datagram
                 InetAddress inetAddr = clientSock.getInetAddress();
                 int rp = this._getRemotePort(clientSock);
                 this._sendUDPResponse(isControl, bindAddr, inetAddr, rp, resp);
@@ -3364,7 +3364,7 @@ public class ServerSocketThread
         }
         */
 
-        private void _sendUDPResponse(boolean isControl, InetAddress clientBindAddr, InetAddress clientAddr, int clientPort, byte pkt[]) 
+        private void _sendUDPResponse(boolean isControl, InetAddress clientBindAddr, InetAddress clientAddr, int clientPort, byte pkt[])
             throws IOException {
             // -- "ServerSocketThread.this.datagramSocket" is non-null for UDP sessions
             if ((pkt == null) || (pkt.length == 0)) {
@@ -3466,7 +3466,7 @@ public class ServerSocketThread
                     int minTimeout = MinimumTimeoutIntervalMS; // minimum timeout in MS
                     int maxTimeout = (int)(timeoutAtMS - currentTimeMS); // maximum timeout interval in MS
                     int actTimeout = (minTimeout <= 0)? maxTimeout : (minTimeout < maxTimeout)? minTimeout : maxTimeout;
-                    clientSock.setSoTimeout(actTimeout); 
+                    clientSock.setSoTimeout(actTimeout);
                     //}
                 }
                 // prform read
@@ -3505,8 +3505,8 @@ public class ServerSocketThread
             }
         }
 
-        private byte[] _readLine(ClientSocket clientSock, ClientPacketHandler clientHandler) 
-            throws IOException { // SSReadTimeoutException, SSEndOfStreamException, 
+        private byte[] _readLine(ClientSocket clientSock, ClientPacketHandler clientHandler)
+            throws IOException { // SSReadTimeoutException, SSEndOfStreamException,
             // Read until:
             //  - EOL
             //  - Timeout
@@ -3522,7 +3522,7 @@ public class ServerSocketThread
             /* max read length */
             int maxLen = this._getMaximumPacketLength(clientHandler); // safety net only
             // no minimum
-            
+
             /* set default socket timeout */
             //clientSock.setSoTimeout(10000);
 
@@ -3640,7 +3640,7 @@ public class ServerSocketThread
 
         }
 
-        private byte[] _readPacket(ClientSocket clientSock, ClientPacketHandler clientHandler) 
+        private byte[] _readPacket(ClientSocket clientSock, ClientPacketHandler clientHandler)
             throws IOException { // SSReadTimeoutException, SSEndOfStreamException, SocketException
             // Read until:
             //  - Timeout
@@ -3679,7 +3679,7 @@ public class ServerSocketThread
                     /* read byte */
                     // hangs until byte read or timeout
                     int lastByte = this._readByte(clientSock, clientHandler, pcktTimeoutAt, packetLen);
-                    // valid byte returned 
+                    // valid byte returned
 
                     /* reset idle timeout */
                     if (isIdle) {
@@ -3796,14 +3796,14 @@ public class ServerSocketThread
                             // -- already have exactly what we need
                             actualLen = packetLen;
                             // -- done reading, we have a packet
-                            break; 
+                            break;
                         } else
                         if (nextLen < packetLen) {
                             // -- ERROR: "getActualPacketLength" returned a value less than the current length
                             Print.logError("Actual length ["+nextLen+"] < Packet length ["+packetLen+"]");
                             actualLen = packetLen;
                             // -- done reading, we have a packet
-                            break; 
+                            break;
                         } else
                         if (nextLen > maxLen) {
                             Print.logError("Actual length ["+nextLen+"] > Maximum length ["+maxLen+"]");
@@ -3952,9 +3952,9 @@ public class ServerSocketThread
         }
 
     } // ServerSessionThread
-    
+
     // ------------------------------------------------------------------------
-    
+
     /**
     *** SSSessionTimeoutException
     **/
@@ -3987,7 +3987,7 @@ public class ServerSocketThread
             this.dataPacketLen = len;
         }
     }
-    
+
     /**
     *** SSEndOfStreamException
     **/

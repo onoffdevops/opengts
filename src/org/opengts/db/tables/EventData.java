@@ -6,9 +6,9 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -30,8 +30,8 @@
 //      'tripometer' purposes).
 //  2007/02/28  Martin D. Flynn
 //     -Added column 'FLD_horzAccuracy' (meters)
-//     -Removed columns FLD_geofenceID2, FLD_thermoAverage#, & FLD_topSpeedKPH.  
-//      For specific custom solutions these can easily be added back, but for a  
+//     -Removed columns FLD_geofenceID2, FLD_thermoAverage#, & FLD_topSpeedKPH.
+//      For specific custom solutions these can easily be added back, but for a
 //      general solution they are not necessary.
 //  2007/03/11  Martin D. Flynn
 //     -Added convenience methods 'getSpeedString' and 'getHeadingString'.
@@ -49,7 +49,7 @@
 //  2007/07/27  Martin D. Flynn
 //     -Added custom/optional column 'FLD_driver'
 //  2007/09/16  Martin D. Flynn
-//     -Added 'getFieldValueString' method to return a formatted String 
+//     -Added 'getFieldValueString' method to return a formatted String
 //      representation of the specified field.
 //     -Integrated DBSelect
 //  2007/11/28  Martin D. Flynn
@@ -57,7 +57,7 @@
 //     -"getTimestampString()" now returns a time based on the Account TimeZone.
 //     -Apply 'Departed' geozone description for STATUS_GEOFENCE_DEPART events.
 //  2007/01/10  Martin D. Flynn
-//     -Added method 'countRangeEvents(...)' to return the number of events matching  
+//     -Added method 'countRangeEvents(...)' to return the number of events matching
 //      the specified criteria.
 //  2008/02/04  Martin D. Flynn
 //     -Added custom/optional column 'FLD_fuelTotal', 'FLD_fuelIdle', 'FLD_engineRpm'
@@ -334,7 +334,7 @@ public class EventData
     /**
     *** Retruns the IgnitionState of the specified EventData instance.<br>
     **/  // EventData.getIgnitionState
-    public static IgnitionState getIgnitionState(EventData ev, boolean checkLastSC) 
+    public static IgnitionState getIgnitionState(EventData ev, boolean checkLastSC)
     {
 
         /* make sure we have a valid EventData instance */
@@ -776,7 +776,7 @@ public class EventData
         newField_creationTime(RTConfig.getBoolean(DBConfig.PROP_EventData_keyedCreationTime,false)), // FLD_creationTime (altkey: createtime)
     };
 
-    // -- Extra Address fields 
+    // -- Extra Address fields
     // -  startupInit.EventData.AddressFieldInfo=true
     public static final String FLD_streetAddress        = "streetAddress";          // reverse-geocoded street address
     public static final String FLD_city                 = "city";                   // reverse-geocoded city
@@ -789,9 +789,9 @@ public class EventData
     public static final DBField AddressFieldInfo[] = {
         new DBField(FLD_streetAddress    , String.class  , DBField.TYPE_STRING(90)  , I18N.getString(EventData.class,"EventData.fld.streetAddress"      , "Street Address"        ), "utf8=true"),
         new DBField(FLD_city             , String.class  , DBField.TYPE_STRING(40)  , I18N.getString(EventData.class,"EventData.fld.city"               , "City"                  ), "utf8=true"),
-        new DBField(FLD_stateProvince    , String.class  , DBField.TYPE_STRING(40)  , I18N.getString(EventData.class,"EventData.fld.stateProvince"      , "State/Privince"        ), "utf8=true"), 
+        new DBField(FLD_stateProvince    , String.class  , DBField.TYPE_STRING(40)  , I18N.getString(EventData.class,"EventData.fld.stateProvince"      , "State/Privince"        ), "utf8=true"),
         new DBField(FLD_postalCode       , String.class  , DBField.TYPE_STRING(16)  , I18N.getString(EventData.class,"EventData.fld.postalCode"         , "Postal Code"           ), "utf8=true"),
-        new DBField(FLD_country          , String.class  , DBField.TYPE_STRING(40)  , I18N.getString(EventData.class,"EventData.fld.country"            , "Country"               ), "utf8=true"), 
+        new DBField(FLD_country          , String.class  , DBField.TYPE_STRING(40)  , I18N.getString(EventData.class,"EventData.fld.country"            , "Country"               ), "utf8=true"),
         new DBField(FLD_subdivision      , String.class  , DBField.TYPE_STRING(32)  , I18N.getString(EventData.class,"EventData.fld.subdivision"        , "Subdivision"           ), "utf8=true"),
         new DBField(FLD_speedLimitKPH    , Double.TYPE   , DBField.TYPE_DOUBLE      , I18N.getString(EventData.class,"EventData.fld.speedLimitKPH"      , "Speed Limit"           ), "format=#0.0 units=speed"),
         new DBField(FLD_isTollRoad       , Boolean.TYPE  , DBField.TYPE_BOOLEAN     , I18N.getString(EventData.class,"EventData.fld.isTollRoad"         , "Toll Road"             ), ""),
@@ -858,7 +858,7 @@ public class EventData
         new DBField(FLD_jobNumber        , String.class  , DBField.TYPE_STRING(32)  , I18N.getString(EventData.class,"EventData.fld.jobNumber"          , "Job Number"            ), ""),
         new DBField(FLD_rfidTag          , String.class  , DBField.TYPE_STRING(32)  , I18N.getString(EventData.class,"EventData.fld.rfidTag"            , "RFID/BarCode Tag"      ), ""),
         new DBField(FLD_attachType       , String.class  , DBField.TYPE_STRING(64)  , I18N.getString(EventData.class,"EventData.fld.attachType"         , "Attachment MIME Type"  ), ""),
-        new DBField(FLD_attachData       , byte[].class  , DBField.TYPE_BLOB        , I18N.getString(EventData.class,"EventData.fld.attachData"         , "Attachment Data"       ), ""),
+        new DBField(FLD_attachData       , byte[].class  , DBField.TYPE_MBLOB        , I18N.getString(EventData.class,"EventData.fld.attachData"         , "Attachment Data"       ), ""),
     };
 
     // -- OBD fields
@@ -897,7 +897,7 @@ public class EventData
     public static final String FLD_ptoDistanceKM        = "ptoDistanceKM";          // km
     public static final String FLD_throttlePos          = "throttlePos";            // %
     public static final String FLD_brakePos             = "brakePos";               // %
-    public static final String FLD_j1708Fault           = "j1708Fault";             // 
+    public static final String FLD_j1708Fault           = "j1708Fault";             //
     public static final String FLD_faultCode            = "faultCode";              // J1708/J1939/OBDII fault code
     public static final String FLD_malfunctionLamp      = "malfunctionLamp";        // boolean
   //public static final String FLD_milDistanceKM        = "milDistanceKM";          // km
@@ -933,7 +933,7 @@ public class EventData
     public static final String FLD_doorStateMask        = "doorStateMask";          // bitmask
     public static final String FLD_lightsStateMask      = "lightsStateMask";        // bitmask
     // --
-    public static final DBField CANBUSFieldInfo[] = { 
+    public static final DBField CANBUSFieldInfo[] = {
         // -- (may be externally accessed by DBConfig.DBInitialization)
         // -  Custom fields (may also need to be supported by "org.opengts.servers.gtsdmtp.DeviceDBImpl")
       //new DBField(FLD_obdType          , Integer.TYPE  , DBField.TYPE_UINT16     , I18N.getString(EventData.class,"EventData.fld.obdType"            , "OBD Type"              ), ""),
@@ -1079,9 +1079,9 @@ public class EventData
     public static final String FLD_pulseCount           = "pulseCount";             // # (* gain)
     public static final String FLD_frequencyHz          = "frequencyHz";            // Hertz
     public static final String FLD_analog0              = "analog0";                // volts
-    public static final String FLD_analog1              = "analog1";                // 
-    public static final String FLD_analog2              = "analog2";                // 
-    public static final String FLD_analog3              = "analog3";                // 
+    public static final String FLD_analog1              = "analog1";                //
+    public static final String FLD_analog2              = "analog2";                //
+    public static final String FLD_analog3              = "analog3";                //
     public static final DBField AnalogFieldInfo[] = {
         new DBField(FLD_pulseCount       , Double.TYPE   , DBField.TYPE_DOUBLE      , I18N.getString(EventData.class,"EventData.fld.pulseCount"         , "Pulse Count/Gain"      ), "format=#0.0"),
         new DBField(FLD_frequencyHz      , Double.TYPE   , DBField.TYPE_DOUBLE      , I18N.getString(EventData.class,"EventData.fld.frequenceHz"        , "Frequency"             ), "format=#0.0"),
@@ -1129,7 +1129,7 @@ public class EventData
     public static final String FLD_cellNeighborInfo3    = "cellNeighborInfo3";  // CellTower
     public static final String FLD_cellNeighborInfo4    = "cellNeighborInfo4";  // CellTower
     public static final String FLD_cellNeighborInfo5    = "cellNeighborInfo5";  // CellTower
-    public static final DBField NeighborCellTowerData[] = { 
+    public static final DBField NeighborCellTowerData[] = {
         new DBField(FLD_cellNeighborInfo0, String.class , DBField.TYPE_STRING(80), I18N.getString(EventData.class,"EventData.fld.cellNeighborInfo0"  , "Neighbor Cell Info #0" ), ""),
         new DBField(FLD_cellNeighborInfo1, String.class , DBField.TYPE_STRING(80), I18N.getString(EventData.class,"EventData.fld.cellNeighborInfo1"  , "Neighbor Cell Info #1" ), ""),
         new DBField(FLD_cellNeighborInfo2, String.class , DBField.TYPE_STRING(80), I18N.getString(EventData.class,"EventData.fld.cellNeighborInfo2"  , "Neighbor Cell Info #2" ), ""),
@@ -1155,7 +1155,7 @@ public class EventData
     public static final String FLD_impactDataIndex      = "impactDataIndex";    // impact data index
     public static final String FLD_impactDataType       = "impactDataType";     // impact data type (ie. "Accelerometer[]")
     public static final String FLD_impactData           = "impactData";         // impact data (ie. array of Accelerometer)
-    public static final DBField ImpactData[] = { 
+    public static final DBField ImpactData[] = {
         new DBField(FLD_impactDataPeriod , Integer.TYPE , DBField.TYPE_INT32     , I18N.getString(EventData.class,"EventData.fld.impactDataPeriod"   , "Impact Data Period"    ), ""),
         new DBField(FLD_impactDataStatus , Integer.TYPE , DBField.TYPE_INT32     , I18N.getString(EventData.class,"EventData.fld.impactDataStatus"   , "Impact Data Status"    ), ""),
         new DBField(FLD_impactDataIndex  , Integer.TYPE , DBField.TYPE_INT32     , I18N.getString(EventData.class,"EventData.fld.impactDataIndex"    , "Impact Data Index"     ), ""),
@@ -1181,8 +1181,8 @@ public class EventData
     // -- Trip summary (ATrack)
     // -  startupInit.EventData.TripSummary=true
     // -  tripFuelUsed ==> see FLD_fuelTrip
-    public static final String FLD_tripStartTime        = "tripStartTime";    
-    public static final String FLD_tripStopTime         = "tripStopTime";    
+    public static final String FLD_tripStartTime        = "tripStartTime";
+    public static final String FLD_tripStopTime         = "tripStopTime";
   //public static final String FLD_tripHours            = "tripHours";
     public static final String FLD_tripDistanceKM       = "tripDistanceKM";
     public static final String FLD_tripIdleHours        = "tripIdleHours";
@@ -1213,7 +1213,7 @@ public class EventData
 
     // -- End-Of-Day summary (Antx)
     // -  startupInit.EventData.EndOfDaySummary=true
-    public static final String FLD_dayEngineStarts      = "dayEngineStarts";    
+    public static final String FLD_dayEngineStarts      = "dayEngineStarts";
     public static final String FLD_dayIdleHours         = "dayIdleHours";
     public static final String FLD_dayFuelIdle          = "dayFuelIdle";
     public static final String FLD_dayWorkHours         = "dayWorkHours";
@@ -1232,7 +1232,7 @@ public class EventData
         new DBField(FLD_dayFuelTotal     , Double.TYPE  , DBField.TYPE_DOUBLE      , I18N.getString(EventData.class,"EventData.fld.dayFuelTotal"       , "Day Total Fuel"        ), "format=#0.0 units=volume"),
     };
 
-    // -- Keyed creation time with millisecond resolution  
+    // -- Keyed creation time with millisecond resolution
     // -  startupInit.EventData.EventPushData=true  (OBSOLETE)
     // -  startupInit.EventData.CreationTimeMillisecond=true
     public static final String FLD_dataPush             = "dataPush";               //
@@ -1316,7 +1316,7 @@ public class EventData
                 EventData.TABLE_NAME(),
                 EventData.StandardFieldInfo,
                 DBFactory.KeyType.PRIMARY,
-                EventData.class, 
+                EventData.class,
                 EventData.Key.class,
                 false/*editable*/,false/*viewable*/);
             factory.addParentTable(Account.TABLE_NAME());
@@ -1401,7 +1401,7 @@ public class EventData
     public static String getTableDescription(Locale loc)
     {
         I18N i18n = I18N.getI18N(EventData.class, loc);
-        return i18n.getString("EventData.description", 
+        return i18n.getString("EventData.description",
             "This table contains " +
             "events which have been generated by all client devices."
             );
@@ -1448,7 +1448,7 @@ public class EventData
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
     // Common Bean access fields below
-    
+
     // EventDataProvider interface. (defined in DeviceRecord.java)
     // public final String getDeviceVIN() { return super.getDeviceVIN(); }
 
@@ -1824,15 +1824,15 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Sets the data source for this event.  The data source is an optional field defined by the 
-    *** remote client tracking device.  
+    *** Sets the data source for this event.  The data source is an optional field defined by the
+    *** remote client tracking device.
     *** @return The event data source
     **/
     public String getDataSource()
     {
         return this.getFieldValue(FLD_dataSource, "");
     }
-    
+
     /**
     *** Sets the data source for this event.
     *** @param v  The data source
@@ -1843,9 +1843,9 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     /**
-    *** Sets the transport-id for this event.  This is the 'transportID' from the Transport 
+    *** Sets the transport-id for this event.  This is the 'transportID' from the Transport
     *** record used to identify this Device.
     *** @return The transport-id used to identify this device.
     **/
@@ -1853,7 +1853,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_transportID, "");
     }
-    
+
     /**
     *** Sets the transport-id for this event.
     *** @param v  The transport-id used to identify this device.
@@ -1924,7 +1924,7 @@ public class EventData
             return this.getCellGeoPoint();
         }
     }
-    
+
     /**
     *** Gets the accuracy radius, in meters
     *** @return The Accuracy radius, in meters
@@ -1942,7 +1942,7 @@ public class EventData
 
     // GeoPoint optimization
     private GeoPoint geoPoint = null;
-    
+
     /**
     *** Gets the GeoPoint for this event
     *** @return The GeoPoint for this event
@@ -1994,8 +1994,8 @@ public class EventData
             this.setLongitude(gp.getLongitude());
         }
     }
-    
-    /** 
+
+    /**
     *** Returns true if the GeoPoint represented by this event is valid
     *** @return True if the GeoPoint represented by this event is valid
     **/
@@ -2055,7 +2055,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_gpsAge, 0L);
     }
-    
+
     /**
     *** Sets the age of the GPS fix in seconds
     **/
@@ -2063,7 +2063,7 @@ public class EventData
     {
         this.setFieldValue(FLD_gpsAge, ((v >= 0L)? v : 0L));
     }
-    
+
     /**
     *** Gets the GPS fix timestamp (event time minus GPS age)
     **/
@@ -2102,7 +2102,7 @@ public class EventData
 
     /**
     *** Sets the heading
-    **/ 
+    **/
     public double getHeading()
     {
         return this.getFieldValue(FLD_heading, 0.0);
@@ -2110,12 +2110,12 @@ public class EventData
 
     /**
     *** Gets the heading
-    **/ 
+    **/
     public void setHeading(double v)
     {
         this.setFieldValue(FLD_heading, v);
     }
-    
+
     // ------------------------------------------------------------------------
 
     public double getAltitude() // meters
@@ -2172,7 +2172,7 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     public boolean hasOdometerOffsetKM()
     {
         if (!super.hasOptionalFieldValue(FLD_odometerOffsetKM)) {
@@ -2201,7 +2201,7 @@ public class EventData
         EVENT_ONLY,
         BEST
     };
-    
+
     private static OdometerOffsetType DefaultOdometerOffsetType = null;
 
     /**
@@ -2216,19 +2216,19 @@ public class EventData
         if (offsType == null) {
             if (DefaultOdometerOffsetType == null) {
                 String T = StringTools.trim(RTConfig.getString(DBConfig.PROP_EventData_odometerOffsetType,"")).toUpperCase();
-                if (T.startsWith("NONE")) { 
+                if (T.startsWith("NONE")) {
                     // -- NONE
                     DefaultOdometerOffsetType = OdometerOffsetType.NONE;
                     Print.logInfo("Default Odometer Offset Type: " + DefaultOdometerOffsetType);
                     Print.logWarn("(Odometer offset will not be applied!)");
                 } else
-                if (T.startsWith("DEVICE")) { 
+                if (T.startsWith("DEVICE")) {
                     // -- DEVICE, DEVICE_ONLY, DEVICE-ONLY
                     DefaultOdometerOffsetType = OdometerOffsetType.DEVICE_ONLY;
                     Print.logInfo("Default Odometer Offset Type: " + DefaultOdometerOffsetType);
                     Print.logInfo("(Odometer offset obtained from the Device record only)");
                 } else
-                if (T.startsWith("EVENT")) { 
+                if (T.startsWith("EVENT")) {
                     // -- EVENT, EVENT_ONLY, EVENT-ONLY, EVENTDATA
                     DefaultOdometerOffsetType = OdometerOffsetType.EVENT_ONLY;
                     Print.logInfo("Default Odometer Offset Type: " + DefaultOdometerOffsetType);
@@ -2409,7 +2409,7 @@ public class EventData
                 Print.logException("Error reading Geozone: " + this.getAccountID() + "/" + gid, dbe);
                 this.geozone = null;
             }
-        } 
+        }
         return this.geozone;
     }
 
@@ -2425,7 +2425,7 @@ public class EventData
     }
 
     /**
-    *** Gets the Geozone display name 
+    *** Gets the Geozone display name
     *** @return The Geozone display name, or an empty String if this EventData record does
     ***         not define a valid GeozoneID
     **/
@@ -2487,7 +2487,7 @@ public class EventData
             return -1L;
         } else {
             // number of seconds stopped (may still be '0')
-            return (timestamp - motionTime); 
+            return (timestamp - motionTime);
         }
 
     }
@@ -2519,7 +2519,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_entityID, "");
     }
-    
+
     public void setEntityID(String v)
     {
         this.setFieldValue(FLD_entityID, StringTools.trim(v));
@@ -2540,13 +2540,13 @@ public class EventData
         /* no "Entity" attached data? */
         String attachType = this.getAttachType();
         if (!attachType.equalsIgnoreCase(HTMLTools.CONTENT_TYPE_ENTITY_CSV)) {
-            return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]); 
+            return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]);
         }
 
         /* check attach data */
         byte data[] = this.getAttachData();
         if (ListTools.isEmpty(data)) {
-            return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]); 
+            return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]);
         }
 
         /* extract listed entities */
@@ -2559,7 +2559,7 @@ public class EventData
                 if (!StringTools.isBlank(entID)) { entitySet.add(entID.trim()); }
             }
         }
-        return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]); 
+        return ListTools.isEmpty(entitySet)? null : entitySet.toArray(new String[entitySet.size()]);
 
     }
 
@@ -2692,7 +2692,7 @@ public class EventData
     {
         GPSFixType fixType = EventData.getGPSFixType(this);
         if (fixType.equals(GPSFixType.UNKNOWN)) { // 2.4.6-B01
-            if (this.isValidGeoPoint()) { 
+            if (this.isValidGeoPoint()) {
                 //return GPSFixType.UNKNOWN.toString(loc);
                 return GPSFixType.n2D.toString(loc);
             } else {
@@ -2711,7 +2711,7 @@ public class EventData
         Long v = (Long)this.getFieldValue(FLD_gpsFixStatus);
         return (v != null)? v.longValue() : 0L;
     }
-    
+
     public void setGpsFixStatus(long v)
     {
         this.setFieldValue(FLD_gpsFixStatus, ((v >= 0L)? v : 0L));
@@ -2720,7 +2720,7 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the horizontal accuracy (meters) 
+    *** Gets the horizontal accuracy (meters)
     **/
     public double getHorzAccuracy()
     {
@@ -2728,13 +2728,13 @@ public class EventData
     }
 
     /**
-    *** Sets the horizontal accuracy (meters) 
+    *** Sets the horizontal accuracy (meters)
     **/
     public void setHorzAccuracy(double v)
     {
         this.setFieldValue(FLD_horzAccuracy, v);
     }
-    
+
     /**
     *** Returns true if the horizontal accuracy has been defined
     **/
@@ -2744,7 +2744,7 @@ public class EventData
     }
 
     /**
-    *** Gets the horizontal accuracy (meters) 
+    *** Gets the horizontal accuracy (meters)
     *** @param useHDOP  If true, attempt to calculate the value from HDOP
     **/
     public double getHorzAccuracy(boolean useHDOP) // getBestAccuracy
@@ -2774,7 +2774,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_vertAccuracy, 0.0);
     }
-    
+
     public void setVertAccuracy(double v)
     {
         this.setFieldValue(FLD_vertAccuracy, v);
@@ -2805,7 +2805,7 @@ public class EventData
     /**
     *** Returns true if the Horizontal Dilution Of Precision has been set
     **/
-    public boolean hasHDOP() 
+    public boolean hasHDOP()
     {
         return (this.getHDOP() > 0.0)? true : false;
     }
@@ -2854,7 +2854,7 @@ public class EventData
         double V = this.getFieldValue(FLD_batteryLevel, 0.0);
         return V;
     }
-    
+
     /**
     *** Sets the current battery level
     *** @param v The current battery level
@@ -2876,7 +2876,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_batteryVolts, 0.0);
     }
-    
+
     /**
     *** Sets the current battery voltage
     *** @param v The current battery voltage
@@ -2916,7 +2916,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_signalStrength, 0.0);
     }
-    
+
     /**
     *** Sets the current signal strength
     *** @param v The current signal strength
@@ -2990,9 +2990,9 @@ public class EventData
         if ((EventData.AddressColumnLength > 0)             &&
             (addr.length() >= EventData.AddressColumnLength)  ) {
             // -- "-1" so we are not so close to the edge of the cliff
-            int newLen = EventData.AddressColumnLength - 1; 
+            int newLen = EventData.AddressColumnLength - 1;
             addr = addr.substring(0, newLen).trim();
-            // -- Note: MySQL will refuse to insert the record if the data 
+            // -- Note: MySQL will refuse to insert the record if the data
             // -  length is greater than the table column length.
         }
         this.setFieldValue(FLD_address, addr);
@@ -3017,7 +3017,7 @@ public class EventData
             FLD_isTollRoad
             );
     }
-    
+
     // ------------------------------------------------------------------------
 
     public Set<String> updateAddress(boolean fastOnly)
@@ -3036,11 +3036,11 @@ public class EventData
         throws SlowOperationException
     {
         // -- Notes:
-        // -  1) If the caller does not want to wait for a time-consuming operation,  
-        // -     specifying 'fastOnly==true' will cause this method to throw a 
-        // -     'SlowOperationException' if it determines that the reverse-geocoding 
-        // -     will take too long.  The reason that reverse-geocoding  might take a 
-        // -     while is because it might be using an outside service (ie. linking to 
+        // -  1) If the caller does not want to wait for a time-consuming operation,
+        // -     specifying 'fastOnly==true' will cause this method to throw a
+        // -     'SlowOperationException' if it determines that the reverse-geocoding
+        // -     will take too long.  The reason that reverse-geocoding  might take a
+        // -     while is because it might be using an outside service (ie. linking to
         // -     a remote web-based service) to perform it's function.
         // -     (SlowOperationException is not thrown if 'fastOnly' is false.)
         // -  2) The address may not be written to the table correctly if the current
@@ -3050,7 +3050,7 @@ public class EventData
 
         /* already have an address? */
         if (!force && this.hasAddress()) {
-            // we already have an address 
+            // we already have an address
             // (and 'force' did not indicate we should update the address)
             return null;
         }
@@ -3279,9 +3279,9 @@ public class EventData
             // -- no ReverseGeocodeProvider, no reverse-geocoding
             String acctID = acct.getAccountID();
             if (acct.hasPrivateLabel()) {
-                Print.logInfo("[Account '%s'] PrivateLabel '%s' does not define a ReverseGeocodeProvider", acctID, privLabel); 
+                Print.logInfo("[Account '%s'] PrivateLabel '%s' does not define a ReverseGeocodeProvider", acctID, privLabel);
             } else {
-                Print.logInfo("No PrivateLabel (thus no ReverseGeocodeProvider) for Account '%s'", acctID); 
+                Print.logInfo("No PrivateLabel (thus no ReverseGeocodeProvider) for Account '%s'", acctID);
             }
             return null;
         } else
@@ -3356,21 +3356,21 @@ public class EventData
         /* still no address after all of this */
         Print.logInfo("No RG Address found ["+rgp.getName()+"]: " + addrGP);
         return null;
-        
+
     }
-    
+
     // ------------------------------------------------------------------------
 
     /**
     *** Returns a ReverseGeocode instance, using the named ReverseGeocodeProvider, for this event.
     *** Returns null if the named ReverseGeocodeProvider does not exist.
     *** Will use the 'active' ReverseGeocodeProvider if the specified name is null/blank.
-    *** @param name     The name of the ReverseGeocodeProvider.  Must be available in the 
+    *** @param name     The name of the ReverseGeocodeProvider.  Must be available in the
     ***                 BasicPrivateLabel assigned to the Account.
     *** @param fastOnly True to require that ReverseGeocodeProvider must be a fast operation.
-    ***                 SlowOperationException will be thrown if "fastOnly" is true, and the 
+    ***                 SlowOperationException will be thrown if "fastOnly" is true, and the
     ***                 specified ReverseGeocodeProvider is a slow operation.
-    *** @throws SlowOperationException if "fastOnly" is true, and the this reverse-geocode 
+    *** @throws SlowOperationException if "fastOnly" is true, and the this reverse-geocode
     ***     process is a slow operation.
     **/
     public ReverseGeocode getReverseGeocode(String name, boolean fastOnly)
@@ -3416,7 +3416,7 @@ public class EventData
         if (rgp == null) {
             // -- named ReverseGeocodeProvider not found
             String acctID = acct.getAccountID();
-            Print.logInfo("[Account '%s'] PrivateLabel '%s' ReverseGeocodeProvider name not found: %s", acctID, privLabel, rgName); 
+            Print.logInfo("[Account '%s'] PrivateLabel '%s' ReverseGeocodeProvider name not found: %s", acctID, privLabel, rgName);
             return null;
         } else
         if (!rgp.isEnabled()) {
@@ -3461,14 +3461,14 @@ public class EventData
         }
         return v;
     }
-    
+
     public void setStreetAddress(String v)
     {
         String street = StringTools.trim(v);
         if ((EventData.StreetColumnLength > 0)              &&
             (street.length() >= EventData.StreetColumnLength)  ) {
             // -1 so we are not so close to the edge of the cliff
-            int newLen = EventData.StreetColumnLength - 1; 
+            int newLen = EventData.StreetColumnLength - 1;
             street = street.substring(0, newLen).trim();
             // Note: MySQL will refuse to insert the record if the data length
             // is greater than the table column length.
@@ -3503,7 +3503,7 @@ public class EventData
         if ((EventData.CityColumnLength > 0)              &&
             (city.length() >= EventData.CityColumnLength)  ) {
             // -1 so we are not so close to the edge of the cliff
-            int newLen = EventData.CityColumnLength - 1; 
+            int newLen = EventData.CityColumnLength - 1;
             city = city.substring(0, newLen).trim();
             // Note: MySQL will refuse to insert the record if the data length
             // is greater than the table column length.
@@ -3527,14 +3527,14 @@ public class EventData
         }
         return v;
     }
-    
+
     public void setStateProvince(String v)
     {
-        String state = StringTools.trim(v); 
+        String state = StringTools.trim(v);
         if ((EventData.StateColumnLength > 0)              &&
             (state.length() >= EventData.StateColumnLength)  ) {
             // -- -1 so we are not so close to the edge of the cliff
-            int newLen = EventData.StateColumnLength - 1; 
+            int newLen = EventData.StateColumnLength - 1;
             state = state.substring(0, newLen).trim();
             // -- Note: MySQL will refuse to insert the record if the data length
             // -  is greater than the table column length.
@@ -3558,14 +3558,14 @@ public class EventData
         }
         return v;
     }
-    
+
     public void setPostalCode(String v)
     {
         String postal = StringTools.trim(v);
         if ((EventData.PostalColumnLength > 0)              &&
             (postal.length() >= EventData.PostalColumnLength)  ) {
             // -1 so we are not so close to the edge of the cliff
-            int newLen = EventData.PostalColumnLength - 1; 
+            int newLen = EventData.PostalColumnLength - 1;
             postal = postal.substring(0, newLen).trim();
             // Note: MySQL will refuse to insert the record if the data length
             // is greater than the table column length.
@@ -3587,7 +3587,7 @@ public class EventData
         }
         return v;
     }
-    
+
     /**
     *** Sets the address country identifier
     **/
@@ -3634,9 +3634,9 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the posted speed limit 
+    *** Gets the posted speed limit
     *** (typically obtained from the reverse-geocoding service)
-    *** @return The posted speed limit 
+    *** @return The posted speed limit
     **/
     public double getSpeedLimitKPH()
     {
@@ -3644,13 +3644,13 @@ public class EventData
     }
 
     /**
-    *** Sets the posted speed limit 
+    *** Sets the posted speed limit
     *** (typically obtained from the reverse-geocoding service)
-    *** @param v The posted speed limit 
+    *** @param v The posted speed limit
     **/
     public void setSpeedLimitKPH(double v)
     {
-        // -- this clips the minimum allowed speed-limit.  
+        // -- this clips the minimum allowed speed-limit.
         // -  If the min limit is < 0.0, the speed limit will be set to 0 (ignored)
         double minKPH = RTConfig.getDouble(DBConfig.PROP_EventData_minimumPostedSpeedLimit,0.0);
         if (minKPH != 0.0) {
@@ -3729,7 +3729,7 @@ public class EventData
         /* 4: check geozone speed */
         if (checkGeozoneLimit) {
             Geozone GZ = Geozone.getGeozone(
-                this.getAccountID(), null/*ZoneID*/, 
+                this.getAccountID(), null/*ZoneID*/,
                 this.getGeoPoint() , null/*purpose*/, false/*RGOnly*/);
             if ((GZ != null) && GZ.isDeviceInGroup(this.getDeviceID())) {
                 double limKPH = GZ.getSpeedLimitKPH();
@@ -3813,7 +3813,7 @@ public class EventData
         /* check geozone speed */
         if (checkGeozoneLimit) {
             Geozone GZ = Geozone.getGeozone(
-                this.getAccountID(), null/*ZoneID*/, 
+                this.getAccountID(), null/*ZoneID*/,
                 this.getGeoPoint() , null/*purpose*/, false/*RGOnly*/);
             if ((GZ != null) && GZ.isDeviceInGroup(this.getDeviceID())) {
                 double limKPH = GZ.getSpeedLimitKPH();
@@ -3823,7 +3823,7 @@ public class EventData
                         return 4; // exceeds geozone speed limit
                     }
                 }
-    
+
             }
         }
 
@@ -3872,7 +3872,7 @@ public class EventData
         long m = this.getInputMask();
         return (((1L << bit) & m) != 0L);
     }
-    
+
     /* set digital input mask */
     public void setInputMask(long v) // setOutputMask
     {
@@ -3885,7 +3885,7 @@ public class EventData
             this.setFieldValue(FLD_inputMask, 0L);
             this.inputMaskExplicitlySet = false; // <0 is undefined, do not indicate set
         } else {
-            // -- FLD_inputMask is currently 32-bit max 
+            // -- FLD_inputMask is currently 32-bit max
             this.setFieldValue(FLD_inputMask, (v & 0xFFFFFFFFL)); // 32-bits only
             this.inputMaskExplicitlySet = true;
         }
@@ -3907,7 +3907,7 @@ public class EventData
         Long v = (Long)this.getFieldValue(FLD_outputMask);
         return (v != null)? v.intValue() : 0L;
     }
-    
+
     /* return state of output mask bit */
     public boolean getOutputMaskBitState(int bit)
     {
@@ -4018,14 +4018,14 @@ public class EventData
         Long v = (Long)this.getFieldValue(FLD_seatbeltMask);
         return (v != null)? v.longValue() : 0L;
     }
-    
+
     /* return state of seatbelt mask bit */
     public boolean getSeatbeltMaskBitState(int bit)
     {
         long m = this.getSeatbeltMask();
         return (((1L << bit) & m) != 0L);
     }
-    
+
     /* set digital seatbelt mask */
     public void setSeatbeltMask(long v)
     {
@@ -4033,7 +4033,7 @@ public class EventData
             // FLD_seatbeltMask is unsigned
             this.setFieldValue(FLD_seatbeltMask, 0L);
         } else {
-            // FLD_seatbeltMask is currently 32-bit max 
+            // FLD_seatbeltMask is currently 32-bit max
             this.setFieldValue(FLD_seatbeltMask, (v & 0xFFFFFFFFL)); // 32-bit
         }
     }
@@ -4046,14 +4046,14 @@ public class EventData
         Long v = (Long)this.getFieldValue(FLD_doorStateMask);
         return (v != null)? v.longValue() : 0L;
     }
-    
+
     /* return state of door state mask bit */
     public boolean getDoorStateMaskBitState(int bit)
     {
         long m = this.getDoorStateMask();
         return (((1L << bit) & m) != 0L);
     }
-    
+
     /* set digital door state mask */
     public void setDoorStateMask(long v)
     {
@@ -4061,7 +4061,7 @@ public class EventData
             // FLD_doorStateMask is unsigned
             this.setFieldValue(FLD_doorStateMask, 0L);
         } else {
-            // FLD_doorStateMask is currently 32-bit max 
+            // FLD_doorStateMask is currently 32-bit max
             this.setFieldValue(FLD_doorStateMask, (v & 0xFFFFFFFFL)); // 32-bit
         }
     }
@@ -4074,14 +4074,14 @@ public class EventData
         Long v = (Long)this.getFieldValue(FLD_lightsStateMask);
         return (v != null)? v.longValue() : 0L;
     }
-    
+
     /* return state of lights state mask bit */
     public boolean getLightsStateMaskBitState(int bit)
     {
         long m = this.getLightsStateMask();
         return (((1L << bit) & m) != 0L);
     }
-    
+
     /* set digital lights state mask */
     public void setLightsStateMask(long v)
     {
@@ -4089,7 +4089,7 @@ public class EventData
             // FLD_lightsStateMask is unsigned
             this.setFieldValue(FLD_lightsStateMask, 0L);
         } else {
-            // FLD_lightsStateMask is currently 32-bit max 
+            // FLD_lightsStateMask is currently 32-bit max
             this.setFieldValue(FLD_lightsStateMask, (v & 0xFFFFFFFFL)); // 32-bit
         }
     }
@@ -4103,7 +4103,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_barometer, 0.0); // kPa
     }
-    
+
     public void setBarometer(double v) // kPa
     {
         this.setFieldValue(FLD_barometer, v);
@@ -4115,7 +4115,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_humidity, 0.0); // %
     }
-    
+
     public void setHumidity(double v) // %
     {
         this.setFieldValue(FLD_humidity, ((v < 0.0)? 0.0 : (v > 1.0)? 1.0 : v));
@@ -4182,7 +4182,7 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     private static int    Thermo_COUNT      = -1;
     private static Object Thermo_COUNT_lock = new Object();
 
@@ -4362,7 +4362,7 @@ public class EventData
     /**
     *** Returns the number of available analog fields
     **/
-    public static int GetAnalogFieldCount() 
+    public static int GetAnalogFieldCount()
     {
         return 4;
     }
@@ -4370,7 +4370,7 @@ public class EventData
     /**
     *** Returns the analog field name for the specified index
     **/
-    public static String GetAnalogFieldName(int ndx) 
+    public static String GetAnalogFieldName(int ndx)
     {
         switch (ndx) {
             case 0: return EventData.FLD_analog0;
@@ -4731,7 +4731,7 @@ public class EventData
         return true;
 
     }
-    
+
     /* update cell tower location (see also "updateAddress") */
     public Set<String> updateCellTowerLocation()
     {
@@ -4749,9 +4749,9 @@ public class EventData
         MobileLocationProvider mlp = privLabel.getMobileLocationProvider();
         if (mlp == null) {
             if (acct.hasPrivateLabel()) {
-                Print.logInfo("[Account '%s'] PrivateLabel '%s' does not define a MobileLocationProvider", acctID, privLabel); 
+                Print.logInfo("[Account '%s'] PrivateLabel '%s' does not define a MobileLocationProvider", acctID, privLabel);
             } else {
-                Print.logInfo("No PrivateLabel (thus no MobileLocationProvider) for Account '%s'", acctID); 
+                Print.logInfo("No PrivateLabel (thus no MobileLocationProvider) for Account '%s'", acctID);
             }
             return null;
         } else
@@ -4788,7 +4788,7 @@ public class EventData
         return updFields;
 
     }
-    
+
     // -------------------------------
 
     /* Cell Tower Latitude */
@@ -4810,7 +4810,7 @@ public class EventData
     {
         this.setFieldValue(FLD_cellLongitude, v);
     }
-    
+
     /* Set Cell Tower GeoPoint */
     public void setCellGeoPoint(GeoPoint gp)
     {
@@ -4957,9 +4957,9 @@ public class EventData
             this.setCellServingInfo(  null);
         }
     }
-    
+
     // -------------------------------
-    
+
     /* Nehghbor #0 cell proterty information */
     public String getCellNeighborInfo0()
     {
@@ -5172,7 +5172,7 @@ public class EventData
             this.driver = null;
             String driverID = null;
             if (this.hasDriverID()) {
-                driverID = this.getDriverID(); 
+                driverID = this.getDriverID();
                 this.isEventDriver = true;
             } else
             if (chkDevIfBlank) {
@@ -5186,9 +5186,9 @@ public class EventData
                 try {
                     this.driver = Driver.getDriver(this.getAccount(), driverID);
                     if (this.driver != null) {
-                        //Print.logInfo("Found Driver record: " + this.getAccountID() + "/" + driverID); 
+                        //Print.logInfo("Found Driver record: " + this.getAccountID() + "/" + driverID);
                     } else {
-                        //Print.logWarn("Driver not found: " + this.getAccountID() + "/" + driverID); 
+                        //Print.logWarn("Driver not found: " + this.getAccountID() + "/" + driverID);
                     }
                 } catch (DBException dbe) {
                     //Print.logWarn("Error reading Driver: " + dbe);
@@ -5250,7 +5250,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_driverMessage, "");
     }
-    
+
     /**
     *** Sets the driver message
     *** @param v The driver message
@@ -5292,7 +5292,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_sensorLow, 0L);
     }
-    
+
     /**
     *** Sets the low sensor value
     *** @param v The low sensor value
@@ -5371,7 +5371,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_appliedPressure, 0.0); // kPa
     }
-    
+
     public void setAppliedPressure(double v)
     {
         this.setFieldValue(FLD_appliedPressure, v);
@@ -5409,7 +5409,7 @@ public class EventData
     }
 
     /**
-    *** Sets the impact data status 
+    *** Sets the impact data status
     *** @param v  The impact data status (0=none, 1=partial, 2=complete)
     **/
     public void setImpactDataStatus(int v)
@@ -5420,7 +5420,7 @@ public class EventData
     // --------------------------------
 
     /**
-    *** Gets the impact data index 
+    *** Gets the impact data index
     **/
     public int getImpactDataIndex()
     {
@@ -5428,7 +5428,7 @@ public class EventData
     }
 
     /**
-    *** Sets the impact data index 
+    *** Sets the impact data index
     **/
     public void setImpactDataIndex(int v)
     {
@@ -5438,7 +5438,7 @@ public class EventData
     // --------------------------------
 
     /**
-    *** Gets the impact data type 
+    *** Gets the impact data type
     **/
     public String getImpactDataType()
     {
@@ -5446,7 +5446,7 @@ public class EventData
     }
 
     /**
-    *** Sets the impact data type 
+    *** Sets the impact data type
     **/
     public void setImpactDataType(String v)
     {
@@ -5456,7 +5456,7 @@ public class EventData
     // --------------------------------
 
     /**
-    *** Gets the impact data 
+    *** Gets the impact data
     **/
     public String getImpactData()
     {
@@ -5464,7 +5464,7 @@ public class EventData
     }
 
     /**
-    *** Sets the impact data 
+    *** Sets the impact data
     **/
     public void setImpactData(String v)
     {
@@ -6224,7 +6224,7 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     private RTProperties attachRTProp = null;
 
     /**
@@ -6245,8 +6245,8 @@ public class EventData
         this.setFieldValue(FLD_attachType, StringTools.trim(v));
         this.attachRTProp = null;
     }
-    
-    /** 
+
+    /**
     *** Returns true if the attachment type matches the specified type
     *** @param type  The target attachment type
     *** @return True if match, false otherwise
@@ -6298,7 +6298,7 @@ public class EventData
             this.setAttachType(null);
             this.setAttachData(null);
         } else {
-            this.setAttachType(StringTools.isBlank(mimeType)? 
+            this.setAttachType(StringTools.isBlank(mimeType)?
                 mimeType : HTMLTools.getMimeTypeFromData(data,null));
             this.setAttachData(data);
         }
@@ -6350,8 +6350,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the ETA unique-id 
-    *** @return The ETA unique-id 
+    *** Gets the ETA unique-id
+    *** @return The ETA unique-id
     **/
     public long getEtaUniqueID()
     {
@@ -6397,7 +6397,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_etaLatitude, 0.0);
     }
-    
+
     /**
     *** Sets the ETA Latitude
     *** @param v The ETA Latitude
@@ -6406,7 +6406,7 @@ public class EventData
     {
         this.setFieldValue(FLD_etaLatitude, v);
     }
-    
+
     /**
     *** Sets the ETA GeoPoint
     *** @param gp The ETA GeoPoint
@@ -6441,7 +6441,7 @@ public class EventData
     {
         return this.getFieldValue(FLD_etaLongitude, 0.0);
     }
-    
+
     /**
     *** Sets the ETA Longitude
     *** @param v The ETA Longitude
@@ -6454,8 +6454,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the STOP id 
-    *** @return The STOP id 
+    *** Gets the STOP id
+    *** @return The STOP id
     **/
     public long getStopID()
     {
@@ -6474,8 +6474,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the STOP Status 
-    *** @return The STOP Status 
+    *** Gets the STOP Status
+    *** @return The STOP Status
     **/
     public int getStopStatus()
     {
@@ -6494,8 +6494,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the STOP Index 
-    *** @return The STOP Index 
+    *** Gets the STOP Index
+    *** @return The STOP Index
     **/
     public int getStopIndex()
     {
@@ -6517,8 +6517,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the MESSAGE time 
-    *** @return The MESSAGE time 
+    *** Gets the MESSAGE time
+    *** @return The MESSAGE time
     **/
     public long getMessageTimestamp()
     {
@@ -6537,8 +6537,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the MESSAGE id 
-    *** @return The MESSAGE id 
+    *** Gets the MESSAGE id
+    *** @return The MESSAGE id
     **/
     public long getMessageID()
     {
@@ -6557,8 +6557,8 @@ public class EventData
     // ------------------------------------------------------------------------
 
     /**
-    *** Gets the MESSAGE Status 
-    *** @return The MESSAGE Status 
+    *** Gets the MESSAGE Status
+    *** @return The MESSAGE Status
     **/
     public int getMessageStatus()
     {
@@ -6583,7 +6583,7 @@ public class EventData
     //{
     //    return this.getFieldValue(FLD_obdType, 0);
     //}
-    
+
     //public void setObdType(int v)
     //{
     //    this.setFieldValue(FLD_obdType, v);
@@ -6724,7 +6724,7 @@ public class EventData
             switch (tank) {
                 case TANK_1 : return this.getFuelLevel();
                 case TANK_2 : return this.getFuelLevel2();
-                case TOTAL  : 
+                case TOTAL  :
                     if (this._fuelLevelTotal > 0.0) {
                         return this._fuelLevelTotal; // previously set total level
                     } else {
@@ -6828,7 +6828,7 @@ public class EventData
     // --------------------------------
 
     /**
-    *** Gets the fuel volume in Liters, 
+    *** Gets the fuel volume in Liters,
     *** based on the level and estimated fuel capacity
     *** @return The fuel volume
     **/
@@ -6843,7 +6843,7 @@ public class EventData
     }
 
     /**
-    *** Gets the fuel volume in the Account preferred units, 
+    *** Gets the fuel volume in the Account preferred units,
     *** based on the level and estimated fuel capacity
     *** @return The fuel volume
     **/
@@ -6894,7 +6894,7 @@ public class EventData
             lastFuelLevel = dev.getLastFuelLevel(tank); // #1
         } else {
             // -- level from first event after 'secAgo'
-            long ts = ed.getTimestamp() - secAgo; 
+            long ts = ed.getTimestamp() - secAgo;
             try {
                 boolean validGPS = false;
                 EventData pev = dev.getFirstEvent(ts, validGPS);
@@ -6907,7 +6907,7 @@ public class EventData
         if (lastFuelLevel < 0.0) {
             // -- cannot be less than 0%
             return 0.0; // invalid fuel level value
-        } else 
+        } else
         if (lastFuelLevel > 1.0) {
             // -- cannot be more than 100%, clip to 100%
             lastFuelLevel = 1.0;
@@ -6946,7 +6946,7 @@ public class EventData
         double currentFuelLevel = ed.getFuelLevel(tank, true/*estimate*/); // #1
         if (currentFuelLevel < 0.0) {
             // -- invalid fuel level value
-            return false; 
+            return false;
         } else
         if (currentFuelLevel > 1.0) {
             currentFuelLevel = 1.0;
@@ -6956,7 +6956,7 @@ public class EventData
         Device dev = ed.getDevice();
         if (dev == null) {
             // -- device not found (unlikely to occur)
-            return false; 
+            return false;
         }
 
         /* get last fuel level */
@@ -6965,7 +6965,7 @@ public class EventData
             // -- last event fuel-level saved in Device record
             lastFuelLevel = dev.getLastFuelLevel(tank);
         } else {
-            long ts = ed.getTimestamp() - secAgo; 
+            long ts = ed.getTimestamp() - secAgo;
             try {
                 boolean validGPS = false;
                 EventData pev = dev.getFirstEvent(ts, validGPS);
@@ -6977,8 +6977,8 @@ public class EventData
         }
         if (lastFuelLevel < 0.0) {
             // -- invalid last fuel level value
-            return false; 
-        } else 
+            return false;
+        } else
         if (lastFuelLevel > 1.0) {
             lastFuelLevel = 1.0;
         }
@@ -6991,7 +6991,7 @@ public class EventData
         } else
         if (fuelDeltaPct == 0.0) {
             // -- fuel level did not change
-            return false; 
+            return false;
         }
         // -- fuelDeltaPct is < 0 here
 
@@ -7088,7 +7088,7 @@ public class EventData
             return fuelRem;
         }
         // -- estimate, beyond this point
-        
+
         /* get device */
         Device dev = this.getDevice(); // should not be null
         if (dev == null) {
@@ -7900,7 +7900,7 @@ public class EventData
         this.setFieldValue(FLD_faultCode, fault);
     }
 
-    /** 
+    /**
     *** Returns true if this event contains a non-blank fault code string
     *** @return True if this event contains a non-blank fault code string
     **/
@@ -7919,8 +7919,8 @@ public class EventData
         return new RTProperties(fc);
     }
 
-    /** 
-    *** Sets the OBDII fault codes 
+    /**
+    *** Sets the OBDII fault codes
     *** @param dtc  An array of DTC value codes (ie. "P0420","P0123")
     **/
     public void setFaultCode_OBDII(String dtc[])
@@ -7932,8 +7932,8 @@ public class EventData
         }
     }
 
-    /** 
-    *** Sets the J1939 fault codes 
+    /**
+    *** Sets the J1939 fault codes
     *** @param dtc  An array of DTC value codes (format: "SPN/FMI/OC")
     **/
     public void setFaultCode_J1939(String dtc[])
@@ -8059,7 +8059,7 @@ public class EventData
 
     /**
     *** Sets the Device instance used in the "_insertEventData" processing.<br>
-    *** This is set within the "Device._insertEventData" method and only if 
+    *** This is set within the "Device._insertEventData" method and only if
     *** "GetDeferRuleCheckToPostInsert()" is true.   This method is necessary
     *** because the "EventData.getDevice()" instance must return an unmodified copy
     *** of the Device instance when "GetDeferRuleCheckToPostInsert()" is true.
@@ -8094,7 +8094,7 @@ public class EventData
     *** Sets the Event index (used for reporting)
     *** @param ndx The event index
     **/
-    public void setEventIndex(int ndx) 
+    public void setEventIndex(int ndx)
     {
         this.eventIndex = ndx;
     }
@@ -8109,8 +8109,8 @@ public class EventData
     }
 
     /**
-    *** Returns true if this event is the first event 
-    *** @return True if this event is the first event 
+    *** Returns true if this event is the first event
+    *** @return True if this event is the first event
     **/
     public boolean getIsFirstEvent()
     {
@@ -8132,8 +8132,8 @@ public class EventData
     }
 
     /**
-    *** Returns true if this event is the last event 
-    *** @return True if this event is the last event 
+    *** Returns true if this event is the last event
+    *** @return True if this event is the last event
     **/
     public boolean getIsLastEvent()
     {
@@ -8280,7 +8280,7 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     /**
     *** Gets the "Start/Stop StatusCode supported" config
     *** @param dft  The default "Start/Stop StatusCode supported" state
@@ -8414,10 +8414,10 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     /* PushpinIconIndexProvider */
     private PushpinIconIndexProvider iconIndexProvider = null;
-    
+
     /**
     *** Sets the Pushpin Icon Index Provider
     *** @param piip  The PushpinIconIndexProvider instance
@@ -8428,10 +8428,10 @@ public class EventData
     }
 
     // ------------------------------------------------------------------------
-    
+
     /* preset explicit icon index */
     private int explicitPushpinIconIndex = -1;
-    
+
     /**
     *** Sets the explicit Pushpin Icon Index
     *** @param epii  The PushpinIconIndexProvider instance
@@ -8440,7 +8440,7 @@ public class EventData
     {
         this.explicitPushpinIconIndex = epii;
     }
-    
+
     /**
     *** Sets the explicit Pushpin Icon Index
     *** @param iconName  The icon name
@@ -8549,7 +8549,7 @@ public class EventData
             if (!rf.checkRuntime()) {
                 Print.logWarn("StatusCode RuleFactory runtime check failed: " + this.getStatusCodeHex());
             } else {
-                int iconNdx = this._getPushpinIndexFromRuleSelector(rf, "IconSelector [#3]", iconSelector, iconMap, 
+                int iconNdx = this._getPushpinIndexFromRuleSelector(rf, "IconSelector [#3]", iconSelector, iconMap,
                     debugPP);
                 if (iconNdx >= 0) {
                     // -- already displays Pushpin debug
@@ -8565,7 +8565,7 @@ public class EventData
         if (isFleet) {
             // -- isFleet map
             // -  BasicPrivateLabel.PROP_TrackMap_lastDevicePushpin_fleet
-            boolean showDevPP = this.showLastEventDevicePushpin(isFleet,bpl); 
+            boolean showDevPP = this.showLastEventDevicePushpin(isFleet,bpl);
             String devPP = (showDevPP && (dev != null))? dev.getPushpinID(true/*eval*/) : "";
 
             // ---------------------------------------
@@ -8585,7 +8585,7 @@ public class EventData
             // -- 4.b) If "trackMap.lastDevicePushpin.fleet=true", use Device pushpin
 
             /* DevicePushpin: show Device pushpinID for Event? */
-            if (showDevPP && !StringTools.isBlank(devPP) && !devPP.equalsIgnoreCase(PPNAME_statusCode)) { 
+            if (showDevPP && !StringTools.isBlank(devPP) && !devPP.equalsIgnoreCase(PPNAME_statusCode)) {
                 int diNdx = EventData._getPushpinIconIndex(devPP, iconMap, -1);
                 if (diNdx >= 0) {
                     if (debugPP) PushpinDebug("Device ("+dev.getDeviceID()+") fleet [#4b]", iconMap, diNdx);
@@ -8641,7 +8641,7 @@ public class EventData
             // -- 7.a) If "trackMap.lastDevicePushpin.device=true", use Device pushpin
 
             /* DevicePushpin: show Device pushpinID for last event? */
-            if (showDevPP && !StringTools.isBlank(devPP)) { 
+            if (showDevPP && !StringTools.isBlank(devPP)) {
                 int diNdx = EventData._getPushpinIconIndex(devPP, iconMap, -1);
                 if (diNdx >= 0) {
                     if (debugPP) PushpinDebug("Device ["+dev.getDeviceID()+"] last [#7a]" , iconMap, diNdx);
@@ -8714,7 +8714,7 @@ public class EventData
     *** @param debugPP   True to display debug information regarding icon selection
     *** @return The selected icon index
     **/
-    private int _getPushpinIndexFromRuleSelector(RuleFactory ruleFact, 
+    private int _getPushpinIndexFromRuleSelector(RuleFactory ruleFact,
         String type, String iconSel, OrderedMap<String,PushpinIcon> iconMap, // OrderedSet<String> iconKeys,
         boolean debugPP)
     {
@@ -8805,7 +8805,7 @@ public class EventData
             if (!rf.checkRuntime()) {
                 Print.logWarn("StatusCode RuleFactory runtime check failed: " + this.getStatusCodeHex());
             } else {
-                int iconNdx = this._getPushpinIndexFromRuleSelector(rf, "StatusCode selector ["+dbgMsg+":0x"+StringTools.toHexString(this.getStatusCode(),16)+"]", scIconSel, iconMap, 
+                int iconNdx = this._getPushpinIndexFromRuleSelector(rf, "StatusCode selector ["+dbgMsg+":0x"+StringTools.toHexString(this.getStatusCode(),16)+"]", scIconSel, iconMap,
                     debugPP);
                 if (iconNdx >= 0) {
                     // -- already displays Pushpins debug
@@ -8846,7 +8846,7 @@ public class EventData
                         } else {
                             sb.append("\"0x" + StringTools.toHexString(code,16) + "\"");
                         }
-                    } else 
+                    } else
                     if ((typeClass == Double.class) || (typeClass == Double.TYPE)) {
                         double d = ((Double)val).doubleValue();
                         String fmt = dbFld.getFormat();
@@ -8855,7 +8855,7 @@ public class EventData
                         } else {
                             sb.append("\"" + String.valueOf(d) + "\"");
                         }
-                    } else 
+                    } else
                     if ((typeClass == Float.class) || (typeClass == Float.TYPE)) {
                         float d = ((Float)val).floatValue();
                         String fmt = dbFld.getFormat();
@@ -8872,7 +8872,7 @@ public class EventData
         }
         return sb.toString();
     }
-    
+
     // ------------------------------------------------------------------------
 
     private EventData previousEventData          = null;
@@ -8936,7 +8936,7 @@ public class EventData
 
     /**
     *** Gets the previous EventData record
-    *** @param statusCodes  A list of status codes to search for 
+    *** @param statusCodes  A list of status codes to search for
     *** @param validGPS  True to check for previous events with a valid GPS location only
     *** @return  The previous EventData record
     *** @throws DBException
@@ -8957,7 +8957,7 @@ public class EventData
         }
 
         /* get previous event */
-        // 'endTime' should be this events timestamp, 
+        // 'endTime' should be this events timestamp,
         // and 'additionalSelect' should be (statusCode != this.getStatusCode())
         long startTime = -1L; // start of time
         long endTime   = this.getTimestamp() - 1L; // previous to this event
@@ -8985,7 +8985,7 @@ public class EventData
         } else {
             return null;
         }
-        
+
     }
 
     /**
@@ -8999,7 +8999,7 @@ public class EventData
     **/
     public static EventData getPreviousEventData(
         String accountID, String deviceID,
-        long timestamp, int statusCodes[], 
+        long timestamp, int statusCodes[],
         boolean validGPS)
         throws DBException
     {
@@ -9018,7 +9018,7 @@ public class EventData
     /**
     *** Gets the device record for this event
     **/
-    /* Cannot override "getDevice() 
+    /* Cannot override "getDevice()
     @Override
     public Device getDevice()
     {
@@ -9047,7 +9047,7 @@ public class EventData
 
     private EventData nextEventData          = null;
     private EventData nextEventData_validGPS = null;
-    
+
     /**
     *** Gets the next EventData record
     *** @param validGPS  True to check for next events with a valid GPS location only
@@ -9060,7 +9060,7 @@ public class EventData
 
         if ((!validGPS && (this.nextEventData == null)) ||
             ( validGPS && (this.nextEventData_validGPS == null))) {
-            // 'startTime' should be this events timestamp, 
+            // 'startTime' should be this events timestamp,
             // and 'additionalSelect' should be (statusCode != this.getStatusCode())
             long startTime   = this.getTimestamp() + 1L;
             long endTime     = -1L;
@@ -9097,7 +9097,7 @@ public class EventData
     **/
     public static EventData getNextEventData(
         String accountID, String deviceID,
-        long timestamp, int statusCodes[], 
+        long timestamp, int statusCodes[],
         boolean validGPS)
         throws DBException
     {
@@ -9141,7 +9141,7 @@ public class EventData
     **/
     protected void recordWillInsert()
     {
-        // overriden to optimize 
+        // overriden to optimize
         // (DBRecordListnener not allowed, to prevent excessive backlogging)
     }
 
@@ -9215,7 +9215,7 @@ public class EventData
             Print.logError("GeoEvent is null");
             return null;
         }
-                
+
         /* create key */
         String acctID = gev.getAccountID();
         String devID  = gev.getDeviceID();
@@ -9226,14 +9226,14 @@ public class EventData
             return null;
         }
         EventData.Key evKey = new EventData.Key(acctID, devID, time, stCode);
-        
+
         /* fill record */
         EventData evdb = evKey.getDBRecord();
         for (String fldn : gev.getFieldKeys()) {
             Object val = gev.getFieldValue(fldn,null);
             evdb.setFieldValue(fldn, val);
         }
-        
+
         /* return event */
         return evdb;
 
@@ -9259,9 +9259,9 @@ public class EventData
     **/
     public static String getWhereClause(
         String acctId, String devId,
-        long timeStart, long timeEnd, 
-        int statCode[], 
-        boolean gpsRequired, 
+        long timeStart, long timeEnd,
+        int statCode[],
+        boolean gpsRequired,
         String andSelect_1, String andSelect_2)
     {
         DBFactory<EventData> dbFact = EventData.getFactory();
@@ -9334,7 +9334,7 @@ public class EventData
 
         /* end of where */
         return dwh.WHERE(dwh.toString());
-        
+
     }
 
     /**
@@ -9343,9 +9343,9 @@ public class EventData
     **/
     public static String getWhereClause(
         String acctId, String devId,
-        long timeStart, long timeEnd, 
-        int statCode[], 
-        boolean gpsRequired, 
+        long timeStart, long timeEnd,
+        int statCode[],
+        boolean gpsRequired,
         String andSelect_1)
     {
         return EventData.getWhereClause(
@@ -9472,7 +9472,7 @@ public class EventData
         dsel.setOrderAscending(isAscending);
         dsel.setLimit(limit);
         return dsel;
-        
+
     }
 
     /* get a specific EventData record */
@@ -9518,10 +9518,10 @@ public class EventData
         throws DBException
     {
         return EventData.getRangeEvents(
-            acctId, devId, 
+            acctId, devId,
             timeStart, timeEnd,
             statCode,
-            validGPS, 
+            validGPS,
             limitType, limit, ascending,
             addtnlSelect_1, null/*addtnlSelect_2*/,
             null/*rcdHandler*/);
@@ -9529,7 +9529,7 @@ public class EventData
 
     /* get range of EventData records (does not return null) */
     public static EventData[] getRangeEvents(
-        String acctId, 
+        String acctId,
         String devId,
         long timeStart, long timeEnd,
         int statCode[],
@@ -9540,10 +9540,10 @@ public class EventData
         throws DBException
     {
         return EventData.getRangeEvents(
-            acctId, devId, 
+            acctId, devId,
             timeStart, timeEnd,
             statCode,
-            validGPS, 
+            validGPS,
             limitType, limit, ascending,
             addtnlSelect_1, null/*addtnlSelect_2*/,
             rcdHandler);
@@ -9551,7 +9551,7 @@ public class EventData
 
     /* get range of EventData records (does not return null) */
     public static EventData[] getRangeEvents(
-        String acctId, 
+        String acctId,
         String devId,
         long timeStart, long timeEnd,
         int statCode[],
@@ -9565,10 +9565,10 @@ public class EventData
 
         /* get record selector */
         DBSelect<EventData> dsel = EventData._createRangeEventSelector(
-            acctId, devId, 
+            acctId, devId,
             timeStart, timeEnd,
             statCode,
-            validGPS, 
+            validGPS,
             limitType, limit, ascending,
             addtnlSelect_1, addtnlSelect_2); // fix [2.6.2-B06]
 
@@ -9635,10 +9635,10 @@ public class EventData
 
         /* get record selector */
         DBSelect<EventData> dsel = EventData._createRangeEventSelector(
-            acctId, devId, 
+            acctId, devId,
             timeStart, timeEnd,
             statCode,
-            validGPS, 
+            validGPS,
             limitType, limit, true/*ascending*/,
             addtnlSelect_1, null/*addtnlSelect_2*/);
 
@@ -9663,7 +9663,7 @@ public class EventData
 
     }
 
-    /** 
+    /**
     *** Gets the number of EventData records for the specified Account/Device
     *** within the specified range.
     *** @param acctId     The Account ID
@@ -9716,14 +9716,14 @@ public class EventData
         /* status codes required */
         if (ListTools.isEmpty(statCode)) {
             return map;
-        } 
+        }
 
         /* get record selector */
         DBSelect<EventData> dsel = EventData._createRangeEventSelector(
-            acctID, devID, 
+            acctID, devID,
             timeStart, timeEnd,
             statCode,
-            false/*validGPS*/, 
+            false/*validGPS*/,
             EventData.LimitType.FIRST, -1L, true/*ascending*/,
             null/*addtnlSelect_1*/, null/*addtnlSelect_2*/);
 
@@ -9776,7 +9776,7 @@ public class EventData
 
     /* get EventData records by "creationMillis" (does not return null) */
     public static EventData[] getEventsByCreationMillis(
-        String acctId, 
+        String acctId,
         String devId,
         long createStartMS, long createEndMS,
         long limit)
@@ -9850,7 +9850,7 @@ public class EventData
     /**
     *** Delete events which are in the future
     *** @param device      The Device record for which EventData records will be deleted
-    *** @param futureTime  The time in the future after which events will be deleted.  
+    *** @param futureTime  The time in the future after which events will be deleted.
     ***                    This time must be more than 60 seconds beyond the current system clock time.
     *** @return The number of events deleted.
     **/
@@ -9876,7 +9876,7 @@ public class EventData
     *** Delete events which are in the future
     *** @param acctID      The Account ID
     *** @param devID       The Device ID
-    *** @param futureTime  The time in the future after which events will be deleted.  
+    *** @param futureTime  The time in the future after which events will be deleted.
     ***                    This time must be more than 60 seconds beyond the current system clock time.
     *** @return The number of events deleted.
     **/
@@ -9907,7 +9907,7 @@ public class EventData
     *** Delete events which are after the specified timestamp (exclusive)
     *** @param acctID      The Account ID
     *** @param devID       The Device ID
-    *** @param timestamp   The time after which all events will be deleted.  
+    *** @param timestamp   The time after which all events will be deleted.
     *** @param inclusive   True to include 'timestamp', false to exclude
     *** @return The number of events deleted.
     **/
@@ -9966,7 +9966,7 @@ public class EventData
 
     /**
     *** Delete old events<br>
-    *** Note: Will return -1 if EventData table is InnoDB.  
+    *** Note: Will return -1 if EventData table is InnoDB.
     ***       Old events will still be deleted, however it will still go through the
     ***       motions of attempting to delete events, even if the range is empty.
     *** @param device      The Device instance for the events that are to be deleted.
@@ -9976,7 +9976,7 @@ public class EventData
     **/
     public static long deleteOldEvents(
         Device device,
-        long oldTimeSec, 
+        long oldTimeSec,
         StringBuffer msg)
         throws DBException
     {
@@ -9998,7 +9998,7 @@ public class EventData
             oldTimeSec = delOldTimeSec;
             if (msg != null) {
                 if (msg.length() > 0) { msg.append(", "); }
-                msg.append("Using retained-date"); 
+                msg.append("Using retained-date");
             }
         }
 
@@ -10101,7 +10101,7 @@ public class EventData
             this.startingGP = startingGP;
             this.accumKM = startingOdomKM;
         }
-        public int handleDBRecord(EventData rcd) throws DBException 
+        public int handleDBRecord(EventData rcd) throws DBException
         {
             EventData ev = rcd;
             if (this.lastEvent != null) {
@@ -10150,9 +10150,9 @@ public class EventData
 
         /* return distance */
         return rcdHandler.getGPSDistanceTraveledKM();
-        
+
     }
- 
+
     // ------------------------------------------------------------------------
 
     public static DateTime parseDate(String dateStr, TimeZone tz)
@@ -10220,7 +10220,7 @@ public class EventData
     *** @param desUTableName  The untranslated table name into which the EventData records
     ***     will be copied.  This table MUST at least define all columns which are defined
     ***     in the source EventData table (however, it may have additional fields).
-    ***     If the source EventData table has alternate key "creationTime", then the 
+    ***     If the source EventData table has alternate key "creationTime", then the
     ***     destination EventData table copy must also have "creationTime" defined as an
     ***     alternate key.
     **/
@@ -10398,12 +10398,12 @@ public class EventData
             // -- DBSelect
             DBSelect<EventData> dsel = new DBSelect<EventData>(dbFact);
             dsel.setWhere(dwh);
-            dsel.setOrderByFields(orderBy); 
+            dsel.setOrderByFields(orderBy);
             dsel.setOrderAscending(true);
             dsel.setLimit(maxReadLimit);
             // -- read
             try {
-                DBRecord.select(dsel, 
+                DBRecord.select(dsel,
                     new DBRecordHandler<EventData>() {
                         public int handleDBRecord(EventData rcd) throws DBException {
                             try {
@@ -10516,10 +10516,10 @@ public class EventData
     private static final String KEY_POSTALCODE[]      = new String[] { "postalCode"         , "zipCode"         };  // "98765"
     private static final String KEY_SUBDIVISION[]     = new String[] { "subdivision"        , "subdiv"          };  // "US/CA"
 
-    public  static final String KEY_FAULT_CODE[]      = new String[] { "faultCode"                              };  // 
-    public  static final String KEY_FAULT_CODES[]     = new String[] { "faultCodes"                             };  // 
-    public  static final String KEY_FAULT_HEADER[]    = new String[] { "faultHeader"                            };  // 
-    public  static final String KEY_FAULT_DESC[]      = new String[] { "faultDesc"                              };  // 
+    public  static final String KEY_FAULT_CODE[]      = new String[] { "faultCode"                              };  //
+    public  static final String KEY_FAULT_CODES[]     = new String[] { "faultCodes"                             };  //
+    public  static final String KEY_FAULT_HEADER[]    = new String[] { "faultHeader"                            };  //
+    public  static final String KEY_FAULT_DESC[]      = new String[] { "faultDesc"                              };  //
 
     private static final String KEY_GEOZONEID[]       = new String[] { "geozoneID"                              };  // "home"
     private static final String KEY_GEOZONE[]         = new String[] { "geozone"            , "geozoneDesc"     };  // "Home Base"
@@ -10557,13 +10557,13 @@ public class EventData
   //private static final String KEY_TEMP_7[]          = new String[] { "temp7", "thermoAverage7"              };  // 47.3F
     private static final String KEY_TEMP_ALL[]        = new String[] { "temp0", "temp1", "temp2", "temp3", "temp4", "temp5", "temp6", "temp7" };
 
-    private static final String KEY_ETA_DATETIME[]    = new String[] { "etaDateTime"                            };  // 
-    private static final String KEY_ETA_UNIQUE_ID[]   = new String[] { "etaUniqueID"        , "etaID"           };  // 
-    private static final String KEY_ETA_DISTANCE[]    = new String[] { "etaDistanceKM"                          };  // 
-    private static final String KEY_ETA_GEOPOINT[]    = new String[] { "etaGeoPoint"                            };  // 
-    private static final String KEY_STOP_ID[]         = new String[] { "stopUniqueID"       , "stopID"          };  // 
-    private static final String KEY_STOP_STATUS[]     = new String[] { "stopStatus"                             };  // 
-    private static final String KEY_STOP_INDEX[]      = new String[] { "stopIndex"                              };  // 
+    private static final String KEY_ETA_DATETIME[]    = new String[] { "etaDateTime"                            };  //
+    private static final String KEY_ETA_UNIQUE_ID[]   = new String[] { "etaUniqueID"        , "etaID"           };  //
+    private static final String KEY_ETA_DISTANCE[]    = new String[] { "etaDistanceKM"                          };  //
+    private static final String KEY_ETA_GEOPOINT[]    = new String[] { "etaGeoPoint"                            };  //
+    private static final String KEY_STOP_ID[]         = new String[] { "stopUniqueID"       , "stopID"          };  //
+    private static final String KEY_STOP_STATUS[]     = new String[] { "stopStatus"                             };  //
+    private static final String KEY_STOP_INDEX[]      = new String[] { "stopIndex"                              };  //
 
     private static final String KEY_STOPPED_TIME[]    = new String[] { "elapsedTimeStopped" , "stoppedTimeSec"  }; //
 
@@ -10607,7 +10607,7 @@ public class EventData
     public static String getKeyFieldTitle(String key, String arg, Locale locale)
     {
         return EventData._getKeyFieldString(
-            true/*title*/, key, arg, 
+            true/*title*/, key, arg,
             locale, null/*BasicPrivateLabel*/, null/*EventData*/);
     }
 
@@ -10623,7 +10623,7 @@ public class EventData
     {
         Locale locale = (bpl != null)? bpl.getLocale() : null;
         return EventData._getKeyFieldString(
-            false/*value*/, key, arg, 
+            false/*value*/, key, arg,
             locale, bpl, this);
     }
 
@@ -10638,7 +10638,7 @@ public class EventData
     *** @return The title/value
     **/
     public static String _getKeyFieldString(
-        boolean getTitle, String key, String arg, 
+        boolean getTitle, String key, String arg,
         Locale locale, BasicPrivateLabel bpl, EventData ed)
     {
 
@@ -10715,8 +10715,8 @@ public class EventData
                 // -- arg: <PrevHours>,<StatusCode>
                 String a[]       = StringTools.split(arg,',');
                 int sinceHH      = (a.length > 1)? StringTools.parseInt(a[0],24) : 24;
-                int statCodes[]  = ((a.length > 2) && !StringTools.isBlank(a[1]))? 
-                    new int[] { StringTools.parseInt(a[1],StatusCodes.STATUS_NONE) } : 
+                int statCodes[]  = ((a.length > 2) && !StringTools.isBlank(a[1]))?
+                    new int[] { StringTools.parseInt(a[1],StatusCodes.STATUS_NONE) } :
                     null;
                     long timeStart = now - DateTime.HourSeconds((sinceHH > 0)? sinceHH : 24);
                 long timeEnd     = -1L;
@@ -10747,7 +10747,7 @@ public class EventData
                     if (StringTools.isBlank(url)) {
                         return "";
                     } else
-                    if (StringTools.isBlank(arg)    || 
+                    if (StringTools.isBlank(arg)    ||
                         arg.equalsIgnoreCase("a")   ||  // "anchor"
                         arg.equalsIgnoreCase("html")||
                         arg.equalsIgnoreCase("link")  ) {
@@ -10804,7 +10804,7 @@ public class EventData
                     String e[] = device.getAttachedEntityDescriptions(EntityManager.EntityType.TRAILER);
                     if ((e != null) && (e.length > 0)) {
                         StringBuffer sb = new StringBuffer();
-                        for (int i = 0; i < e.length; i++) { 
+                        for (int i = 0; i < e.length; i++) {
                             if (i > 0) { sb.append(","); }
                             sb.append(e[i]);
                         }
@@ -11113,7 +11113,7 @@ public class EventData
                     return StringTools.format(distKM,"0") + " " + Account.DistanceUnits.KM.toString(locale);
                 }
             }
-        } 
+        }
 
         /* Battery */
         if (EventData._keyMatch(key,EventData.KEY_BATTERY_LEVEL)) {
@@ -11226,7 +11226,7 @@ public class EventData
                 double VOL = vu.convertFromLiters(litres);
                 return StringTools.format(VOL,"0.0") + " " + vu.toString(locale);
             }
-        } 
+        }
 
         /* Fuel #1 */
         if (EventData._keyMatch(key,EventData.KEY_FUEL_LEVEL1)) {
@@ -11276,7 +11276,7 @@ public class EventData
                 double VOL = vu.convertFromLiters(CAP_1 * LEV_1);
                 return StringTools.format(VOL,"0.0") + " " + vu.toString(locale);
             }
-        } 
+        }
 
         /* Fuel #2 */
         if (EventData._keyMatch(key,EventData.KEY_FUEL_LEVEL2)) {
@@ -11326,7 +11326,7 @@ public class EventData
                 double VOL = vu.convertFromLiters(CAP_2 * LEV_2);
                 return StringTools.format(VOL,"0.0") + " " + vu.toString(locale);
             }
-        } 
+        }
 
         /* Tires */
         if (EventData._keyMatch(key,EventData.KEY_TIRE_TEMP)) {
@@ -11406,7 +11406,7 @@ public class EventData
                     return "";
                 }
             }
-        } 
+        }
 
         /* Engine */
         if (EventData._keyMatch(key,EventData.KEY_OIL_PRESSURE)) { // [2.6.4-B18]
@@ -11443,7 +11443,7 @@ public class EventData
                 long rpm = ed.getEngineRpm();
                 return String.valueOf(rpm);
             }
-        } 
+        }
 
         /* Address values */
         if (EventData._keyMatch(key,EventData.KEY_ADDRESS)) {
@@ -11487,7 +11487,7 @@ public class EventData
             } else {
                 return ed.getSubdivision();
             }
-        } 
+        }
 
         /* OBD fault values */
         if (EventData._keyMatch(key,EventData.KEY_FAULT_CODES)) {
@@ -11705,7 +11705,7 @@ public class EventData
                 if (StringTools.isBlank(ph)) {
                     return "";
                 } else
-                if (StringTools.isBlank(arg)     || 
+                if (StringTools.isBlank(arg)     ||
                     arg.equalsIgnoreCase("plain")  ) {
                     return ph;
                 } else
@@ -11790,7 +11790,7 @@ public class EventData
             int  argBit  = StringTools.parseInt(arg,0);
             long argMask = (argBit >= 0)? (1L << argBit) : 0L;
             if (getTitle) {
-                return i18n.getString("EventData.key.seatbeltBit", "Seatbelt\n{0}", 
+                return i18n.getString("EventData.key.seatbeltBit", "Seatbelt\n{0}",
                     EventData.GetSeatbeltMaskDescription(argMask,locale));
             } else {
                 long seatbelt = ed.getSeatbeltMask(); // bit mask
@@ -11819,7 +11819,7 @@ public class EventData
             int  argBit  = StringTools.parseInt(arg,0);
             long argMask = (argBit >= 0)? (1L << argBit) : 0L;
             if (getTitle) {
-                return i18n.getString("EventData.key.doorBit", "Door\n{0}", 
+                return i18n.getString("EventData.key.doorBit", "Door\n{0}",
                     EventData.GetDoorMaskDescription(argMask,locale));
             } else {
                 long door = ed.getDoorStateMask(); // bit mask
@@ -11848,7 +11848,7 @@ public class EventData
             int  argBit  = StringTools.parseInt(arg,0);
             long argMask = (argBit >= 0)? (1L << argBit) : 0L;
             if (getTitle) {
-                return i18n.getString("EventData.key.lightsBit", "Lights\n{0}", 
+                return i18n.getString("EventData.key.lightsBit", "Lights\n{0}",
                     EventData.GetLightsMaskDescription(argMask,locale));
             } else {
                 long lights = ed.getLightsStateMask(); // bit mask
@@ -12192,8 +12192,8 @@ public class EventData
         public int compare(EventData ev1, EventData ev2) {
             if (ev1 == ev2) {
                 // -- exact same object (or both null)
-                return 0; 
-            } else 
+                return 0;
+            } else
             if (ev1 == null) {
                 // -- unlikely
                 return this.ascending? -1 :  1; // null < non-null
@@ -12248,8 +12248,8 @@ public class EventData
         public int compare(EventData ev1, EventData ev2) {
             if (ev1 == ev2) {
                 // -- exact same object (or both null)
-                return 0; 
-            } else 
+                return 0;
+            } else
             if (ev1 == null) {
                 // -- unlikely
                 return this.ascending? -1 :  1; // null < non-null
@@ -12314,10 +12314,10 @@ public class EventData
             } else
             if (v1 == null) {
                 return this.ascending? -1 : 1;
-            } else 
+            } else
             if (v2 == null) {
                 return this.ascending? 1 : -1;
-            } else 
+            } else
             if (v1.equals(v2)) {
                 return 0;
             } else
@@ -12463,7 +12463,7 @@ public class EventData
                 estSB.append(" to ");
                 estSB.append(StringTools.format((double)estSEC_hi / 3600.0,"0.00"));
                 estSB.append(" hours]");
-            } else 
+            } else
             if (estSEC_hi > 60L) {
                 // -- seconds
                 estSB.append(estSEC_lo);
@@ -12506,7 +12506,7 @@ public class EventData
                 confirm = confirmStr.equalsIgnoreCase("yes");
             }
             if (!confirm) {
-                String msg = 
+                String msg =
                 "-----------------------------------------------------------------------------------------------------------\n" +
                 "IMPORTANT NOTICE:\n" +
                 "The process to convert the EventData table to InnoDB may take an extended length of time to complete. \n" +
