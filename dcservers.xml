@@ -539,8 +539,8 @@
          === Listen ports
          -->
         <ListenPorts
-            tcpPort="31272"
-            udpPort="31272"
+            tcpPort="31273"
+            udpPort="31273"
             />
 
         <!--
