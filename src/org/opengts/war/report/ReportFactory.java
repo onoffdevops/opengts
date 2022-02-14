@@ -2399,7 +2399,8 @@ public class ReportFactory
             if (rptInfo == null) {
                 OutputProvider op = new OutputProvider(pw);
                 pw.print("<html>\n"); 
-                pw.print("<head>\n"); 
+                pw.print("<head>\n");
+                pw.print("<script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256 BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>\n");
                 rpt.getReportLayout().writeReportStyle(format, rpt, op, 1);
                 pw.print("</head>\n"); 
                 pw.print("<body>\n"); 

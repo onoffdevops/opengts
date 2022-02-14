@@ -1,0 +1,18 @@
+[INFO_|10/26 18:12:37|StartupInit.preInitialization:134] Version: 2.6.5
+[INFO_|10/26 18:12:37|StartupInit.preInitialization:138] GTS_HOME: /home/ubuntu/opengts
+[INFO_|10/26 18:12:37|OSTools.printMemoryUsage:1307] Memory-Mb: Max=3566.5, Total=185.0, Free=150.0, Used=35.0 [1%]
+[INFO_|10/26 18:12:37|DCServerFactory._loadDCServerXML:700] DCServerConfig XML file not loaded: /opt/tomcat/apache-tomcat-7.0.90/webapps/events/WEB-INF/dcservers.xml
+[INFO_|10/26 18:12:37|RTConfigContextListener.contextInitialized:290] java.awt.headless=false
+[INFO_|10/26 18:18:57|StartupInit.preInitialization:134] Version: 2.6.5
+[INFO_|10/26 18:18:57|StartupInit.preInitialization:138] GTS_HOME: /home/ubuntu/opengts
+[INFO_|10/26 18:18:57|OSTools.printMemoryUsage:1307] Memory-Mb: Max=3566.5, Total=228.0, Free=150.4, Used=77.6 [2%]
+[INFO_|10/26 18:18:57|DCServerFactory._loadDCServerXML:700] DCServerConfig XML file not loaded: /opt/tomcat/apache-tomcat-7.0.90/webapps/events/WEB-INF/dcservers.xml
+[INFO_|10/26 18:18:57|RTConfigContextListener.contextInitialized:290] java.awt.headless=false
+[INFO_|10/26 18:18:58|DBConnection.closeAllConnections:418] Closed all open DBConnections: 0
+[INFO_|10/26 18:18:59|RTConfigContextListener.contextDestroyed:322] Remaining pool threads [0]: 0
+[INFO_|10/26 18:18:59|RTConfigContextListener.contextDestroyed:325] ... Servlet Context destroyed: DeviceEvents
+[INFO_|10/26 18:18:59|RTConfigContextListener.contextDestroyed:326] -----------------------------------------------
+[INFO_|10/26 18:20:33|DBConnection.closeAllConnections:418] Closed all open DBConnections: 0
+[INFO_|10/26 18:20:34|RTConfigContextListener.contextDestroyed:322] Remaining pool threads [0]: 0
+[INFO_|10/26 18:20:34|RTConfigContextListener.contextDestroyed:325] ... Servlet Context destroyed: DeviceEvents
+[INFO_|10/26 18:20:34|RTConfigContextListener.contextDestroyed:326] -----------------------------------------------

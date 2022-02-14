@@ -676,7 +676,12 @@ public class TrackClientPacketHandler
 	  // TPMS - Tyres Pressure Monitoring
 	  if (eventCode.contains("tpms") || eventCode.contains("TPMS")) {
 		  Print.logInfo("TPMS (Tyres Pressure Monitoring) ");
-	  }
+      }
+      //Panic button
+      if (eventCode.contains("help me")) {       
+        statusCode = StatusCodes.STATUS_PANIC_ON;
+        Print.logInfo("PANIC BUTTON: test " + eventCode);
+      }
 
         /* valid lat/lon? */
         if (validGPS && !GeoPoint.isValid(latitude,longitude)) {
@@ -1077,7 +1082,9 @@ public class TrackClientPacketHandler
         if (servingCell != null) {
         Print.logInfo("CellTower: " + servingCell);
         }
-
+      
+        Print.logInfo("StatusCode: " + statusCode);
+        
         /* digital input change events */
         if (gpioInput >= 0L) {
             if (SIMEVENT_DIGITAL_INPUTS > 0L) {

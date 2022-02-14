@@ -119,6 +119,7 @@ import org.opengts.war.tools.ComboOption;
 import org.opengts.war.tools.MapDimension;
 
 import org.opengts.war.report.*;
+import org.opengts.war.track.Constants;
 
 public class EventDataLayout
     extends ReportLayout
@@ -715,7 +716,7 @@ public class EventDataLayout
                         //TimeZone tz_ = ed.getTimeZone();
                         BasicPrivateLabel bpl_ = Account.getPrivateLabel(acct_);
                         //String filename = ed.getTimestampString(epoch_, acct_, tz_, bpl_);
-						String filename = ed.getTimestampString(epoch_, acct_, bpl_);
+						String filename = ed.getTimestampString();
                         filename = filename.substring(0,19).replace(' ','_').replace('/','-');
                         attURL.addArg("fn", ed.getDeviceID() + "_" + filename);
                         int W = (dim != null)? dim.getWidth()  : 340; // Default: 600
@@ -736,7 +737,7 @@ public class EventDataLayout
                         String encURL = WebPageAdaptor.EncodeURL(reqState,attURL);
                         ColumnValue cv = new ColumnValue();
                         cv.setValue(" "+extn+" ");
-                        cv.setLinkURL("javascript:openResizableWindow('"+encURL+"','',"+W+","+H+");",null/*target*/);
+                        cv.setLinkURL("javascript:openResizableWindow('"+encURL+"','',"+W+","+H+");",null, false);
                         return cv;
                     } else {
                         return "";

@@ -240,6 +240,8 @@ public class ReportDisplay
         pw.write("  <meta name='copyright' content='"+privLabel.getCopyright()+"'/>\n");
         pw.write("  <meta name='robots' content='none'/>\n");
         pw.write("  <title>" + privLabel.getPageTitle() + "</title>\n");
+        pw.write("  <script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256 BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>\n");
+
 
         // -- JavaScript tools
         JavaScriptTools.writeUtilsJS(pw, request);
@@ -483,6 +485,7 @@ public class ReportDisplay
         pw.write("  <meta name='copyright' content='"+privLabel.getCopyright()+"'/>\n");
         pw.write("  <meta name='robots' content='none'/>\n");
         pw.write("  <title>" + privLabel.getPageTitle() + "</title>\n");
+        pw.write("  <script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256 BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>\n");
         report.writeJavaScript(pw, reqState);
         pw.write("</head>\n");
         pw.write("\n");

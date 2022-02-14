@@ -66,8 +66,8 @@ public class CommandPingDispatcher
     **/
     public boolean sendDeviceCommand(Device device, String cmdType, String cmdName, String cmdArgs[])
     {
-        RTProperties resp = DCServerFactory.sendServerCommand(device, cmdType, cmdName, cmdArgs);
-        return DCServerFactory.isCommandResultOK(resp);
+        //RTProperties resp = DCServerFactory.sendServerCommand(device, cmdType, cmdName, cmdArgs);
+        return false /*DCServerFactory.isCommandResultOK(resp)*/;
     }
 
     // ------------------------------------------------------------------------

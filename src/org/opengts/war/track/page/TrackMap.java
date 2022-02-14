@@ -328,7 +328,19 @@ public abstract class TrackMap
         HttpServletRequest  request    = reqState.getHttpServletRequest();
 
         /* start JavaScript */
-        JavaScriptTools.writeStartJavaScript(out);
+        JavaScriptTools.writeStartJavaScript(out); 
+        	out.println("function action_sendCMD() {");	
+            out.println("var devID = document.getElementById('deviceSelector').value;");
+            out.println("var cmdID = document.getElementById('CommandID').value;");					
+            out.println("$.post('./SendCommand',");
+            out.println("{");					
+            out.println("DeviceID: devID,");
+            out.println("CommandID: cmdID");
+            out.println("},");
+            out.println("function(data,status) {");
+            out.println("console.log(data, status);");
+            out.println("});");
+            out.println("};");
 
         /* Calendar attributes */
         boolean calFade     = false;
@@ -514,6 +526,8 @@ public abstract class TrackMap
 
         /* TrackMap.js */
         JavaScriptTools.writeJSInclude(out, JavaScriptTools.qualifyJSFileRef("TrackMap.js"), request);
+        /* Jquery.js */
+        JavaScriptTools.writeJSInclude(out, JavaScriptTools.qualifyJSFileRef("jquery.js"), request);
 
         /* sorttable.js */
         if (sortableLocDet ||
@@ -1034,6 +1048,7 @@ public abstract class TrackMap
                 // -- Command Form
                 // -  This entire form is 'hidden'.  It's used by JS functions to submit specific commands 
                 String actionURL = Track.GetBaseURL(reqState); // EncodeMakeURL(reqState,RequestProperties.TRACK_BASE_URI());
+           
                 out.println("\n<!-- Command form -->");
                 out.println("<form id='"+FORM_COMMAND+"' name='"+FORM_COMMAND+"' method='post' action=\""+actionURL+"\" target='_self'>"); // target='_top'
                 out.println("  <input type='hidden' name='"+PARM_PAGE                 +"' value=''/>");
@@ -1047,7 +1062,7 @@ public abstract class TrackMap
 
                 // -- start of map/date table (2 columns)
                 String tableStyle = "width:100%;" + (mapAutoSize?" height:100%;":"");
-                out.println("<table border='0' cellspacing='0' cellpadding='0' style='"+tableStyle+"'>"); // [
+                out.println("<table border='0' cellspacing='0' cellpadding='0' style='width:100%'"); // [
 
                 // -- Account/Device header
                 // -  TODO: this should have references to CSS clases
@@ -1060,10 +1075,10 @@ public abstract class TrackMap
                 // -- Device/Group selection
                 out.println("<td nowrap align='left' style='font-size:9pt; height:19px;'>");
                 out.println("<form id='"+FORM_SELECT_DEVICE+"' name='"+FORM_SELECT_DEVICE+"' method='post' target='_self'>"); // target='_top'
-                out.println("<input type='hidden' name='"+PARM_PAGE                 +"' value='" + FilterValue(pageName) + "'/>");
-                out.println("<input type='hidden' name='"+Calendar.PARM_RANGE_FR[0] +"' value=''/>");
-                out.println("<input type='hidden' name='"+Calendar.PARM_RANGE_TO[0] +"' value=''/>");
-                out.println("<input type='hidden' name='"+Calendar.PARM_TIMEZONE[0] +"' value=''/>");
+                out.println("<input type='text' name='"+PARM_PAGE                 +"' value='" + FilterValue(pageName) + "'/>");
+                out.println("<input type='text' name='"+Calendar.PARM_RANGE_FR[0] +"' value=''/>");
+                out.println("<input type='text' name='"+Calendar.PARM_RANGE_TO[0] +"' value=''/>");
+                out.println("<input type='text' name='"+Calendar.PARM_TIMEZONE[0] +"' value=''/>");
                 out.write("<table cellspacing='0' cellpadding='0' border='0'><tr>\n"); // [
                 String mapTypeTitle = TrackMap.this.getStringProperty(privLabel,PROP_mapTypeTitle,null);
                 if (StringTools.isBlank(mapTypeTitle)) {
@@ -1134,7 +1149,8 @@ public abstract class TrackMap
                             sortList.add(new IDDescription(id,desc));
                         }
                         IDDescription.SortList(sortList, rtnDispName? IDDescription.SortBy.DESCRIPTION : dcSortBy);
-                        out.print("<td nowrap>");
+                      
+					
                         out.print("<select id='"+ID_DEVICE_ID+"' name='"+parmDevGrp+"' onchange=\"javascript:trackMapSelectDevice()\">");
                         for (IDDescription dd : sortList) {
                             String id   = dd.getID();
@@ -1585,15 +1601,49 @@ public abstract class TrackMap
                     out.write("<tr>\n");
                     out.write("<td colspan='"+colspan+"' align='center' style='padding-top:2px; border-top:1px solid #555555; font-size:9pt;'>\n");
                     out.write("<a class='trackMapDetailLocationControl' id='"+MapProvider.ID_DETAIL_CONTROL+"' href=\"javascript:mapProviderToggleDetails()\">");
-                    out.write(i18n.getString("TrackMap.showLocationDetails","Show Location Details"));
+                    out.write(i18n.getString("TrackMap.showLocationDetails","Show Location Details Alejo"));
                     out.write("</a>");
-                    out.write("<div id='"+MapProvider.ID_DETAIL_TABLE+"' style='width:100%;'></div>\n");
+                    out.write("<div style='color:red' id='"+MapProvider.ID_DETAIL_TABLE+"' style='width:100%;'></div>\n");
                     out.write("</td>\n");
                     out.write("</tr>\n");
+
+                    
+                     
                 }
 
                 // -- end of map/selector table
                 out.println("");
+                   out.println("<div id='sendCMD'>");
+                        out.println("<select id='CommandID'>");
+                        out.println("<option disabled selected>-------</option>");
+                        out.println("<optgroup label='Comandos Generales'>");
+                        out.println("<option value='positionStart'>Solicitar Posicion</option>"); 
+                        out.println("<option value='positionSingle'>Posicion Individual</option>"); 					
+                        out.println("<option value='positionCancel'>Cancelar Posicion</option>");					
+                        out.println("<option value='positionPeriodic_10s'>Posicion Periodica Cada 10 sec.</option>");
+                        out.println("<option value='positionPeriodic_15s'>Posicion Periodica Cada 15 sec.</option>");
+                        out.println("<option value='positionPeriodic_20s'>Posicion Periodica Cada 20 sec.</option>");
+                        out.println("<option value='positionPeriodic_30s'>Posicion Periodica Cada 30 sec.</option>");
+                        out.println("<option value='positionPeriodic_1m'>Posicion Periodica Cada 1 min.</option>");
+                        out.println("<option value='positionPeriodic_5m'>Posicion Periodica Cada 5 min.</option>");
+                        out.println("<option value='positionPeriodic_10m'>Posicion Periodica Cada 10 min.</option>");
+                        out.println("<option value='positionPeriodic_30m'>Posicion Periodica Cada 30 min.</option>");
+                        out.println("<option value='positionPeriodic_1h'>Posicion Periodica Cada 1 hora</option>");
+                        out.println("<option value='positionPeriodic_5h'>Posicion Periodica Cada 5 horas</option>");
+                        out.println("<option value='positionPeriodic_10h'>Posicion Periodica Cada 10 horas</option>");
+                        out.println("<option value='positionPeriodic_24h'>Posicion Periodica Cada 24 horas</option>");					
+                        out.println("<option value='engineOFF'>Apagado de Motor</option>");	
+                        out.println("<option value='engineON'>Encendido de Motor</option>");
+                        out.println("<option value='alarmArm'>Alarma (Arm)</option>");
+                        out.println("<option value='alarmDisarm'>Alarma (Disarm)</option>");					
+                        out.println("<option value='alarmCancel'>Cancelar Alarma</option>");
+                        out.println("<option value='alarmCancelMove'>Cancelar Alarma de Movimiento</option>");					
+                        out.println("<option value='requestPhoto'>Solicitar Foto</option>");
+                        out.println("</optgroup>");					
+                        out.println("</select>");
+                        out.println("<br><br>");
+                        out.println("<button onclick='javascript:action_sendCMD();' type='button'>ENVIAR</button>");
+                        out.println("</div>");	
                 out.println("</table>"); // ]
 
                 /* write DeviceChooser DIV */

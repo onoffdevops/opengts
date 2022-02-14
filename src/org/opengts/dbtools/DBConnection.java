@@ -1208,6 +1208,17 @@ public class DBConnection
         }
     }
 
+     /**
+    *** Gets the default DBConnection
+    **/
+    public static DBConnection getDefaultConnection()
+    {
+        String uri = DBProvider.getDBUri(true);
+        String usr = DBProvider.getDBUsername();
+        String pwd = DBProvider.getDBPassword();
+        return getDBConnection_read(uri, usr, pwd);
+    }
+
     // ------------------------------------------------------------------------
 
 }

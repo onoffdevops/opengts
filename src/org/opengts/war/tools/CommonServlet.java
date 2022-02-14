@@ -419,6 +419,8 @@ public class CommonServlet
         out.write("  <meta http-equiv='expires' content='0'/>\n"); // expires 'now'
         out.write("  <meta name='copyright' content='"+privLabel.getCopyright()+"'/>\n");
         out.write("  <meta name='robots' content='none'/>\n");
+        out.write("  <script src='https://code.jquery.com/jquery-2.2.4.min.js' integrity='sha256 BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=' crossorigin='anonymous'></script>\n");
+
         out.write("  <title>" + privLabel.getPageTitle() + "</title>\n");
 
         // Page style

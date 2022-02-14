@@ -63,6 +63,7 @@ import org.opengts.util.*;
 import org.opengts.dbtools.*;
 
 import org.opengts.db.tables.*;
+import java.nio.charset.StandardCharsets;
 
 public class DCServerFactory
 {
@@ -2119,6 +2120,7 @@ public class DCServerFactory
         Device device,
         String cmdType, String cmdName, String cmdArgs[])
     {
+        //String answer = "";
         boolean internal = ((cmdType != null) && cmdType.equalsIgnoreCase(DCServerConfig.COMMAND_INTERNAL))? true : false;
 
         /* blank account/device */
@@ -2141,7 +2143,7 @@ public class DCServerFactory
         RTProperties rtCmd = DCServerFactory.createRTProperties(
             accountID, deviceID, uniqueID, 
             cmdType, cmdName, cmdArgs);
-        String   cmdStr    = rtCmd.toString();
+        String   cmdStr    =rtCmd.toString();
         byte     cmdData[] = (cmdStr + "\n").getBytes();
 
         /* get command dispatch host:port */
@@ -2169,8 +2171,7 @@ public class DCServerFactory
             CommandPacketHandler.setResult(rtCmd,result);
             rtCmd.setString(DCServerFactory.RESPONSE_PROTOCOL, DCServerConfig.CommandProtocol.SMS.toString());
             return rtCmd;
-        }
-
+        }        
         /* send */
         Print.logInfo("[%s] Sending command to '%s:%d' ==> %s", serverName, cmdHost, cmdPort, cmdStr);
         RTProperties response = null;
@@ -2181,6 +2182,7 @@ public class DCServerFactory
             String resp = cst.socketReadLine();
             Print.logInfo("[%s] Command Response: %s", serverName, resp);
             response = new RTProperties(resp); // via SMS???
+            //answer += "respuesta "+ response; 
         } catch (ConnectException ce) { // "Connection refused"
             Print.logError("[" + serverName + "] Unable to connect to server: " + ce.getMessage());
         } catch (Throwable t) {
@@ -2190,14 +2192,14 @@ public class DCServerFactory
         }
         
         /* return response */
-        return response;
+        return rtCmd;
 
     }
     
     /**
     *** Send a command request to the server command port for the specified Device
     **/
-    public static RTProperties sendServerCommand(
+    public static RTProperties sendServerCommand(      
         Device device,
         String cmdType, String cmdName, String cmdArgs[])
     {
@@ -2224,19 +2226,19 @@ public class DCServerFactory
                 cmdType, cmdName, cmdArgs);
             resp.setString(DCServerFactory.RESPONSE_RESULT , result.getCode() );
             resp.setString(DCServerFactory.RESPONSE_MESSAGE, result.toString());
-            return resp;
+            return null;
         }
 
         /* Account/Device: exceeds max 'ping' */
         if (!internal && device.exceedsMaxPingCount()) {
-            Print.logWarn(dcsCtx + "Account/Device exceeded maximum allowed pings.");
+            //Print.logWarn(dcsCtx + "Account/Device exceeded maximum allowed pings.");
             ResultCode result = ResultCode.OVER_LIMIT;
             RTProperties resp = DCServerFactory.createRTProperties(
                 acctID, devID, unqID, 
                 cmdType, cmdName, cmdArgs);
             resp.setString(DCServerFactory.RESPONSE_RESULT , result.getCode() );
             resp.setString(DCServerFactory.RESPONSE_MESSAGE, result.toString());
-            return resp;
+            return null;
         }
 
         /* send command */
@@ -2245,6 +2247,7 @@ public class DCServerFactory
 
         /* increment ping count */
         if (!internal && (device != null) && DCServerFactory.isCommandResultOK(resp)) {
+          
             Print.logInfo(dcsCtx + "Incrementing Device PingCount ...");
             device.incrementPingCount(DateTime.getCurrentTimeSec(), true/*reload*/, true/*update*/); // Server delegate
           //String acctID = RTConfig.getString(RTKey.SESSION_ACCOUNT  ,device.getAccountID());
@@ -2255,6 +2258,7 @@ public class DCServerFactory
             if (!ListTools.isEmpty(cmdArgs)) { cmdStr += "(" + StringTools.join(cmdArgs,",") + ")"; }
             Audit.deviceCommand(acctID, userID, devID, ipAddr, cmdStr, cmdProto);
         } else {
+           
             Print.logInfo(dcsCtx + "Response: " + resp);
         }
 
@@ -3531,11 +3535,11 @@ public class DCServerFactory
     **/
     private static void usage()
     {
-        Print.logInfo("Usage:");
-        Print.logInfo("  java ... " + DCServerFactory.class.getName() + " {options}");
-        Print.logInfo("'Lookup' Options:");
+        Print.logInfo("   Usage:");
+        Print.logInfo("   java ... " + DCServerFactory.class.getName() + " {options}");
+        Print.logInfo("  'Lookup' Options:");
         Print.logInfo("  -lookup=<mobileID>      A device mobile-id");
-        Print.logInfo("'Send' Options:");
+        Print.logInfo("  'Send' Options:");
         Print.logInfo("  -server=<serverID>      The DCS id");
         Print.logInfo("  -account=<accountID>    The account id");
         Print.logInfo("  -device=<deviceID>      The device id");
@@ -3741,7 +3745,7 @@ public class DCServerFactory
         // -------------------------------------------------------
 
         /* send */
-        RTProperties resp = DCServerFactory._sendServerCommand(server, device, cmdType, cmdName, cmdArgs);
+        RTProperties resp =DCServerFactory._sendServerCommand(server, device, cmdType, cmdName, cmdArgs);
         if (resp == null) {
             Print.sysPrintln("Unable to send command");
             System.exit(2);

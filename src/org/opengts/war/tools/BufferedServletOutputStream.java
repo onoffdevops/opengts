@@ -95,7 +95,7 @@ public class BufferedServletOutputStream // <-- mod may be required for Tomcat-7
     ***    Unomment the line below.
     ***    Remove source module "src/org/opengts/war/tools/WriteListener.java" (if present)
     **/
-    public void setWriteListener(/*javax.servlet.*/WriteListener wl) {/*NO-OP*/}
+    //public void setWriteListener(/*javax.servlet.*/WriteListener wl) {/*NO-OP*/}
 
     // ------------------------------------------------------------------------
 

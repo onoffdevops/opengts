@@ -1,0 +1,1623 @@
+##
+[INFO_|02/10 15:09:37|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:5666]
+[INFO_|02/10 15:09:37|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:5666 [to null:22001]
+[INFO_|02/10 15:09:37|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101024,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2650] IMEI     : 864927030040330
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2651] Timestamp: 1644228624 [Mon Feb 07 10:10:24 UTC 2022]
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2672] UniqueID : 864927030040330
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2673] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2771] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2775] Speed    : 0.0 kph 0.0
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2777] Battery V: 14.2 Volts
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2783] Odometer : 2602.0 km
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2786] EngTemp C: 50.0 C
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.handleCommon:2789] OBD DTC  : P0135
+[INFO_|02/10 15:09:37|TrackClientPacketHandler.insertEventRecord:3020] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:09:37|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:09:37|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [39 ms] (normal) ...
+[INFO_|02/10 15:09:37|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [39 ms]
+[INFO_|02/10 15:11:39|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:50978]
+[INFO_|02/10 15:11:39|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:50978 [to null:22001]
+[INFO_|02/10 15:11:39|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101025,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2650] IMEI     : 864927030040330
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2651] Timestamp: 1644228625 [Mon Feb 07 10:10:25 UTC 2022]
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2672] UniqueID : 864927030040330
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2673] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2771] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2775] Speed    : 0.0 kph 0.0
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2777] Battery V: 14.2 Volts
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2783] Odometer : 2602.0 km
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2786] EngTemp C: 50.0 C
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.handleCommon:2789] OBD DTC  : P0135
+[INFO_|02/10 15:11:39|TrackClientPacketHandler.insertEventRecord:3020] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:11:39|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:11:39|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [43 ms] (normal) ...
+[INFO_|02/10 15:11:39|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [42 ms]
+[INFO_|02/10 15:21:58|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:54966]
+[INFO_|02/10 15:21:58|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:54966 [to null:22001]
+[INFO_|02/10 15:21:58|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101026,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2650] IMEI     : 864927030040330
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2651] Timestamp: 1644228626 [Mon Feb 07 10:10:26 UTC 2022]
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2672] UniqueID : 864927030040330
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2673] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2771] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2775] Speed    : 0.0 kph 0.0
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2777] Battery V: 14.2 Volts
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2783] Odometer : 2602.0 km
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2786] EngTemp C: 50.0 C
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.handleCommon:2789] OBD DTC  : P0135
+[INFO_|02/10 15:21:58|TrackClientPacketHandler.insertEventRecord:3020] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:21:58|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:21:58|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [43 ms] (normal) ...
+[INFO_|02/10 15:21:58|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [43 ms]
+[INFO_|02/10 15:24:04|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:50197]
+[INFO_|02/10 15:24:04|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:50197 [to null:22001]
+[INFO_|02/10 15:24:04|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101027,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2650] IMEI     : 864927030040330
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2651] Timestamp: 1644228627 [Mon Feb 07 10:10:27 UTC 2022]
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2672] UniqueID : 864927030040330
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2673] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2771] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2775] Speed    : 0.0 kph 0.0
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2777] Battery V: 14.2 Volts
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2783] Odometer : 2602.0 km
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2786] EngTemp C: 50.0 C
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.handleCommon:2789] OBD DTC  : P0135
+[INFO_|02/10 15:24:04|TrackClientPacketHandler.insertEventRecord:3020] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:24:04|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:24:04|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [41 ms] (normal) ...
+[INFO_|02/10 15:24:04|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [41 ms]
+[INFO_|02/10 15:28:25|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 15:28:25|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 15:28:25|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 15:28:25|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 15:28:25|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 15:28:25|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 15:28:25|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 15:28:25|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 15:28:25|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 15:28:25|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 15:28:25|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 15:28:25|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 15:28:25|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 15:28:25|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 15:28:27|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 15:28:27|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 15:28:33|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:49231]
+[INFO_|02/10 15:28:33|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 15:28:33|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:49231 [to null:22001]
+[INFO_|02/10 15:28:33|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101028,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing Emanuel: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228628 [Mon Feb 07 10:10:28 UTC 2022]
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 15:28:33|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:28:33|DBField.<init>:426] [attachData] Type mismatch - expected:MEDIUMBLOB[MBLOB] ==> found:BLOB[SBLOB]
+[INFO_|02/10 15:28:33|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:28:33|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [145 ms] (normal) ...
+[INFO_|02/10 15:28:33|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [145 ms]
+[INFO_|02/10 15:45:59|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 15:45:59|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 15:45:59|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 15:45:59|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 15:45:59|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 15:45:59|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 15:45:59|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 15:45:59|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 15:45:59|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 15:45:59|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 15:45:59|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 15:45:59|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 15:45:59|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 15:45:59|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 15:46:01|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 15:46:01|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 15:47:24|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 15:47:24|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 15:47:24|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 15:47:24|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 15:47:24|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 15:47:24|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 15:47:24|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 15:47:24|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 15:47:24|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 15:47:24|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 15:47:24|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 15:47:24|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 15:47:24|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 15:47:24|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 15:47:27|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 15:47:27|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 15:47:35|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:48611]
+[INFO_|02/10 15:47:35|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 15:47:35|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:48611 [to null:22001]
+[INFO_|02/10 15:47:35|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101029,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228629 [Mon Feb 07 10:10:29 UTC 2022]
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 15:47:35|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[INFO_|02/10 15:47:35|DBField.<init>:426] [attachData] Type mismatch - expected:MEDIUMBLOB[MBLOB] ==> found:BLOB[SBLOB]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixType [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixStatus [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.horzAccuracy [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vertAccuracy [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.HDOP [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.satelliteCount [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryLevel [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryVolts [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.signalStrength [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.sequence [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressReg [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelUsage [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel2 [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEconomy [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTotal [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelRemain [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTrip [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelIdle [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPTO [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEngineOn [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineRpm [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineHours [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineOnHours [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineLoad [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTorque [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.idleHours [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workHours [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workDistanceKM [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.serviceDistanceKM [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transOilTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerInTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerOutTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantLevel [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.intakeTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeGForce [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.acceleration [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.accelerometerXYZ [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.massAirFlowRate [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilLevel [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airFilterPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.turboPressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoEngaged [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoHours [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoDistanceKM [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.throttlePos [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePos [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vBatteryVolts [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.j1708Fault [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.faultCode [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.malfunctionLamp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tirePressure [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tireTemp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tankLevel [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.seatbeltMask [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.doorStateMask [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.lightsStateMask [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airbagLamp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.absLamp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeLamp [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transGear [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTowerID [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileCountryCode [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileNetworkCode [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTimingAdvance [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.locationAreaCode [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellServingInfo [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLatitude [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLongitude [ignored]
+[WARN_|02/10 15:47:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellAccuracy [ignored]
+[INFO_|02/10 15:47:35|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 15:47:35|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [192 ms] (normal) ...
+[INFO_|02/10 15:47:35|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [192 ms]
+[INFO_|02/10 18:55:02|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 18:55:02|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 18:55:02|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 18:55:02|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 18:55:02|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 18:55:02|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 18:55:02|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 18:55:02|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 18:55:02|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 18:55:02|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 18:55:02|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 18:55:02|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 18:55:02|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 18:55:02|Main.main:182] --------------------------------------------------------------------------
+[ERROR|02/10 18:55:05|ServerSocketThread.createServerSocket:298] Bind Address: null
+[ERROR|02/10 18:55:05|TrackServer._startTCP:225] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.opengts.util.ServerSocketThread.createServerSocket(ServerSocketThread.java:292)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:555)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:566)
+	at org.opengts.servers.tk10x.TrackServer._startTCP(TrackServer.java:223)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:175)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 18:55:05|TrackServer.<init>:178] TCP: Error binding to port: 22001
+[ERROR|02/10 18:55:05|TrackServer._startUDP:262] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at org.opengts.util.ServerSocketThread.createDatagramSocket(ServerSocketThread.java:266)
+	at org.opengts.servers.tk10x.TrackServer._startUDP(TrackServer.java:260)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:192)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 18:55:05|TrackServer.<init>:198] UDP: Error binding to port: 22001
+[WARN_|02/10 18:55:05|TrackServer.<init>:208] No active device communication listeners!
+[INFO_|02/10 18:56:23|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:11091]
+[INFO_|02/10 18:56:23|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:11091 [to null:22001]
+[INFO_|02/10 18:56:23|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101030,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228630 [Mon Feb 07 10:10:30 UTC 2022]
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 18:56:23|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixType [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixStatus [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.horzAccuracy [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vertAccuracy [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.HDOP [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.satelliteCount [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryLevel [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryVolts [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.signalStrength [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.sequence [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressReg [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelUsage [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel2 [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEconomy [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTotal [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelRemain [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTrip [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelIdle [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPTO [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEngineOn [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineRpm [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineHours [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineOnHours [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineLoad [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTorque [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.idleHours [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workHours [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workDistanceKM [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.serviceDistanceKM [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transOilTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerInTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerOutTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantLevel [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.intakeTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeGForce [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.acceleration [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.accelerometerXYZ [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.massAirFlowRate [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilLevel [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airFilterPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.turboPressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoEngaged [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoHours [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoDistanceKM [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.throttlePos [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePos [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vBatteryVolts [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.j1708Fault [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.faultCode [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.malfunctionLamp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tirePressure [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tireTemp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tankLevel [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.seatbeltMask [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.doorStateMask [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.lightsStateMask [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airbagLamp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.absLamp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeLamp [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transGear [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTowerID [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileCountryCode [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileNetworkCode [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTimingAdvance [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.locationAreaCode [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellServingInfo [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLatitude [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLongitude [ignored]
+[WARN_|02/10 18:56:23|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellAccuracy [ignored]
+[INFO_|02/10 18:56:23|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 18:56:23|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [117 ms] (normal) ...
+[INFO_|02/10 18:56:23|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [117 ms]
+[INFO_|02/10 19:03:13|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 19:03:13|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 19:03:13|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 19:03:13|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 19:03:13|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 19:03:13|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 19:03:13|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 19:03:13|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 19:03:13|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 19:03:13|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 19:03:13|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 19:03:13|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 19:03:13|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 19:03:13|Main.main:182] --------------------------------------------------------------------------
+[ERROR|02/10 19:03:16|ServerSocketThread.createServerSocket:298] Bind Address: null
+[ERROR|02/10 19:03:16|TrackServer._startTCP:225] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.opengts.util.ServerSocketThread.createServerSocket(ServerSocketThread.java:292)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:555)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:566)
+	at org.opengts.servers.tk10x.TrackServer._startTCP(TrackServer.java:223)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:175)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 19:03:16|TrackServer.<init>:178] TCP: Error binding to port: 22001
+[ERROR|02/10 19:03:16|TrackServer._startUDP:262] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at org.opengts.util.ServerSocketThread.createDatagramSocket(ServerSocketThread.java:266)
+	at org.opengts.servers.tk10x.TrackServer._startUDP(TrackServer.java:260)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:192)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 19:03:16|TrackServer.<init>:198] UDP: Error binding to port: 22001
+[WARN_|02/10 19:03:16|TrackServer.<init>:208] No active device communication listeners!
+[INFO_|02/10 19:03:51|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:54893]
+[INFO_|02/10 19:03:51|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:54893 [to null:22001]
+[INFO_|02/10 19:03:51|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101031,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228631 [Mon Feb 07 10:10:31 UTC 2022]
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 19:03:51|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixType [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixStatus [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.horzAccuracy [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vertAccuracy [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.HDOP [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.satelliteCount [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryLevel [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryVolts [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.signalStrength [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.sequence [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressReg [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelUsage [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel2 [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEconomy [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTotal [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelRemain [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTrip [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelIdle [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPTO [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEngineOn [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineRpm [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineHours [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineOnHours [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineLoad [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTorque [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.idleHours [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workHours [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workDistanceKM [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.serviceDistanceKM [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transOilTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerInTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerOutTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantLevel [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.intakeTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeGForce [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.acceleration [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.accelerometerXYZ [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.massAirFlowRate [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilLevel [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airFilterPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.turboPressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoEngaged [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoHours [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoDistanceKM [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.throttlePos [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePos [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vBatteryVolts [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.j1708Fault [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.faultCode [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.malfunctionLamp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tirePressure [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tireTemp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tankLevel [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.seatbeltMask [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.doorStateMask [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.lightsStateMask [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airbagLamp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.absLamp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeLamp [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transGear [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTowerID [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileCountryCode [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileNetworkCode [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTimingAdvance [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.locationAreaCode [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellServingInfo [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLatitude [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLongitude [ignored]
+[WARN_|02/10 19:03:51|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellAccuracy [ignored]
+[INFO_|02/10 19:03:51|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 19:03:51|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [95 ms] (normal) ...
+[INFO_|02/10 19:03:51|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [96 ms]
+[INFO_|02/10 20:07:24|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 20:07:24|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 20:07:24|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 20:07:24|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 20:07:24|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 20:07:24|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 20:07:24|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 20:07:24|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 20:07:24|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 20:07:24|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 20:07:24|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 20:07:24|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 20:07:24|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 20:07:24|Main.main:182] --------------------------------------------------------------------------
+[ERROR|02/10 20:07:26|ServerSocketThread.createServerSocket:298] Bind Address: null
+[ERROR|02/10 20:07:26|TrackServer._startTCP:225] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.opengts.util.ServerSocketThread.createServerSocket(ServerSocketThread.java:292)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:555)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:566)
+	at org.opengts.servers.tk10x.TrackServer._startTCP(TrackServer.java:223)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:175)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:07:26|TrackServer.<init>:178] TCP: Error binding to port: 22001
+[ERROR|02/10 20:07:26|TrackServer._startUDP:262] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at org.opengts.util.ServerSocketThread.createDatagramSocket(ServerSocketThread.java:266)
+	at org.opengts.servers.tk10x.TrackServer._startUDP(TrackServer.java:260)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:192)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:07:26|TrackServer.<init>:198] UDP: Error binding to port: 22001
+[WARN_|02/10 20:07:26|TrackServer.<init>:208] No active device communication listeners!
+[INFO_|02/10 20:07:35|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:18513]
+[INFO_|02/10 20:07:35|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:18513 [to null:22001]
+[INFO_|02/10 20:07:35|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101032,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228632 [Mon Feb 07 10:10:32 UTC 2022]
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 20:07:35|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixType [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.gpsFixStatus [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.horzAccuracy [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vertAccuracy [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.HDOP [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.satelliteCount [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryLevel [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryVolts [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.batteryTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.signalStrength [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.sequence [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPressReg [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelUsage [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelLevel2 [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEconomy [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTotal [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelRemain [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelTrip [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelIdle [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelPTO [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.fuelEngineOn [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineRpm [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineHours [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineOnHours [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineLoad [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTorque [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.idleHours [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workHours [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.workDistanceKM [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.serviceDistanceKM [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transOilTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerInTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilCoolerOutTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantLevel [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.coolantTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.engineTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.intakeTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeGForce [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.acceleration [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.accelerometerXYZ [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.massAirFlowRate [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilLevel [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.oilTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airFilterPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.turboPressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoEngaged [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoHours [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.ptoDistanceKM [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.throttlePos [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakePos [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.vBatteryVolts [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.j1708Fault [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.faultCode [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.malfunctionLamp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tirePressure [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tireTemp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.tankLevel [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.seatbeltMask [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.doorStateMask [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.lightsStateMask [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.airbagLamp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.absLamp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.brakeLamp [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.transGear [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTowerID [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileCountryCode [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.mobileNetworkCode [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellTimingAdvance [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.locationAreaCode [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellServingInfo [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLatitude [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellLongitude [ignored]
+[WARN_|02/10 20:07:35|DBProvider.insertRecordIntoTable:2365] Insert: Field does not exist: EventData.cellAccuracy [ignored]
+[INFO_|02/10 20:07:35|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 20:07:35|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [89 ms] (normal) ...
+[INFO_|02/10 20:07:35|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [88 ms]
+[INFO_|02/10 20:14:02|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 20:14:02|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 20:14:02|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 20:14:02|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 20:14:02|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 20:14:02|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 20:14:02|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 20:14:02|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 20:14:02|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 20:14:02|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 20:14:02|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 20:14:02|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 20:14:02|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 20:14:02|Main.main:182] --------------------------------------------------------------------------
+[ERROR|02/10 20:14:04|ServerSocketThread.createServerSocket:298] Bind Address: null
+[ERROR|02/10 20:14:04|TrackServer._startTCP:225] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.opengts.util.ServerSocketThread.createServerSocket(ServerSocketThread.java:292)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:555)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:566)
+	at org.opengts.servers.tk10x.TrackServer._startTCP(TrackServer.java:223)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:175)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:14:04|TrackServer.<init>:178] TCP: Error binding to port: 22001
+[ERROR|02/10 20:14:04|TrackServer._startUDP:262] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at org.opengts.util.ServerSocketThread.createDatagramSocket(ServerSocketThread.java:266)
+	at org.opengts.servers.tk10x.TrackServer._startUDP(TrackServer.java:260)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:192)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:14:04|TrackServer.<init>:198] UDP: Error binding to port: 22001
+[WARN_|02/10 20:14:04|TrackServer.<init>:208] No active device communication listeners!
+[INFO_|02/10 20:21:59|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 20:21:59|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 20:21:59|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 20:21:59|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 20:21:59|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 20:21:59|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 20:21:59|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 20:21:59|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 20:21:59|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 20:21:59|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 20:21:59|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 20:21:59|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 20:21:59|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 20:21:59|Main.main:182] --------------------------------------------------------------------------
+[ERROR|02/10 20:22:01|ServerSocketThread.createServerSocket:298] Bind Address: null
+[ERROR|02/10 20:22:01|TrackServer._startTCP:225] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.opengts.util.ServerSocketThread.createServerSocket(ServerSocketThread.java:292)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:555)
+	at org.opengts.util.ServerSocketThread.<init>(ServerSocketThread.java:566)
+	at org.opengts.servers.tk10x.TrackServer._startTCP(TrackServer.java:223)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:175)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:22:01|TrackServer.<init>:178] TCP: Error binding to port: 22001
+[ERROR|02/10 20:22:01|TrackServer._startUDP:262] Exception: ServerSocket error
+java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainDatagramSocketImpl.bind0(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.bind(AbstractPlainDatagramSocketImpl.java:93)
+	at java.net.DatagramSocket.bind(DatagramSocket.java:392)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:242)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:299)
+	at java.net.DatagramSocket.<init>(DatagramSocket.java:271)
+	at org.opengts.util.ServerSocketThread.createDatagramSocket(ServerSocketThread.java:266)
+	at org.opengts.servers.tk10x.TrackServer._startUDP(TrackServer.java:260)
+	at org.opengts.servers.tk10x.TrackServer.<init>(TrackServer.java:192)
+	at org.opengts.servers.tk10x.TrackServer.startTrackServer(TrackServer.java:64)
+	at org.opengts.servers.tk10x.Main.main(Main.java:204)
+[ERROR|02/10 20:22:01|TrackServer.<init>:198] UDP: Error binding to port: 22001
+[WARN_|02/10 20:22:01|TrackServer.<init>:208] No active device communication listeners!
+[INFO_|02/10 20:32:40|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 20:32:40|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 20:32:40|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 20:32:40|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 20:32:40|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 20:32:40|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 20:32:40|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 20:32:40|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 20:32:40|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 20:32:40|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 20:32:40|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 20:32:40|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 20:32:40|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 20:32:40|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 20:32:43|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 20:32:43|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 20:35:23|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:48313]
+[INFO_|02/10 20:35:23|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 20:35:23|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:48313 [to null:22001]
+[INFO_|02/10 20:35:23|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101033,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228633 [Mon Feb 07 10:10:33 UTC 2022]
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2791] OBD DTC  : P0135
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 20:35:23|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF911] OBD_Fault
+[INFO_|02/10 20:35:23|Device.insertEventData_throw:12043] Cualquier maricada
+[INFO_|02/10 20:35:23|Device.insertEventData_throw:12049] Cualquier maricada x 2
+[INFO_|02/10 20:35:24|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 20:35:24|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [159 ms] (normal) ...
+[INFO_|02/10 20:35:24|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [159 ms]
+[INFO_|02/10 20:46:18|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:43205]
+[INFO_|02/10 20:46:18|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:43205 [to null:22001]
+[INFO_|02/10 20:46:18|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101034,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,,
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2652] IMEI     : 864927030040330
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2653] Timestamp: 1644228634 [Mon Feb 07 10:10:34 UTC 2022]
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2674] UniqueID : 864927030040330
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2675] DeviceID : onoff/864927030040330
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2773] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2777] Speed    : 14.0 kph 0.0
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2779] Battery V: 14.2 Volts
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2785] Odometer : 2602.0 km
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2788] EngTemp C: 50.0 C
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.handleCommon:2794] FuelLevel: 2686.0 %
+[INFO_|02/10 20:46:18|TrackClientPacketHandler.insertEventRecord:3022] Event: [0xF900] OBD_Info_0
+[INFO_|02/10 20:46:18|Device.insertEventData_throw:12043] Cualquier maricada
+[INFO_|02/10 20:46:18|Device.insertEventData_throw:12049] Cualquier maricada x 2
+[INFO_|02/10 20:46:18|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 20:46:18|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [72 ms] (normal) ...
+[INFO_|02/10 20:46:18|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [71 ms]
+[INFO_|02/10 21:51:47|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 21:51:47|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 21:51:47|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 21:51:47|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 21:51:47|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 21:51:47|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 21:51:47|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 21:51:47|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 21:51:47|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 21:51:47|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 21:51:47|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 21:51:47|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 21:51:47|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 21:51:47|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 21:51:50|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 21:51:50|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 21:51:59|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:42368]
+[INFO_|02/10 21:51:59|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 21:51:59|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:42368 [to null:22001]
+[INFO_|02/10 21:51:59|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101035,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2653] IMEI     : 864927030040330
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2654] Timestamp: 1644228635 [Mon Feb 07 10:10:35 UTC 2022]
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2675] UniqueID : 864927030040330
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2676] DeviceID : onoff/864927030040330
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2774] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2778] Speed    : 14.0 kph 0.0
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2780] Battery V: 14.2 Volts
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2786] Odometer : 2602.0 km
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2789] EngTemp C: 50.0 C
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2792] OBD DTC  : P0135,P0193
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.handleCommon:2795] FuelLevel: 2686.0 %
+[INFO_|02/10 21:51:59|TrackClientPacketHandler.insertEventRecord:3023] Event: [0xF911] OBD_Fault
+[INFO_|02/10 21:51:59|Device.insertEventData_throw:12043] Cualquier maricada
+[INFO_|02/10 21:51:59|Device.insertEventData_throw:12049] Cualquier maricada x 2
+[INFO_|02/10 21:51:59|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 21:51:59|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [155 ms] (normal) ...
+[INFO_|02/10 21:51:59|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [154 ms]
+[INFO_|02/10 22:33:39|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 22:33:39|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 22:33:39|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 22:33:39|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 22:33:39|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 22:33:39|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 22:33:39|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 22:33:39|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 22:33:39|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 22:33:39|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 22:33:39|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 22:33:39|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 22:33:39|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 22:33:39|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 22:33:41|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 22:33:41|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 22:34:03|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:30588]
+[INFO_|02/10 22:34:03|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 22:34:03|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:30588 [to null:22001]
+[INFO_|02/10 22:34:03|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101036,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2661] IMEI     : 864927030040330
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2662] Timestamp: 1644228636 [Mon Feb 07 10:10:36 UTC 2022]
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2683] UniqueID : 864927030040330
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2684] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2782] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2786] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2788] Battery V: 14.2 Volts
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2794] Odometer : 2602.0 km
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2797] EngTemp C: 50.0 C
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2800] OBD DTC  : [Ljava.lang.String;@7cb721b3,P0920
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.handleCommon:2803] FuelLevel: 2686.0 %
+[INFO_|02/10 22:34:03|TrackClientPacketHandler.insertEventRecord:3031] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:34:03|Device.insertEventData_throw:12043] Cualquier maricada
+[INFO_|02/10 22:34:03|Device.insertEventData_throw:12049] Cualquier maricada x 2
+[INFO_|02/10 22:34:03|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:34:03|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [157 ms] (normal) ...
+[INFO_|02/10 22:34:03|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [157 ms]
+[INFO_|02/10 22:44:35|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 22:44:35|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 22:44:35|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 22:44:35|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 22:44:35|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 22:44:35|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 22:44:35|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 22:44:35|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 22:44:35|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 22:44:35|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 22:44:35|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 22:44:35|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 22:44:35|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 22:44:35|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 22:44:37|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 22:44:37|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 22:45:15|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:35566]
+[INFO_|02/10 22:45:15|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 22:45:15|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:35566 [to null:22001]
+[INFO_|02/10 22:45:15|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101037,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' [Ljava.lang.String;@bf6611f
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2663] IMEI     : 864927030040330
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2664] Timestamp: 1644228637 [Mon Feb 07 10:10:37 UTC 2022]
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2685] UniqueID : 864927030040330
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2686] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2784] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2788] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2790] Battery V: 14.2 Volts
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2796] Odometer : 2602.0 km
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2799] EngTemp C: 50.0 C
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2802] OBD DTC  : P0135
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.handleCommon:2805] FuelLevel: 2686.0 %
+[INFO_|02/10 22:45:15|TrackClientPacketHandler.insertEventRecord:3033] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:45:15|Device.insertEventData_throw:12043] Cualquier maricada
+[INFO_|02/10 22:45:15|Device.insertEventData_throw:12049] Cualquier maricada x 2
+[INFO_|02/10 22:45:15|Device.checkEventRules:13826] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:45:15|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [156 ms] (normal) ...
+[INFO_|02/10 22:45:15|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [155 ms]
+[INFO_|02/10 22:52:24|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 22:52:24|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 22:52:24|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 22:52:24|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 22:52:24|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 22:52:24|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 22:52:24|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 22:52:24|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 22:52:24|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 22:52:24|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 22:52:24|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 22:52:24|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 22:52:24|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 22:52:24|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 22:52:27|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 22:52:27|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 22:52:32|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:44593]
+[INFO_|02/10 22:52:32|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 22:52:32|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:44593 [to null:22001]
+[INFO_|02/10 22:52:32|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101038,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2663] IMEI     : 864927030040330
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2664] Timestamp: 1644228638 [Mon Feb 07 10:10:38 UTC 2022]
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2685] UniqueID : 864927030040330
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2686] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2784] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2788] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2790] Battery V: 14.2 Volts
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2796] Odometer : 2602.0 km
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2799] EngTemp C: 50.0 C
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2802] OBD DTC  : P0135
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.handleCommon:2805] FuelLevel: 2686.0 %
+[INFO_|02/10 22:52:32|TrackClientPacketHandler.insertEventRecord:3033] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:52:32|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:52:32|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [149 ms] (normal) ...
+[INFO_|02/10 22:52:32|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [149 ms]
+[INFO_|02/10 22:56:15|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 22:56:15|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 22:56:15|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 22:56:15|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 22:56:15|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 22:56:15|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 22:56:15|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 22:56:15|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 22:56:15|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 22:56:15|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 22:56:15|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 22:56:15|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 22:56:15|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 22:56:15|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 22:56:18|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 22:56:18|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 22:56:24|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:44095]
+[INFO_|02/10 22:56:24|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 22:56:24|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:44095 [to null:22001]
+[INFO_|02/10 22:56:24|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101039,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.handleCommon:2663] IMEI     : 864927030040330
+[INFO_|02/10 22:56:24|TrackClientPacketHandler.handleCommon:2664] Timestamp: 1644228639 [Mon Feb 07 10:10:39 UTC 2022]
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2685] UniqueID : 864927030040330
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2686] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2784] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2788] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2790] Battery V: 14.2 Volts
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2796] Odometer : 2602.0 km
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2799] EngTemp C: 50.0 C
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2802] OBD DTC  : P0135,P0193,P0920
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.handleCommon:2805] FuelLevel: 2686.0 %
+[INFO_|02/10 22:56:25|TrackClientPacketHandler.insertEventRecord:3033] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:56:25|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:56:25|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [161 ms] (normal) ...
+[INFO_|02/10 22:56:25|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [162 ms]
+[INFO_|02/10 22:57:50|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:62463]
+[INFO_|02/10 22:57:50|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:62463 [to null:22001]
+[INFO_|02/10 22:57:50|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101040,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2663] IMEI     : 864927030040330
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2664] Timestamp: 1644228640 [Mon Feb 07 10:10:40 UTC 2022]
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2685] UniqueID : 864927030040330
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2686] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2784] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2788] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2790] Battery V: 14.2 Volts
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2796] Odometer : 2602.0 km
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2799] EngTemp C: 50.0 C
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2802] OBD DTC  : P0135,P0193,P0920
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.handleCommon:2805] FuelLevel: 2686.0 %
+[INFO_|02/10 22:57:50|TrackClientPacketHandler.insertEventRecord:3033] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:57:50|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:57:50|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [74 ms] (normal) ...
+[INFO_|02/10 22:57:50|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [73 ms]
+[INFO_|02/10 22:58:52|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/10 22:58:52|Main.main:168] Generic TK102/TK103
+[INFO_|02/10 22:58:52|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/10 22:58:52|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/10 22:58:52|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/10 22:58:52|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/10 22:58:52|Main.main:173] Estimating Odometer: true
+[INFO_|02/10 22:58:52|Main.main:174] Simulating Geozone : true
+[INFO_|02/10 22:58:52|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/10 22:58:52|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/10 22:58:52|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/10 22:58:52|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/10 22:58:52|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/10 22:58:52|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/10 22:58:55|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/10 22:58:55|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/10 22:59:07|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:41760]
+[INFO_|02/10 22:59:07|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/10 22:59:07|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:41760 [to null:22001]
+[INFO_|02/10 22:59:07|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101041,2602,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,P0920,P0726
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228641 [Mon Feb 07 10:10:41 UTC 2022]
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2800] Odometer : 2602.0 km
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2806] OBD DTC  : P0135,P0193,P0920,P0726
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/10 22:59:07|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF911] OBD_Fault
+[INFO_|02/10 22:59:07|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 22:59:07|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [157 ms] (normal) ...
+[INFO_|02/10 22:59:07|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [157 ms]
+[INFO_|02/10 23:03:26|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:61267]
+[INFO_|02/10 23:03:26|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:61267 [to null:22001]
+[INFO_|02/10 23:03:26|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101043,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,,P0726
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228643 [Mon Feb 07 10:10:43 UTC 2022]
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2800] Odometer : 2603.0 km
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2806] OBD DTC  : P0135,P0193,P0726
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/10 23:03:26|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF911] OBD_Fault
+[INFO_|02/10 23:03:27|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 23:03:27|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [66 ms] (normal) ...
+[INFO_|02/10 23:03:27|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [67 ms]
+[INFO_|02/10 23:17:56|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:21961]
+[INFO_|02/10 23:17:56|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:21961 [to null:22001]
+[INFO_|02/10 23:17:56|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101044,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,P0193,B08765,P0726
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228644 [Mon Feb 07 10:10:44 UTC 2022]
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2800] Odometer : 2603.0 km
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2806] OBD DTC  : P0135,P0193,B08765,P0726
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/10 23:17:56|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF911] OBD_Fault
+[INFO_|02/10 23:17:56|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 23:17:56|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [66 ms] (normal) ...
+[INFO_|02/10 23:17:56|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [65 ms]
+[INFO_|02/10 23:18:29|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:54980]
+[INFO_|02/10 23:18:29|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:54980 [to null:22001]
+[INFO_|02/10 23:18:29|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101045,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,,,
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' P0135
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228645 [Mon Feb 07 10:10:45 UTC 2022]
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2800] Odometer : 2603.0 km
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2806] OBD DTC  : P0135
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/10 23:18:29|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF911] OBD_Fault
+[INFO_|02/10 23:18:29|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/10 23:18:29|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [69 ms] (normal) ...
+[INFO_|02/10 23:18:29|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [68 ms]
+[INFO_|02/11 13:02:29|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:39206]
+[INFO_|02/11 13:02:29|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:39206 [to null:22001]
+[INFO_|02/11 13:02:29|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101046,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,,
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' 
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228646 [Mon Feb 07 10:10:46 UTC 2022]
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2800] Odometer : 2603.0 km
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/11 13:02:29|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF900] OBD_Info_0
+[INFO_|02/11 13:02:29|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 13:02:29|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [120 ms] (normal) ...
+[INFO_|02/11 13:02:29|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [117 ms]
+[INFO_|02/11 20:36:59|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:60621]
+[INFO_|02/11 20:36:59|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:60621 [to null:22001]
+[INFO_|02/11 20:36:59|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101047,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0135,P0132,B0123
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:835] 'Emanuel Maya:' 
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2667] IMEI     : 864927030040330
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2668] Timestamp: 1644228647 [Mon Feb 07 10:10:47 UTC 2022]
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2689] UniqueID : 864927030040330
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2690] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2788] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2792] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2794] Battery V: 14.2 Volts
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2800] Odometer : 2603.0 km
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2803] EngTemp C: 50.0 C
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2806] OBD DTC  : ,P0135,P0132,B0123
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.handleCommon:2809] FuelLevel: 2686.0 %
+[INFO_|02/11 20:36:59|TrackClientPacketHandler.insertEventRecord:3037] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:36:59|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:36:59|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [89 ms] (normal) ...
+[INFO_|02/11 20:36:59|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [90 ms]
+[INFO_|02/11 20:45:21|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/11 20:45:21|Main.main:168] Generic TK102/TK103
+[INFO_|02/11 20:45:21|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/11 20:45:21|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/11 20:45:21|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/11 20:45:21|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/11 20:45:21|Main.main:173] Estimating Odometer: true
+[INFO_|02/11 20:45:21|Main.main:174] Simulating Geozone : true
+[INFO_|02/11 20:45:21|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/11 20:45:21|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/11 20:45:21|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/11 20:45:21|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/11 20:45:21|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/11 20:45:21|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/11 20:45:24|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/11 20:45:24|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/11 20:46:15|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:54414]
+[INFO_|02/11 20:46:15|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/11 20:46:15|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:54414 [to null:22001]
+[INFO_|02/11 20:46:15|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101047,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0135,P0132,B0123
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228647 [Mon Feb 07 10:10:47 UTC 2022]
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P0135,P0132,B0123
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/11 20:46:15|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:46:15|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:46:15|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [163 ms] (normal) ...
+[INFO_|02/11 20:46:15|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [162 ms]
+[INFO_|02/11 20:47:47|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:32816]
+[INFO_|02/11 20:47:47|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:32816 [to null:22001]
+[INFO_|02/11 20:47:47|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101048,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0135,P0132,B0123
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228648 [Mon Feb 07 10:10:48 UTC 2022]
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P0135,P0132,B0123
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/11 20:47:47|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:47:47|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:47:47|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [67 ms] (normal) ...
+[INFO_|02/11 20:47:47|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [68 ms]
+[INFO_|02/11 20:50:15|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/11 20:50:15|Main.main:168] Generic TK102/TK103
+[INFO_|02/11 20:50:15|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/11 20:50:15|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/11 20:50:15|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/11 20:50:15|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/11 20:50:15|Main.main:173] Estimating Odometer: true
+[INFO_|02/11 20:50:15|Main.main:174] Simulating Geozone : true
+[INFO_|02/11 20:50:15|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/11 20:50:15|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/11 20:50:15|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/11 20:50:15|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/11 20:50:15|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/11 20:50:15|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/11 20:50:18|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/11 20:50:18|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/11 20:50:33|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:7281]
+[INFO_|02/11 20:50:33|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/11 20:50:33|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:7281 [to null:22001]
+[INFO_|02/11 20:50:33|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101049,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0135,P0132,B0123
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2666] IMEI     : 864927030040330
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2667] Timestamp: 1644228649 [Mon Feb 07 10:10:49 UTC 2022]
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2688] UniqueID : 864927030040330
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2689] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2787] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2791] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2793] Battery V: 14.2 Volts
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2799] Odometer : 2603.0 km
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2802] EngTemp C: 50.0 C
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2805] OBD DTC  : ,P0135,P0132,B0123
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.handleCommon:2808] FuelLevel: 2686.0 %
+[INFO_|02/11 20:50:33|TrackClientPacketHandler.insertEventRecord:3036] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:50:33|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:50:33|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [153 ms] (normal) ...
+[INFO_|02/11 20:50:33|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [152 ms]
+[INFO_|02/11 20:52:22|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/11 20:52:22|Main.main:168] Generic TK102/TK103
+[INFO_|02/11 20:52:22|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/11 20:52:22|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/11 20:52:22|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/11 20:52:22|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/11 20:52:22|Main.main:173] Estimating Odometer: true
+[INFO_|02/11 20:52:22|Main.main:174] Simulating Geozone : true
+[INFO_|02/11 20:52:22|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/11 20:52:22|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/11 20:52:22|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/11 20:52:22|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/11 20:52:22|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/11 20:52:22|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/11 20:52:24|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/11 20:52:24|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/11 20:52:45|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:57866]
+[INFO_|02/11 20:52:45|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/11 20:52:45|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:57866 [to null:22001]
+[INFO_|02/11 20:52:45|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101050,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0135,P0132,B0123
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228650 [Mon Feb 07 10:10:50 UTC 2022]
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P0135,P0132,B0123
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/11 20:52:45|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:52:45|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:52:45|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [141 ms] (normal) ...
+[INFO_|02/11 20:52:45|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [140 ms]
+[INFO_|02/11 20:53:37|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:31303]
+[INFO_|02/11 20:53:37|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:31303 [to null:22001]
+[INFO_|02/11 20:53:37|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101051,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,P0132,B0123
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228651 [Mon Feb 07 10:10:51 UTC 2022]
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : ,P0132,B0123
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/11 20:53:37|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:53:37|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:53:37|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [67 ms] (normal) ...
+[INFO_|02/11 20:53:37|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [67 ms]
+[INFO_|02/11 20:55:58|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:25444]
+[INFO_|02/11 20:55:58|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:25444 [to null:22001]
+[INFO_|02/11 20:55:58|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101052,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,P0132,B0123
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228652 [Mon Feb 07 10:10:52 UTC 2022]
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : ,P0132,B0123
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/11 20:55:58|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:55:58|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:55:58|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [64 ms] (normal) ...
+[INFO_|02/11 20:55:58|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [64 ms]
+[INFO_|02/11 20:57:05|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/11 20:57:05|Main.main:168] Generic TK102/TK103
+[INFO_|02/11 20:57:05|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/11 20:57:05|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/11 20:57:05|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/11 20:57:05|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/11 20:57:05|Main.main:173] Estimating Odometer: true
+[INFO_|02/11 20:57:05|Main.main:174] Simulating Geozone : true
+[INFO_|02/11 20:57:05|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/11 20:57:05|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/11 20:57:05|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/11 20:57:05|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/11 20:57:05|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/11 20:57:05|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/11 20:57:08|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/11 20:57:08|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/11 20:57:20|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:25714]
+[INFO_|02/11 20:57:20|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/11 20:57:20|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:25714 [to null:22001]
+[INFO_|02/11 20:57:20|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101053,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,P0132,B0123
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2686] IMEI     : 864927030040330
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2687] Timestamp: 1644228653 [Mon Feb 07 10:10:53 UTC 2022]
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2708] UniqueID : 864927030040330
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2709] DeviceID : onoff/864927030040330
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2807] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2811] Speed    : 14.0 kph 0.0
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2813] Battery V: 14.2 Volts
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2819] Odometer : 2603.0 km
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2822] EngTemp C: 50.0 C
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2825] OBD DTC  : P0132,B0123
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.handleCommon:2828] FuelLevel: 2686.0 %
+[INFO_|02/11 20:57:20|TrackClientPacketHandler.insertEventRecord:3056] Event: [0xF911] OBD_Fault
+[INFO_|02/11 20:57:20|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 20:57:20|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [152 ms] (normal) ...
+[INFO_|02/11 20:57:20|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [152 ms]
+[INFO_|02/11 21:01:46|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/11 21:01:46|Main.main:168] Generic TK102/TK103
+[INFO_|02/11 21:01:46|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/11 21:01:46|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/11 21:01:46|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/11 21:01:46|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/11 21:01:46|Main.main:173] Estimating Odometer: true
+[INFO_|02/11 21:01:46|Main.main:174] Simulating Geozone : true
+[INFO_|02/11 21:01:46|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/11 21:01:46|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/11 21:01:46|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/11 21:01:46|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/11 21:01:46|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/11 21:01:46|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/11 21:01:48|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/11 21:01:48|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/11 21:02:07|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:44713]
+[INFO_|02/11 21:02:07|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/11 21:02:07|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:44713 [to null:22001]
+[INFO_|02/11 21:02:07|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101054,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,,B0123
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2696] IMEI     : 864927030040330
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2697] Timestamp: 1644228654 [Mon Feb 07 10:10:54 UTC 2022]
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2718] UniqueID : 864927030040330
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2719] DeviceID : onoff/864927030040330
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2817] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2821] Speed    : 14.0 kph 0.0
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2823] Battery V: 14.2 Volts
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2829] Odometer : 2603.0 km
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2832] EngTemp C: 50.0 C
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2835] OBD DTC  : B0123
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.handleCommon:2838] FuelLevel: 2686.0 %
+[INFO_|02/11 21:02:07|TrackClientPacketHandler.insertEventRecord:3066] Event: [0xF911] OBD_Fault
+[INFO_|02/11 21:02:07|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/11 21:02:07|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [157 ms] (normal) ...
+[INFO_|02/11 21:02:07|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [156 ms]
+[INFO_|02/14 15:53:44|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/14 15:53:44|Main.main:168] Generic TK102/TK103
+[INFO_|02/14 15:53:44|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/14 15:53:44|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/14 15:53:44|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/14 15:53:44|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/14 15:53:44|Main.main:173] Estimating Odometer: true
+[INFO_|02/14 15:53:44|Main.main:174] Simulating Geozone : true
+[INFO_|02/14 15:53:44|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/14 15:53:44|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/14 15:53:44|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/14 15:53:44|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/14 15:53:44|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/14 15:53:44|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/14 15:53:47|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/14 15:53:47|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/14 15:55:04|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:41404]
+[INFO_|02/14 15:55:04|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/14 15:55:04|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:41404 [to null:22001]
+[INFO_|02/14 15:55:04|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101055,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,P1035,P0132,,
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228655 [Mon Feb 07 10:10:55 UTC 2022]
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P1035,P0132
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/14 15:55:04|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/14 15:55:04|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/14 15:55:04|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [152 ms] (normal) ...
+[INFO_|02/14 15:55:04|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [152 ms]
+[INFO_|02/14 15:55:55|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:39730]
+[INFO_|02/14 15:55:55|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:39730 [to null:22001]
+[INFO_|02/14 15:55:55|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101056,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,P0132,B0136,
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228656 [Mon Feb 07 10:10:56 UTC 2022]
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P0132,B0136
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/14 15:55:55|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/14 15:55:55|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/14 15:55:55|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [74 ms] (normal) ...
+[INFO_|02/14 15:55:55|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [75 ms]
+[INFO_|02/14 16:57:38|Main.main:167] --------------------------------------------------------------------------
+[INFO_|02/14 16:57:38|Main.main:168] Generic TK102/TK103
+[INFO_|02/14 16:57:38|Main.main:169] Version: 0.2.45 [2.6.5]
+[INFO_|02/14 16:57:38|Main.main:170] Copyright 2007-2017, GeoTelematic Solutions, Inc.
+[INFO_|02/14 16:57:38|Main.main:171] --------------------------------------------------------------------------
+[INFO_|02/14 16:57:38|Main.main:172] Minimum speed      : 2.0 km/h
+[INFO_|02/14 16:57:38|Main.main:173] Estimating Odometer: true
+[INFO_|02/14 16:57:38|Main.main:174] Simulating Geozone : true
+[INFO_|02/14 16:57:38|Main.main:175] Packet Length      : End-Of-Line Character
+[INFO_|02/14 16:57:38|Main.main:176] Current CharSet    : UTF-8
+[INFO_|02/14 16:57:38|Main.main:177] Heartbeat ACK      : [TK103-1] ON
+[INFO_|02/14 16:57:38|Main.main:178] Logon ACK          : [TK103-2] LOAD
+[INFO_|02/14 16:57:38|Main.main:179] Alternate MobileID : [TK103-3] false
+[INFO_|02/14 16:57:38|Main.main:182] --------------------------------------------------------------------------
+[INFO_|02/14 16:57:40|TrackServer._startTCP:244] Starting TCP listener thread on port 22001 [timeout=300000ms] ...
+[INFO_|02/14 16:57:40|TrackServer._startUDP:280] Starting UDP listener thread on port 22001 [timeout=10000ms] ...
+[INFO_|02/14 19:37:59|ServerSocketThread.run:873] Datagram: local=0.0.0.0/0.0.0.0[0.0.0.0/0.0.0.0:22001], remote=/190.144.179.29[/190.144.179.29:8609]
+[INFO_|02/14 19:37:59|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_000) Starting session thread ...
+[INFO_|02/14 19:37:59|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_000) Remote client port: /190.144.179.29:8609 [to null:22001]
+[INFO_|02/14 19:37:59|AbstractClientPacketHandler.printSessionStart:273] Begin UDP session (ClientSession_000): 190.144.179.29
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101057,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,,,B0136,
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228657 [Mon Feb 07 10:10:57 UTC 2022]
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : B0136
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/14 19:37:59|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/14 19:37:59|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[INFO_|02/14 19:37:59|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_000) End of UDP session [162 ms] (normal) ...
+[INFO_|02/14 19:37:59|AbstractClientPacketHandler.printSessionTerminated:724] End UDP session (ClientSession_000): 190.144.179.29 [161 ms]
+[INFO_|02/14 19:39:53|ServerSocketThread$ServerSessionThread.start:2467] (ClientSession_001) Starting session thread ...
+[INFO_|02/14 19:39:53|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_001) Remote client port: /190.144.179.29:62843 [to /172.31.15.187:22001]
+[INFO_|02/14 19:39:53|AbstractClientPacketHandler.printSessionStart:273] Begin TCP session (ClientSession_001): 190.144.179.29
+[WARN_|02/14 19:39:53|ServerSocketThread$ServerSessionThread._readPacket:3910] EOS: 0x696D65693A3836343932373033303034303333302C4F42442C3232303230373130313035382C323630332C32362E38362C3336302E30352C35322C31342C3238252C35302C3138252C313234342C31342E32302C50303133352C2C42303133362C
+[ERROR|02/14 19:39:53|ServerSocketThread$ServerSessionThread._readPacket:3912] End of stream [@ 97]
+[WARN_|02/14 19:39:53|ServerSocketThread$ServerSessionThread.handleClientSession:3101] End of stream [@ 97]
+[INFO_|02/14 19:39:53|ServerSocketThread$ServerSessionThread.handleClientSession:3123] (ClientSession_001) End of TCP session [502 ms] (error/warning) ...
+[INFO_|02/14 19:39:53|AbstractClientPacketHandler.printSessionTerminated:724] End TCP session (ClientSession_001): 190.144.179.29 [504 ms]
+[INFO_|02/14 19:41:12|ServerSocketThread$ServerSessionThread.handleClientSession:2895] (ClientSession_001) Remote client port: /190.144.179.29:15129 [to /172.31.15.187:22001]
+[INFO_|02/14 19:41:12|AbstractClientPacketHandler.printSessionStart:273] Begin TCP session (ClientSession_001): 190.144.179.29
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.getHandlePacket:571] Recv: imei:864927030040330,OBD,220207101058,2603,26.86,360.05,52,14,28%,50,18%,1244,14.20,P0135,,B0136,
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.parseInsertRecord_TK103_2:706] Parsing: TK103-2 (TK103-2) ...
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.getPendingCommand:442] No pending commands for this account/device
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.parseInsertRecord_TK103_2:746] 'command to send:' null text: null
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2675] IMEI     : 864927030040330
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2676] Timestamp: 1644228658 [Mon Feb 07 10:10:58 UTC 2022]
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2697] UniqueID : 864927030040330
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2698] DeviceID : onoff/864927030040330
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2796] GPS      : 0.00000/0.00000 [ValidGPS=false]
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2800] Speed    : 14.0 kph 0.0
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2802] Battery V: 14.2 Volts
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2808] Odometer : 2603.0 km
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2811] EngTemp C: 50.0 C
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2814] OBD DTC  : P0135,B0136
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.handleCommon:2817] FuelLevel: 2686.0 %
+[INFO_|02/14 19:41:12|TrackClientPacketHandler.insertEventRecord:3045] Event: [0xF911] OBD_Fault
+[INFO_|02/14 19:41:12|Device.checkEventRules:13825] Notification disallowed for this Account/Device: onoff/864927030040330
+[ERROR|02/14 19:41:13|ServerSocketThread$ServerSessionThread._readPacket:3912] End of stream [empty packet]
+[INFO_|02/14 19:41:13|ServerSocketThread$ServerSessionThread.handleClientSession:3098] End of stream [empty packet]
+[INFO_|02/14 19:41:13|ServerSocketThread$ServerSessionThread.handleClientSession:3128] (ClientSession_001) End of TCP session [505 ms] (normal) ...
+[INFO_|02/14 19:41:13|AbstractClientPacketHandler.printSessionTerminated:724] End TCP session (ClientSession_001): 190.144.179.29 [504 ms]

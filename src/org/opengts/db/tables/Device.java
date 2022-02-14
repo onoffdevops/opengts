@@ -11875,10 +11875,10 @@ public class Device // Asset
         DCServerConfig dcs = this.getDCServerConfig();
         if (dcs != null) {
             // a DCServerConfig is defined
-            RTProperties resp = DCServerFactory.sendServerCommand(this, ct, cmdName, cmdArgs);
+            /*RTProperties resp = DCServerFactory.sendServerCommand(this, ct, cmdName, cmdArgs);
             Print.logInfo("Ping Response: " + resp);
-            boolean sentOK = DCServerFactory.isCommandResultOK(resp);
-            return sentOK;
+            boolean sentOK = DCServerFactory.isCommandResultOK(resp);*/
+            return false;
         }
 
         /* PingDispatcher */
@@ -12040,7 +12040,6 @@ public class Device // Asset
     public boolean insertEventData_throw(EventData evdb)
         throws DBException
     {
-
         /* log event insertion */
         if (Device.LogEventDataInsertion >= Print.LOG_WARN) {
             // -- LOG_WARN, LOG_INFO, LOG_DEBUG

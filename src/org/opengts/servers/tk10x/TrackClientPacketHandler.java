@@ -6,9 +6,9 @@
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,8 +25,8 @@
 //     -Initial release.
 //  2011/08/21  Martin D. Flynn
 //     -TK103: The Date column appears to be specified in a timezone local to
-//      where the device was configured.  Made some changes to attempt to 
-//      determine the actual GMT day, based on the time difference between the 
+//      where the device was configured.  Made some changes to attempt to
+//      determine the actual GMT day, based on the time difference between the
 //      local time, and the GMT time specified elsewhere in the record.
 //     -TK103: It appears that most tk103 data packets do not contain a heading
 //      value.  If no heading value is present, then an approximate heading will
@@ -225,10 +225,10 @@ public class TrackClientPacketHandler
     private Device       tkDevice       = null;
     private byte         tkFinal[]      = null;
 
-    /** 
-    *** Packet handler constructor 
+    /**
+    *** Packet handler constructor
     **/
-    public TrackClientPacketHandler() 
+    public TrackClientPacketHandler()
     {
         super(Constants.DEVICE_CODE);
     }
@@ -236,7 +236,7 @@ public class TrackClientPacketHandler
     // ------------------------------------------------------------------------
 
     /**
-    *** Callback when session is starting 
+    *** Callback when session is starting
     **/
     public void sessionStarted(InetAddress inetAddr, boolean isTCP, boolean isText)
     {
@@ -250,7 +250,7 @@ public class TrackClientPacketHandler
     }
 
     /**
-    *** Callback when session is terminating 
+    *** Callback when session is terminating
     **/
     public void sessionTerminated(Throwable err, long readCount, long writeCount)
     {
@@ -267,14 +267,14 @@ public class TrackClientPacketHandler
     // ------------------------------------------------------------------------
 
     /* first packet sent to device after session is open */
-    public byte[] getInitialPacket() 
+    public byte[] getInitialPacket()
         throws Exception
     {
         return INITIAL_PACKET; // may ne null
     }
 
     /* final packet sent to device before session is closed */
-    public byte[] getFinalPacket(boolean hasError) 
+    public byte[] getFinalPacket(boolean hasError)
         throws Exception
     {
         return this.tkFinal;
@@ -415,14 +415,134 @@ public class TrackClientPacketHandler
 
     }
 
+    	// ------------------------------------------------------------------------
+	public void deleteCommand(String accountID, String deviceID) {
+	try {
+                org.opengts.extra.tables.PendingCommands pc[] = org.opengts.extra.tables.PendingCommands.getPendingCommands(accountID, deviceID);
+                if (!ListTools.isEmpty(pc)) {
+					if (pc.length > 0) {
+						int sendState = pc[0].getSendState();
+						org.opengts.extra.tables.PendingCommands.deletePendingCommands(accountID, deviceID, sendState, -1L);
+					}
+                } else { /*Print.logWarn("No pending commands for this account/device");*/ }
+        } catch (Throwable th) { Print.logException("Error getting commands for: " + accountID+"/"+deviceID, th); }
+	}
+
+    // ------------------------------------------------------------------------
+
+	public String getPendingCommand(String accountID, String deviceID) {
+		String commandArgs = null;
+		try {
+                org.opengts.extra.tables.PendingCommands pc[] = org.opengts.extra.tables.PendingCommands.getPendingCommands(accountID, deviceID);
+                if (!ListTools.isEmpty(pc)) {
+					if (pc.length > 0) {
+                        commandArgs = pc[0].getCommandArgs();
+
+					}
+                } else { Print.logInfo("No pending commands for this account/device"); }
+        } catch (Throwable th) { Print.logException("Error getting commands for: " + accountID+"/"+deviceID, th); }
+		return commandArgs;
+	}
+
+	// ------------------------------------------------------------------------
+
+	public String findDevice(String mobileID) {
+        //Device dev = DCServerFactory.loadDeviceByPrefixedModemID(UNIQUEID_PREFIX, mobileID);
+		Device dev = DCServerConfig.loadDeviceUniqueID(Main.getServerConfig(), mobileID);
+        if (dev == null) {
+            return null;
+        } else {
+			return dev.getAccountID() + "|" + dev.getDeviceID();
+		}
+	}
+
+	// ------------------------------------------------------------------------
+
+	boolean isCommandAvailable = false;
+
+	public String createCommandFormat(String IMEI, String typeCmd) {
+		if (typeCmd != null && !typeCmd.isEmpty()) {
+		if (typeCmd.equals("positionStart")) {
+			return String.format("**,imei:%s,A", IMEI);
+		}
+		if (typeCmd.equals("positionSingle")) {
+			return String.format("**,imei:%s,B", IMEI);
+		}
+		if (typeCmd.equals("positionCancel")) {
+			return String.format("**,imei:%s,D", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_10s")) {
+			return String.format("**,imei:%s,C,10s", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_15s")) {
+			return String.format("**,imei:%s,C,15s", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_20s")) {
+			return String.format("**,imei:%s,C,20s", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_30s")) {
+			return String.format("**,imei:%s,C,30s", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_1m")) {
+			return String.format("**,imei:%s,C,1m", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_5m")) {
+			return String.format("**,imei:%s,C,5m", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_10m")) {
+			return String.format("**,imei:%s,C,10m", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_30m")) {
+			return String.format("**,imei:%s,C,30m", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_1h")) {
+			return String.format("**,imei:%s,C,1h", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_5h")) {
+			return String.format("**,imei:%s,C,5h", IMEI);
+		}
+        if (typeCmd.equals("positionPeriodic_10h")) {
+		    return String.format("**,imei:%s,C,10h", IMEI);
+		}
+		if (typeCmd.equals("positionPeriodic_24h")) {
+			return String.format("**,imei:%s,C,24h", IMEI);
+		}
+		if (typeCmd.equals("alarmArm")) {
+			return String.format("**,imei:%s,L", IMEI);
+		}
+		if (typeCmd.equals("alarmDisarm")) {
+			return String.format("**,imei:%s,M", IMEI);
+		}
+		if (typeCmd.equals("alarmCancel")) {
+			return String.format("**,imei:%s,E", IMEI);
+		}
+		if (typeCmd.equals("alarmCancelMove")) {
+			return String.format("**,imei:%s,G", IMEI);
+		}
+		if (typeCmd.equals("requestPhoto")) {
+			return String.format("**,imei:%s,160", IMEI);
+		}
+		if (typeCmd.equals("engineOFF")) {
+			// return String.format("**,imei:%s,109", IMEI); // coban
+			return String.format("**,imei:%s,J;", IMEI); //
+		}
+		if (typeCmd.equals("engineON")) {
+			// return String.format("**,imei:%s,110", IMEI); // coban
+			return String.format("**,imei:%s,K;", IMEI);
+		}
+		}
+		return null;
+	}
+
     // ------------------------------------------------------------------------
 
     /**
     *** Workhorse of the packet handler.  Parse/insert event data.
     **/
-    public byte[] getHandlePacket(byte pktBytes[]) 
+    public byte[] getHandlePacket(byte pktBytes[])
     {
 
+        isCommandAvailable = false;
         /* empty packet */
         if (ListTools.isEmpty(pktBytes)) {
             Print.logWarn("Ignoring empty/null packet");
@@ -450,7 +570,7 @@ public class TrackClientPacketHandler
         /* debug/header */
         Print.logInfo("Recv: " + StringTools.toStringValue(pktBytes,'.'));
         if (!StringTools.isPrintableASCII(pktBytes)) {
-        Print.logInfo("Hex : 0x" + StringTools.toHexString(pktBytes)); 
+        Print.logInfo("Hex : 0x" + StringTools.toHexString(pktBytes));
         }
         String s = StringTools.toStringValue(pktBytes).trim();
 
@@ -467,8 +587,31 @@ public class TrackClientPacketHandler
                 int pe = s.indexOf(",",ps);
                 imei   = (pe < ps)? s.substring(ps) : s.substring(ps,pe);
             }
+              // *******
+				String command = null;
+				String fld[] = StringTools.parseStringArray(s, ',');
+                if (fld[1].startsWith("imei:")) {
+					String mobileID = fld[1].substring("imei:".length()).trim();
+					String Params[] = StringTools.parseStringArray(findDevice(mobileID), '|');
+					String accID = Params[0];
+					String devID = Params[1];
+					String typeCmd = getPendingCommand(accID, devID);
+					command = createCommandFormat(mobileID, typeCmd);
+				    deleteCommand(accID, devID);
+                    if (typeCmd != null && !typeCmd.isEmpty()) { isCommandAvailable = true; }
+                }
+                if (isCommandAvailable){
+                Print.logInfo("Sending Command.");
+                if (isDuplex()) { // tcp
+                Print.logInfo("entering +."+command);
+                boolean status_cmd_tcp = this.tcpWrite( command.getBytes() );
+                } else { return command.getBytes(); }
+                } else { return (new byte[] { (byte)'L', (byte)'O', (byte)'A', (byte)'D' }); }
+		      // *******
+
+
             // -- create Logon ACK packet
-            if (!StringTools.isBlank(TK103_LOGON_ACK)    || 
+            if (!StringTools.isBlank(TK103_LOGON_ACK)    ||
                 !StringTools.isBlank(TK103_OLD_LOGON_ACK)  ) {
                 // -- 1) "LOAD"
                 // -- 2) "**,imei:%{IMEI},Q;" : start cached event download
@@ -482,18 +625,18 @@ public class TrackClientPacketHandler
                 Print.logInfo("Logon ACK: n/a");
                 return null;
             }
+
         } else
         if (s.startsWith("imei:")) {
             // TK103-2: data packet
             //   imei:123451042191239,tracker ,1107090553,9735551234,F,215314.000,A,4103.7641,N,14244.9450,W,0.08,;
             return this.parseInsertRecord_TK103_2(s); // TK103-2
         }
-
         /* TK103-3/VJoy: data packet? */
         if (s.startsWith("(")) {
             // -- make sure 'tkDevType' is set
             if (IsDeviceTypeUnknown(this.tkDevType)) { // [was (this.tkDevType == null)] (fixed thanks to Xavier Descamps)
-                this.tkDevType = (s.indexOf(",") >= 0)? 
+                this.tkDevType = (s.indexOf(",") >= 0)?
                     TKDeviceType.VJOY :     // contains commas
                     TKDeviceType.TK103_3;   // no commas
             }
@@ -504,7 +647,6 @@ public class TrackClientPacketHandler
                 return this.parseInsertRecord_TK103_3(s); // TK103-3
             }
         }
-
         /* TKnano-1/2: data packet? */
         // EXPERIMENTAL: may not be fully supported
         if (s.startsWith("*")) { // *HQ,...
@@ -557,7 +699,7 @@ public class TrackClientPacketHandler
     public static       long    COBAN_GPIO_DOOR             = 0x0002L;
 
     /**
-    *** TK103-2: parse and insert data record 
+    *** TK103-2: parse and insert data record
     **/
     private byte[] parseInsertRecord_TK103_2(String s) // handleCommon
     {
@@ -584,19 +726,33 @@ public class TrackClientPacketHandler
 
 
         /* get "imei:" */
+        String mobileID = null;
         if (fld[0].startsWith("imei:")) {
             this.tkModemID = fld[0].substring("imei:".length()).trim();
+            mobileID = fld[0].substring("imei:".length()).trim();
         }
         if (StringTools.isBlank(this.tkModemID)) {
             Print.logError("'imei:' value is missing");
             return null;
         }
 
+        // *******
+		String command = null;
+		String Params[] = StringTools.parseStringArray(findDevice(mobileID), '|');
+		String accID = Params[0];
+		String devID = Params[1];
+		String typeCmd = getPendingCommand(accID, devID);
+		command = createCommandFormat(mobileID, typeCmd);
+        Print.logInfo("'command to send:' "+typeCmd+ " text: "+command);
+		deleteCommand(accID, devID);
+        if (typeCmd != null && !typeCmd.isEmpty()) { isCommandAvailable = true; }
+		// *******
+
         /* event code */
         String eventCode = StringTools.trim(fld[1]);
-        if (eventCode.endsWith("!")) { 
+        if (eventCode.endsWith("!")) {
             // -- remove trailing "!", if present
-            eventCode = eventCode.substring(0,eventCode.length()-1); 
+            eventCode = eventCode.substring(0,eventCode.length()-1);
             // -- IE: "help me!" ==> "help me", etc.
         }
 
@@ -667,13 +823,35 @@ public class TrackClientPacketHandler
         /* parse event */
         if (eventCode.equalsIgnoreCase("OBD")) {
             // -- parse custom OBD data
+            speedKPH    = (fld.length >  7)? StringTools.parseDouble(fld[ 7],0.0) : 0.0;
+            fuelLevel   = (fld.length >  4)? StringTools.parseDouble(fld[ 4],0.0) : 0.0;
             odomKM      = (fld.length >  3)? StringTools.parseDouble(fld[ 3],0.0) : 0.0;
             engTempC    = (fld.length >  9)? StringTools.parseDouble(fld[ 9],0.0) : 0.0;
             batteryV    = (fld.length > 12)? StringTools.parseDouble(fld[12],0.0) : 0.0;
+
             if ((fld.length > 13) && !StringTools.isBlank(fld[13])) {
                 engDTC = new String[] { fld[13] }; // just use the first DTC
             }
-        } else 
+
+            if ((fld.length > 14) && !StringTools.isBlank(fld[14])){
+
+              engDTC = (!StringTools.isBlank(engDTC)) ? new String[] { StringTools.join(engDTC,",")+","+fld[14] } : new String[] { fld[14] }; // just use the second DTC;
+
+            }
+
+            if ((fld.length > 15) && !StringTools.isBlank(fld[15])){
+
+              engDTC = (!StringTools.isBlank(engDTC)) ? new String[] { StringTools.join(engDTC,",")+","+fld[15] } : new String[] { fld[15] }; // just use the third DTC;
+
+            }
+
+            if ((fld.length >= 16) && !StringTools.isBlank(fld[16])){
+
+              engDTC = (!StringTools.isBlank(engDTC)) ? new String[] { StringTools.join(engDTC,",")+","+fld[16] } : new String[] { fld[16] }; // just use the fourth DTC;
+
+            }
+
+        } else
         if (fld[4].equals("L")) {
             // -- parse Mobile location information
             // -  Many thanks to Franjieh El Khoury for this information.
@@ -712,10 +890,10 @@ public class TrackClientPacketHandler
                 if (FL.endsWith("%")) {
                     fuelLevel /= 100.0; // "43.33%" ==> "0.4333" [2.6.3-B29]
                 } else
-                if ((FL.indexOf(".") < 0) && (fuelLevel > 100.0)) { 
+                if ((FL.indexOf(".") < 0) && (fuelLevel > 100.0)) {
                     fuelLevel /= 10000.0; // "6800" ==> "0.68"  [2.6.3-B01]
                 } else
-                if (fuelLevel > 1.0) { 
+                if (fuelLevel > 1.0) {
                     fuelLevel /= 100.0; // "68" or "68.0" ==> "0.68"  [2.6.3-B01]
                 } else {
                     // ==> "0.68"
@@ -729,10 +907,10 @@ public class TrackClientPacketHandler
                 if (FL.endsWith("%")) {
                     fuelLevel2 /= 100.0; // "43.33%" ==> "0.4333" [2.6.3-B29]
                 } else
-                if ((FL.indexOf(".") < 0) && (fuelLevel2 > 100.0)) { 
+                if ((FL.indexOf(".") < 0) && (fuelLevel2 > 100.0)) {
                     fuelLevel2 /= 10000.0; // "6800" ==> "0.68"  [2.6.3-B01]
                 } else
-                if (fuelLevel2 > 1.0) { 
+                if (fuelLevel2 > 1.0) {
                     fuelLevel2 /= 100.0; // "68" or "68.0" ==> "0.68"  [2.6.3-B01]
                 } else {
                     // ==> "0.68"
@@ -778,9 +956,9 @@ public class TrackClientPacketHandler
                 } else
                 if (eventCode.equalsIgnoreCase("ac alarm")) {
                     // <Code key="ac alarm"   >0xF841</Code> <!-- STATUS_PANIC_ON -->
-                    statusCode = StatusCodes.STATUS_PANIC_ON;
+                    //statusCode = StatusCodes.STATUS_PANIC_ON;
                     // <Code key="ac alarm"   >0xFD17</Code> <!-- STATUS_POWER_OFF -->
-                  //statusCode = StatusCodes.STATUS_POWER_OFF;
+                  statusCode = StatusCodes.STATUS_POWER_OFF;
                 } else
                 if (eventCode.equalsIgnoreCase("moving") ||
                     eventCode.equalsIgnoreCase("move")     ) {
@@ -798,7 +976,7 @@ public class TrackClientPacketHandler
                     // <Code key="low batt"   >0xFD10</Code> <!-- STATUS_LOW_BATTERY -->
                     statusCode = StatusCodes.STATUS_LOW_BATTERY;
                 } else
-                if (eventCode.equalsIgnoreCase("help me") || 
+                if (eventCode.equalsIgnoreCase("help me") ||
                     eventCode.equalsIgnoreCase("helpme")    ) {
                     // <Code key="help me"    >0xF841</Code> <!-- STATUS_PANIC_ON -->
                     // <Code key="helpme"     >0xF841</Code> <!-- STATUS_PANIC_ON -->
@@ -873,14 +1051,22 @@ public class TrackClientPacketHandler
         }
 
         // ------------------------------------------------
-        // TK103-2: Common data handling below 
+        // TK103-2: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, null,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, 0.0/*battLvl*/, 
+            gpioInput, batteryV, 0.0/*battLvl*/,
             engTempC, engDTC, fuelLevel, fuelLevel2,
             servingCell);
+
+        if (isCommandAvailable){
+            Print.logInfo("Sending Command.");
+            if (isDuplex()) { // tcp
+            boolean status_cmd_tcp = this.tcpWrite( command.getBytes() );
+            } else { return command.getBytes(); }
+            } else { return null; }
+
 
         /* return ACK */
         return null;
@@ -889,9 +1075,9 @@ public class TrackClientPacketHandler
 
     // ------------------------------------------------------------------------
     // ------------------------------------------------------------------------
-    // TK103-3: 
+    // TK103-3:
     /**
-    *** TK103-3: parse and insert data record 
+    *** TK103-3: parse and insert data record
     **/
     private byte[] parseInsertRecord_TK103_3(String s) // handleCommon
     {
@@ -947,7 +1133,7 @@ public class TrackClientPacketHandler
             }
             // --
             G = 32; // BP05
-        } else 
+        } else
         if (msgType.equals("BR02")) {
             // -- modem-id should have been specified in a previous BP05 packet
             if (TK103_ALTERNATE_MOBILEID) {
@@ -1067,7 +1253,7 @@ public class TrackClientPacketHandler
             // -  00000007
             gpioInput = 0L;
             for (int i = 0; i <= 7; i++) {
-                char B = gpioStr.charAt(7 - i); // 
+                char B = gpioStr.charAt(7 - i); //
                 if (B != '0') { // should be '1' or '0'
                     gpioInput |= (1L << i);
                 }
@@ -1114,12 +1300,12 @@ public class TrackClientPacketHandler
         }
 
         // ------------------------------------------------
-        // TK103-3: Common data handling below 
+        // TK103-3: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, null,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, 0.0/*battLvl*/, 
+            gpioInput, batteryV, 0.0/*battLvl*/,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             null/*CellTower*/);
 
@@ -1170,7 +1356,7 @@ public class TrackClientPacketHandler
 
         /* mobile-id */
         this.tkModemID = StringTools.trim(fld[0]);
-        
+
         /* ACK */
         // -- document indicates this should be returned to indicate "Upload succeeded"
         byte ackPkt[] = "ok".getBytes();
@@ -1283,12 +1469,12 @@ public class TrackClientPacketHandler
         double fuelLevel2 = -1.0;
 
         // ------------------------------------
-        // VJoy: Common data handling below 
+        // VJoy: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, null/*statusCodeSet*/,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, 0.0/*batteryV*/, 0.0/*battLvl*/, 
+            gpioInput, 0.0/*batteryV*/, 0.0/*battLvl*/,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             null/*CellTower*/);
 
@@ -1355,7 +1541,7 @@ public class TrackClientPacketHandler
         if (eventCode.equals("V3")) {
             Print.logWarn("Event type not supported: " + eventCode);
             return null;
-        } else 
+        } else
         if (eventCode.equals("V4")) {
             ofs = 5;
         } else {
@@ -1431,12 +1617,12 @@ public class TrackClientPacketHandler
         }
 
         // ------------------------------------
-        // TKnano-1: Common data handling below 
+        // TKnano-1: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, statCodeSet,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, 0.0/*battLvl*/, 
+            gpioInput, batteryV, 0.0/*battLvl*/,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             null/*CellTower*/);
 
@@ -1573,7 +1759,7 @@ public class TrackClientPacketHandler
             fixtime, statusCode, statCodeSet,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, 0.0/*battLvl*/, 
+            gpioInput, batteryV, 0.0/*battLvl*/,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             null/*CellTower*/);
 
@@ -1583,7 +1769,7 @@ public class TrackClientPacketHandler
     }
 
     /**
-    *** Parse convoluted vehicle status 
+    *** Parse convoluted vehicle status
     *** @return GPIO Input value
     **/
     private static long _parseTKnanoVehicleStatus(long vehStatusNeg, Set<Integer> statCodeSet, long gpioInput)
@@ -1594,7 +1780,7 @@ public class TrackClientPacketHandler
         // The bit-state means:
         //    0 = happened (true)
         //    1 = not-happened (false)
-        // They call this "negative logic" (more accurately "anti-logic").  
+        // They call this "negative logic" (more accurately "anti-logic").
         // For example:
         //  - Byte-3/Bit-2 "ACC-off": a '0' means it 'happened' and the ACC is OFF ('1' is ACC-ON)
         //  - Byte-3/Bit-5 "Engine" : a '0' means it 'happened' and the Fngine turned 'ON' ('1' is Engine-OFF)
@@ -1683,7 +1869,7 @@ public class TrackClientPacketHandler
         // ------
         // Byte #2
         // Bit: 0/0x01 - GPS failure (0=true)
-        //      1/0x02 - not-used 
+        //      1/0x02 - not-used
         //      2/0x04 - not-used [also: Low Battery]
         //      3/0x08 - Backup powered (0=true)
         //      4/0x10 - Battery disconnect (0=true)
@@ -1706,7 +1892,7 @@ public class TrackClientPacketHandler
             statCodeSet.add(new Integer(StatusCodes.STATUS_POWER_FAILURE));
         }
         if ((vehStat_2 & 0x20) == 0) { // 25: "0" is true
-            statCodeSet.add(new Integer(StatusCodes.STATUS_GPS_ANTENNA_OPEN)); 
+            statCodeSet.add(new Integer(StatusCodes.STATUS_GPS_ANTENNA_OPEN));
         }
         if ((vehStat_2 & 0x40) == 0) { // 26: "0" is true
             statCodeSet.add(new Integer(StatusCodes.STATUS_GPS_ANTENNA_SHORT));
@@ -1798,7 +1984,7 @@ public class TrackClientPacketHandler
     // ------------------------------------------------------------------------
     // TK102B/TK102-3: (TCP)
     /**
-    *** TK102-2: parse and insert data record 
+    *** TK102-2: parse and insert data record
     **/
     private byte[] parseInsertRecord_TK102B(String s) // handleCommon
     {
@@ -1918,12 +2104,12 @@ public class TrackClientPacketHandler
         int statusCode = StatusCodes.STATUS_LOCATION;
 
         // ------------------------------------------------
-        // TK102B: Common data handling below 
+        // TK102B: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, null,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, battLvl, 
+            gpioInput, batteryV, battLvl,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             null/*CellTower*/);
 
@@ -1936,7 +2122,7 @@ public class TrackClientPacketHandler
     // ------------------------------------------------------------------------
     // TK102: (TCP)
     /**
-    *** TK102: parse and insert data record 
+    *** TK102: parse and insert data record
     **/
     private byte[] parseInsertRecord_TK102(String s) // handleCommon
     {
@@ -1962,9 +2148,12 @@ public class TrackClientPacketHandler
 
         /* find "imei:" */
         int imeiNdx = -1;
+        String mobileID = null;
+        mobileID = fld[0].substring("imei:".length()).trim();
         for (int f = 0; f < fld.length; f++) {
             if (fld[f].startsWith("imei:")) {
                 this.tkModemID = fld[f].substring("imei:".length()).trim();
+
                 imeiNdx = f;
                 break;
             }
@@ -1973,6 +2162,18 @@ public class TrackClientPacketHandler
             Print.logError("'imei:' value is missing");
             return null;
         }
+
+        // *******
+		String command = null;
+		String Params[] = StringTools.parseStringArray(findDevice(mobileID), '|');
+		String accID = Params[0];
+		String devID = Params[1];
+		String typeCmd = getPendingCommand(accID, devID);
+		command = createCommandFormat(mobileID, typeCmd);
+		deleteCommand(accID, devID);
+        if (typeCmd != null && !typeCmd.isEmpty()) { isCommandAvailable = true; }
+		// *******
+
 
         /* find "GPRMC" */
         int gpx = 0;
@@ -2079,7 +2280,7 @@ public class TrackClientPacketHandler
             }
         }
 
-        // all fields have been extracted from the packet at this point 
+        // all fields have been extracted from the packet at this point
         // ------------------------------------------------------------
 
         /* adjustments to received values */
@@ -2123,7 +2324,7 @@ public class TrackClientPacketHandler
                     // <Code key="low batt"   >0xFD10</Code> <!-- STATUS_LOW_BATTERY -->
                     statusCode = StatusCodes.STATUS_LOW_BATTERY;
                 } else
-                if (eventCode.equalsIgnoreCase("help me") || 
+                if (eventCode.equalsIgnoreCase("help me") ||
                     eventCode.equalsIgnoreCase("helpme")    ) {
                     // <Code key="help me"    >0xF841</Code> <!-- STATUS_PANIC_ON -->
                     // <Code key="helpme"     >0xF841</Code> <!-- STATUS_PANIC_ON -->
@@ -2173,12 +2374,12 @@ public class TrackClientPacketHandler
         }
 
         // ------------------------------------------------
-        // TK102: Common data handling below 
+        // TK102: Common data handling below
         this.handleCommon(this.tkModemID, this.tkModemIDAlt,
             fixtime, statusCode, null,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, headingDeg, altitudeM, odomKM,
-            gpioInput, batteryV, 0.0/*battLvl*/, 
+            gpioInput, batteryV, 0.0/*battLvl*/,
             engTempC, null/*engDTC*/, fuelLevel, fuelLevel2,
             servingCell);
 
@@ -2210,7 +2411,7 @@ public class TrackClientPacketHandler
             int  hh = StringTools.parseInt(hhmmss.substring(0,2),-1);
             int  mm = StringTools.parseInt(hhmmss.substring(2,4),-1);
             int  ss = StringTools.parseInt(hhmmss.substring(4,6),-1);
-            if ((YY < 0) || (MM < 1) || (MM > 12) || (DD < 1) || (DD > 31) || 
+            if ((YY < 0) || (MM < 1) || (MM > 12) || (DD < 1) || (DD > 31) ||
                 (hh < 0) || (mm < 0) || (ss < 0)) {
                 return 0L;
             } else {
@@ -2249,13 +2450,13 @@ public class TrackClientPacketHandler
     **/
     private long _getUTCSeconds_DMY_HMS(long dmy, long hms)
     {
-    
+
         /* time of day [TOD] */
         int    HH  = (int)((hms / 10000L) % 100L);
         int    MM  = (int)((hms / 100L) % 100L);
         int    SS  = (int)(hms % 100L);
         long   TOD = (HH * 3600L) + (MM * 60L) + SS;
-    
+
         /* current UTC day */
         long DAY;
         if (dmy > 0L) {
@@ -2287,14 +2488,14 @@ public class TrackClientPacketHandler
         /* return UTC seconds */
         long sec = DateTime.DaySeconds(DAY) + TOD;
         return sec;
-        
+
     }
 
     /**
     *** Computes seconds in UTC time given values from GPS device.
     *** @param locYMDhms Date received from packet in YYMMDDhhmmss format, where DD is day, MM is month,
-    ***                  YY is year, hh is the hour, mm is the minutes, and ss is the seconds.  
-    ***                  Unfortunately, the device is allowed to be configured to specify this time 
+    ***                  YY is year, hh is the hour, mm is the minutes, and ss is the seconds.
+    ***                  Unfortunately, the device is allowed to be configured to specify this time
     ***                  relative to the local timezone, rather than GMT.  This makes determining the
     ***                  actual time of the event more difficult.
     *** @param gmtHMS    Time received from GPS in HHMMSS format, where HH is hour, MM is minute,
@@ -2368,8 +2569,8 @@ public class TrackClientPacketHandler
 
     }
 
-    /** 
-    *** Parses the specified date into unix 'epoch' time 
+    /**
+    *** Parses the specified date into unix 'epoch' time
     **/
     private long _parseDate_ddmmyy_hhmmss(long ddmmyy, long hhmmss)
     {
@@ -2389,8 +2590,8 @@ public class TrackClientPacketHandler
         }
     }
 
-    /** 
-    *** Parses the specified date into unix 'epoch' time 
+    /**
+    *** Parses the specified date into unix 'epoch' time
     **/
     private long _parseDate_YYMMDDhhmmss(long YYMMDDhhmmss)
     {
@@ -2462,7 +2663,7 @@ public class TrackClientPacketHandler
         long      fixtime, int statusCode, HashSet<Integer> statCodeSet,
         GeoPoint  geoPoint, long gpsAge, double HDOP, int numSats,
         double    speedKPH, double headingDeg, double altitudeM, double odomKM,
-        long      gpioInput, double batteryV, double battLvl, 
+        long      gpioInput, double batteryV, double battLvl,
         double    engTempC, String engDTC[], double fuelLevel, double fuelLevel2,
         CellTower servingCell)
     {
@@ -2497,7 +2698,7 @@ public class TrackClientPacketHandler
         DataTransport dataXPort = device.getDataTransport();
         if (this.hasIPAddress() && !dataXPort.isValidIPAddress(this.getIPAddress())) {
             DTIPAddrList validIPAddr = dataXPort.getIpAddressValid(); // may be null
-            Print.logError("Invalid IP Address from device: " + this.getIPAddress() + 
+            Print.logError("Invalid IP Address from device: " + this.getIPAddress() +
                 " [expecting " + validIPAddr + "]");
             return false;
         }
@@ -2580,8 +2781,8 @@ public class TrackClientPacketHandler
         /* estimate GPS-based odometer */
         if (odomKM <= 0.0) {
             // -- calculate odometer
-            odomKM = (ESTIMATE_ODOMETER && validGPS)? 
-                device.getNextOdometerKM(geoPoint) : 
+            odomKM = (ESTIMATE_ODOMETER && validGPS)?
+                device.getNextOdometerKM(geoPoint) :
                 device.getLastOdometerKM();
         } else {
             // -- bounds-check odometer
@@ -2625,11 +2826,11 @@ public class TrackClientPacketHandler
             if (zone != null) {
                 for (Device.GeozoneTransition z : zone) {
                     int zsc = z.getStatusCode(); // STATUS_GEOFENCE_ARRIVE / STATUS_GEOFENCE_DEPART
-                    this.insertEventRecord(device, 
+                    this.insertEventRecord(device,
                         z.getTimestamp(), zsc, z.getGeozone(),
                         geoPoint, gpsAge, HDOP, numSats,
                         speedKPH, headingDeg, altitudeM, odomKM,
-                        gpioInput, batteryV, battLvl, 
+                        gpioInput, batteryV, battLvl,
                         engTempC, engDTC, fuelLevel, fuelLevel2,
                         servingCell);
                     Print.logInfo("Geozone    : " + z);
@@ -2652,11 +2853,11 @@ public class TrackClientPacketHandler
                             long inpTime = fixtime;
                             int  inpCode = ((gpioInput & m) != 0L)? InputStatusCodes_ON[b] : InputStatusCodes_OFF[b];
                             Print.logInfo("GPIO input : " + StatusCodes.GetDescription(inpCode,null));
-                            this.insertEventRecord(device, 
+                            this.insertEventRecord(device,
                                 inpTime, inpCode, null/*geozone*/,
                                 geoPoint, gpsAge, HDOP, numSats,
                                 speedKPH, headingDeg, altitudeM, odomKM,
-                                gpioInput, batteryV, battLvl, 
+                                gpioInput, batteryV, battLvl,
                                 engTempC, engDTC, fuelLevel, fuelLevel2,
                                 servingCell);
                         }
@@ -2671,11 +2872,11 @@ public class TrackClientPacketHandler
             // -- "statCodeSet" should not contain a STATUS_LOCATION code
             for (Integer sci : statCodeSet) {
                 int sc = sci.intValue();
-                this.insertEventRecord(device, 
+                this.insertEventRecord(device,
                     fixtime, sc, null/*geozone*/,
                     geoPoint, gpsAge, HDOP, numSats,
                     speedKPH, headingDeg, altitudeM, odomKM,
-                    gpioInput, batteryV, battLvl, 
+                    gpioInput, batteryV, battLvl,
                     engTempC, engDTC, fuelLevel, fuelLevel2,
                     servingCell);
                 if (statusCode == sc) {
@@ -2706,42 +2907,42 @@ public class TrackClientPacketHandler
         if (statusCode == StatusCodes.STATUS_NONE) {
             // -- STATUS_NONE and no inserted events ==> convert to "InMotion" or "Location"
             int sc = (speedKPH > 0.0)? StatusCodes.STATUS_MOTION_IN_MOTION : StatusCodes.STATUS_LOCATION;
-            this.insertEventRecord(device, 
+            this.insertEventRecord(device,
                 fixtime, sc, null/*geozone*/,
                 geoPoint, gpsAge, HDOP, numSats,
                 speedKPH, headingDeg, altitudeM, odomKM,
-                gpioInput, batteryV, battLvl, 
+                gpioInput, batteryV, battLvl,
                 engTempC, engDTC, fuelLevel, fuelLevel2,
                 servingCell);
         } else
         if (statusCode != StatusCodes.STATUS_LOCATION) {
             // -- Not a "Location" event
-            this.insertEventRecord(device, 
+            this.insertEventRecord(device,
                 fixtime, statusCode, null/*geozone*/,
                 geoPoint, gpsAge, HDOP, numSats,
                 speedKPH, headingDeg, altitudeM, odomKM,
-                gpioInput, batteryV, battLvl, 
+                gpioInput, batteryV, battLvl,
                 engTempC, engDTC, fuelLevel, fuelLevel2,
                 servingCell);
         } else
         if (XLATE_LOCATON_INMOTION && (speedKPH > 0.0)) {
             // -- Traslate "Location" to "InMotion"
             int sc = StatusCodes.STATUS_MOTION_IN_MOTION;
-            this.insertEventRecord(device, 
+            this.insertEventRecord(device,
                 fixtime, sc, null/*geozone*/,
                 geoPoint, gpsAge, HDOP, numSats,
                 speedKPH, headingDeg, altitudeM, odomKM,
-                gpioInput, batteryV, battLvl, 
+                gpioInput, batteryV, battLvl,
                 engTempC, engDTC, fuelLevel, fuelLevel2,
                 servingCell);
         } else // <-- fixed v2.5.7-B10
         if (validGPS && !device.isNearLastValidLocation(geoPoint,MINIMUM_MOVED_METERS,MINIMUM_MOVED_METERS_AGE)) {
             // -- Only include "Location" if not nearby previous event
-            this.insertEventRecord(device, 
+            this.insertEventRecord(device,
                 fixtime, statusCode, null/*geozone*/,
                 geoPoint, gpsAge, HDOP, numSats,
                 speedKPH, headingDeg, altitudeM, odomKM,
-                gpioInput, batteryV, battLvl, 
+                gpioInput, batteryV, battLvl,
                 engTempC, engDTC, fuelLevel, fuelLevel2,
                 servingCell);
         } else
@@ -2771,11 +2972,11 @@ public class TrackClientPacketHandler
     /**
     *** Create EventData record
     **/
-    private EventData createEventRecord(Device device, 
+    private EventData createEventRecord(Device device,
         long      gpsTime, int statusCode, Geozone geozone,
         GeoPoint  geoPoint, long gpsAge, double HDOP, int numSats,
         double    speedKPH, double heading, double altitudeM, double odomKM,
-        long      gpioInput, double batteryV, double battLvl, 
+        long      gpioInput, double batteryV, double battLvl,
         double    engTempC, String engDTC[], double fuelLevel, double fuelLevel2,
         CellTower servingCell)
     {
@@ -2816,29 +3017,29 @@ public class TrackClientPacketHandler
     }
 
     /**
-    *** Create/Insert a EventData record 
+    *** Create/Insert a EventData record
     **/
-    private void insertEventRecord(Device device, 
+    private void insertEventRecord(Device device,
         long      gpsTime, int statusCode, Geozone geozone,
         GeoPoint  geoPoint, long gpsAge, double HDOP, int numSats,
         double    speedKPH, double heading, double altitudeM, double odomKM,
-        long      gpioInput, double batteryV, double battLvl, 
+        long      gpioInput, double batteryV, double battLvl,
         double    engTempC, String engDTC[], double fuelLevel, double fuelLevel2,
         CellTower servingCell)
     {
 
         /* create event */
-        EventData evdb = createEventRecord(device, 
+        EventData evdb = createEventRecord(device,
             gpsTime, statusCode, geozone,
             geoPoint, gpsAge, HDOP, numSats,
             speedKPH, heading, altitudeM, odomKM,
-            gpioInput, batteryV, battLvl, 
+            gpioInput, batteryV, battLvl,
             engTempC, engDTC, fuelLevel, fuelLevel2,
             servingCell);
 
         /* insert event */
         // this will display an error if it was unable to store the event
-        Print.logInfo("Event: [0x" + StringTools.toHexString(statusCode,16) + "] " + 
+        Print.logInfo("Event: [0x" + StringTools.toHexString(statusCode,16) + "] " +
             StatusCodes.GetDescription(statusCode,null));
         device.insertEventData(evdb);
         this.incrementSavedEventCount();
@@ -2852,7 +3053,7 @@ public class TrackClientPacketHandler
     /**
     *** Startup configuration initialization
     **/
-    public static void configInit() 
+    public static void configInit()
     {
         DCServerConfig dcsc = Main.getServerConfig();
         if (dcsc != null) {
@@ -2882,9 +3083,9 @@ public class TrackClientPacketHandler
             if (SPEED_CONVERSION_TO_KPH < 0.0) {
                 SPEED_CONVERSION_TO_KPH = KILOMETERS_PER_KNOT;
             }
-            
+
         }
-        
+
     }
 
 }
